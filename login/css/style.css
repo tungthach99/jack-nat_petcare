@@ -1,0 +1,14 @@
+.main {
+	margin: 17%;
+	border: 1px black solid;
+	box-shadow: 5px 5px 5px;
+	border-radius: 4px;
+	padding: 10px;
+	background: white;
+}
+.title{
+	text-align: center;
+}
+body{
+	background: #FFEEEE;
+}
