@@ -29,11 +29,11 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+	
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
 		
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<!--	<script src='https://www.google.com/recaptcha/api.js' async defer ></script>-->
 
 </head>
 
@@ -41,6 +41,7 @@
 	<?php
 	include("public/ketnoi.php");
 	include("layout/header.php");
+	include("layout/taikhoan.php");
 	?>
 	
 	<!-- Start All Pages -->
@@ -48,7 +49,7 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>CHECKOUT DETAILS</h1>
+					<h1>TẠO TÀI KHOẢN</h1>
 				</div>
 			</div>
 		</div>
@@ -61,8 +62,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Đặt lịch</h2>
-						<p>Đặt lịch hẹn với chúng tôi để nhận được sự phục vụ chu đáo nhất!</p>
+						<h2>Đăng ký</h2>
+						<p>Mời bạn nhập một số thông tin sau!</p>
 					</div>
 				</div>
 			</div>
@@ -70,55 +71,7 @@
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 					<div class="contact-block">
 						<form id="contactForm">
-							<div class="row">
-								<div class="col-md-6">
-									<h3>Mời bạn chọn dịch vụ</h3>
-									<div class="col-md-12">
-										<div class="form-group">
-											<div class="row">
-												<div class="col-md-6">
-													<input id="input_date" class="datepicker picker__input form-control" name="date" type="text" value="" equired data-error="Mời bạn chọn ngày">
-													<div class="help-block with-errors"></div>
-												</div>
-												<div class="col-md-6">
-													<input id="input_time" class="time form-control picker__input" required data-error="Mời bạn chọn giờ">
-											<div class="help-block with-errors"></div>
-												</div>
-											</div>
-											
-										</div>                                 
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<select class="custom-select d-block form-control" id="dichVu" required data-error="Please select Person">
-											  <option disabled selected>Dịch vụ*</option>
-											  <option value="1">1</option>
-											  <option value="2">2</option>
-											  <option value="3">3</option>
-											  <option value="4">4</option>
-											  <option value="5">5</option>
-											  <option value="6">6</option>
-											  <option value="7">7</option>
-											</select>
-											<div class="help-block with-errors"></div>
-										</div> 
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<select class="custom-select d-block form-control" id="chiNhanh" required data-error="Please select Person">
-											  <option disabled selected>Chi nhánh*</option>
-											  <option value="1">1</option>
-											  <option value="2">2</option>
-											  <option value="3">3</option>
-											  <option value="4">4</option>
-											  <option value="5">5</option>
-											  <option value="6">6</option>
-											  <option value="7">7</option>
-											</select>
-											<div class="help-block with-errors"></div>
-										</div> 
-									</div>
-								</div>
+							<div class="row">	
 								<div class="col-md-6">
 									<h3>Thông tin liên hệ</h3>
 									<div class="col-md-12">
@@ -129,7 +82,7 @@
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Email của bạn" id="email" class="form-control" name="email" required data-error="Please enter your email">
+											<input type="email" placeholder="Email của bạn" id="email" class="form-control" name="email" required data-error="Please enter your email">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
@@ -139,10 +92,54 @@
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" placeholder="Địa chỉ chi tiết" id="phone" class="form-control" name="phone" required data-error="Vui lòng nhập địa chỉ">
+											<div class="help-block with-errors"></div>
+										</div> 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<select class="custom-select d-block form-control" id="dichVu" required data-error="Please select Person">
+											  <option disabled selected>Giới tính*</option>
+											  <option value="Nam">Nam</option>
+											  <option value="Nữ">Nữ</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div> 
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h3>Thông tin tài khoản</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="tenDangNhap" name="tenDangNhap" placeholder="Tên đăng nhập" required data-error="Vui lòng nhập tên đăng nhập">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="password" placeholder="Mật khẩu" id="matKhau" class="form-control" name="matKhau" required data-error="Vui lòng nhập mật khẩu">
+											<div class="help-block with-errors"></div>
+										</div> 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="password" placeholder="Xác nhận mật khẩu" id="xacNhanMatKhau" class="form-control" name="xacNhanMatKhau" required data-error="Vui lòng nhập lại mật khẩu">
+											<div class="help-block with-errors"></div>
+										</div> 
+									</div>
+<!--
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="g-recaptcha" data-sitekey="site_key"></div>
+										</div> 
+									</div>
+-->
 								</div>
 								<div class="col-md-12">
 									<div class="submit-button text-center">
-										<button class="btn btn-common" id="submit" type="submit">Đặt ngay</button>
+										<button class="btn btn-common" id="submit" type="submit">Tạo tài khoản</button>
 										<div id="msgSubmit" class="h3 text-center hidden"></div> 
 										<div class="clearfix"></div> 
 									</div>
@@ -156,60 +153,6 @@
 	</div>
 	<!-- End Reservation -->
 	
-	<!-- Start Customer Reviews -->
-	<div class="customer-reviews-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Tham khảo thêm</h2>
-						<p>Các dịch vụ nổi bật của chúng tôi</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-8 mr-auto ml-auto text-center">
-					<div id="reviews" class="carousel slide" data-ride="carousel">
-						<div class="carousel-inner mt-4">
-							<div class="carousel-item text-center active">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_cat-tia-long.jpg" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Cắt tỉa lông</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Cắt tỉa lông và cắt tỉa lông và và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông.</p>
-							</div>
-							<div class="carousel-item text-center">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_massage-thu-cung.jpg" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Massage cho thú cưng</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng.</p>
-							</div>
-							<div class="carousel-item text-center">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_kham-suc-khoe.jpg" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Kiểm tra sức khỏe</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe.</p>
-							</div>
-						</div>
-						<a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">
-							<i class="fa fa-angle-left" aria-hidden="true"></i>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#reviews" role="button" data-slide="next">
-							<i class="fa fa-angle-right" aria-hidden="true"></i>
-							<span class="sr-only">Next</span>
-						</a>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Customer Reviews -->
 	
 	<!-- Start Contact info -->
 	<div class="contact-imfo-box">

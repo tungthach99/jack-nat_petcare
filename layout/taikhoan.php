@@ -1,4 +1,5 @@
 <div id="formDangNhap">
+	<br><br>
 	<?php 
 	if(!isset($_SESSION["id-user"])){?>
 	<form action="customer/Account/xldangnhap.php" method="post">
@@ -11,7 +12,7 @@
 	</form>
 	<div class="noiDungFormDangNhap">
 		Bạn chưa có tài khoản? <a href="taotaikhoan.php">Tạo tài khoản.</a><br><br>
-		<a><img width="50%" src="images/facebook_signup_with_facebook.png"></a>
+		<a><img width="60%" src="images/facebook_signup_with_facebook.png"></a>
 	</div>
 	<?php }?>
 	<?php if(isset($_SESSION["id-user"])){?>

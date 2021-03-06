@@ -40,12 +40,10 @@ a:hover{
 	font-size: 12px;
 	background-color: #f8f9fa;
 }
-/*
 #formDangNhap form input[type='text']:focus{
 	width: 60%;
 	border: 1px solid;
 }
-*/
 #formDangNhap form input[type='password']:focus{
 	width: 60%;
 	border: 1px solid;
@@ -53,6 +51,7 @@ a:hover{
 form input[type='submit']{
 	border: none;
 	width: 60%;
+	height: 43px;
 	background-color: #d0a772;
 	color: #fff;
 	padding: 5px 0;

@@ -34,16 +34,11 @@
 								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
 							</div>
 						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.php">blog</a>
-								<a class="dropdown-item" href="blog-details.php">blog Single</a>
-							</div>
-						</li>
+						
 						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
 						<li class="nav-item"><a onClick="hienthiform('box-tim-kiem');dongform('formDangNhap')" class="nav-link"><i class="fa fa-search"></i> Search</a>
 						  </li>
+						<li class="nav-item"><a onClick="hienthiform('formDangNhap');" class="nav-link"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
 						<li class="nav-item"><a onClick="hienthiform('formDangNhap');" class="nav-link"><i class="fa fa-user"></i> Tài khoản</a></li>
 					</ul>
 				</div>
