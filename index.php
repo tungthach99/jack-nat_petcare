@@ -1,3 +1,7 @@
+<?php
+ob_start(); 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
@@ -34,6 +38,10 @@
 </head>
 
 <body>
+<?php
+	include("layout/taikhoan.php");
+	require("public/ketnoi.php");
+	?>
 	<!-- Start header -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
