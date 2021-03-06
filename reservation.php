@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-    <link href="css/main.css" rel="stylesheet" />
+	<link href="css/main.css" rel="stylesheet" />
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title>Jack NAT - Hệ thống cửa hàng chăm sóc thú nuôi</title>  
+    <title>Yamifood Restaurant - Responsive HTML5 Template</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -42,7 +42,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="index.php">
 					<img class="logo" src="images/.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,25 +50,25 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Trang chủ</a></li>
-						<li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
+						<li class="nav-item"><a class="nav-link" href="service.php">Dịch vụ</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="menu.html" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
+							<a class="nav-link dropdown-toggle" href="menu.php" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="menu.html">Đồ ăn</a>
-								<a class="dropdown-item" href="menu.html">Phụ kiện</a>
-								<a class="dropdown-item" href="menu.html">Chuồng/Nhà</a>
+								<a class="dropdown-item" href="menu.php">Đồ ăn</a>
+								<a class="dropdown-item" href="menu.php">Phụ kiện</a>
+								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.html">blog</a>
-								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+								<a class="dropdown-item" href="blog.php">blog</a>
+								<a class="dropdown-item" href="blog-details.php">blog Single</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
 						<li class="nav-link"><a class="search">
 							Search
 							<div class="search-bar">
@@ -143,7 +143,7 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>CHECKOUT DETAILS</h1>
+					<h1>Reservation</h1>
 				</div>
 			</div>
 		</div>
@@ -156,8 +156,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Đặt lịch</h2>
-						<p>Đặt lịch hẹn với chúng tôi để nhận được sự phục vụ chu đáo nhất!</p>
+						<h2>Reservation</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
 			</div>
@@ -167,41 +167,23 @@
 						<form id="contactForm">
 							<div class="row">
 								<div class="col-md-6">
-									<h3>Mời bạn chọn dịch vụ</h3>
+									<h3>Book a table</h3>
 									<div class="col-md-12">
 										<div class="form-group">
-											<div class="row">
-												<div class="col-md-6">
-													<input id="input_date" class="datepicker picker__input form-control" name="date" type="text" value="" equired data-error="Mời bạn chọn ngày">
-													<div class="help-block with-errors"></div>
-												</div>
-												<div class="col-md-6">
-													<input id="input_time" class="time form-control picker__input" required data-error="Mời bạn chọn giờ">
+											<input id="input_date" class="datepicker picker__input form-control" name="date" type="text" value="" equired data-error="Please enter Date">
 											<div class="help-block with-errors"></div>
-												</div>
-											</div>
-											
 										</div>                                 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<select class="custom-select d-block form-control" id="dichVu" required data-error="Please select Person">
-											  <option disabled selected>Dịch vụ*</option>
-											  <option value="1">1</option>
-											  <option value="2">2</option>
-											  <option value="3">3</option>
-											  <option value="4">4</option>
-											  <option value="5">5</option>
-											  <option value="6">6</option>
-											  <option value="7">7</option>
-											</select>
+											<input id="input_time" class="time form-control picker__input" required data-error="Please enter time">
 											<div class="help-block with-errors"></div>
-										</div> 
+										</div>                                 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<select class="custom-select d-block form-control" id="chiNhanh" required data-error="Please select Person">
-											  <option disabled selected>Chi nhánh*</option>
+											<select class="custom-select d-block form-control" id="person" required data-error="Please select Person">
+											  <option disabled selected>Select Person*</option>
 											  <option value="1">1</option>
 											  <option value="2">2</option>
 											  <option value="3">3</option>
@@ -215,29 +197,29 @@
 									</div>
 								</div>
 								<div class="col-md-6">
-									<h3>Thông tin liên hệ</h3>
+									<h3>Contact Details</h3>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên" required data-error="Please enter your name">
+											<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Email của bạn" id="email" class="form-control" name="email" required data-error="Please enter your email">
+											<input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Số điện thoại" id="phone" class="form-control" name="phone" required data-error="Please enter your Numbar">
+											<input type="text" placeholder="Your Numbar" id="phone" class="form-control" name="phone" required data-error="Please enter your Numbar">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
 								</div>
 								<div class="col-md-12">
 									<div class="submit-button text-center">
-										<button class="btn btn-common" id="submit" type="submit">Đặt ngay</button>
+										<button class="btn btn-common" id="submit" type="submit">Book Table</button>
 										<div id="msgSubmit" class="h3 text-center hidden"></div> 
 										<div class="clearfix"></div> 
 									</div>
@@ -257,8 +239,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Tham khảo thêm</h2>
-						<p>Các dịch vụ nổi bật của chúng tôi</p>
+						<h2>Customer Reviews</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
 			</div>
@@ -268,27 +250,27 @@
 						<div class="carousel-inner mt-4">
 							<div class="carousel-item text-center active">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_cat-tia-long.jpg" alt="">
+									<img class="d-block w-100 rounded-circle" src="images/profile-1.jpg" alt="">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Cắt tỉa lông</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Cắt tỉa lông và cắt tỉa lông và và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông.</p>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Paul Mitchel</strong></h5>
+								<h6 class="text-dark m-0">Web Developer</h6>
+								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
 							</div>
 							<div class="carousel-item text-center">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_massage-thu-cung.jpg" alt="">
+									<img class="d-block w-100 rounded-circle" src="images/profile-3.jpg" alt="">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Massage cho thú cưng</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng.</p>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Steve Fonsi</strong></h5>
+								<h6 class="text-dark m-0">Web Designer</h6>
+								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
 							</div>
 							<div class="carousel-item text-center">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_kham-suc-khoe.jpg" alt="">
+									<img class="d-block w-100 rounded-circle" src="images/profile-7.jpg" alt="">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Kiểm tra sức khỏe</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe.</p>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Daniel vebar</strong></h5>
+								<h6 class="text-dark m-0">Seo Analyst</h6>
+								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
 							</div>
 						</div>
 						<a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">

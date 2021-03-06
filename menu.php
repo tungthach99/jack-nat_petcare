@@ -21,10 +21,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">    
 	<!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">    
-	<!-- Pickadate CSS -->
-    <link rel="stylesheet" href="css/classic.css">    
-	<link rel="stylesheet" href="css/classic.date.css">    
-	<link rel="stylesheet" href="css/classic.time.css">    
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
@@ -42,7 +38,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="index.php">
 					<img class="logo" src="images/.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,25 +46,25 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Trang chủ</a></li>
-						<li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
+						<li class="nav-item"><a class="nav-link" href="service.php">Dịch vụ</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="menu.html" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
+							<a class="nav-link dropdown-toggle" href="menu.php" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="menu.html">Đồ ăn</a>
-								<a class="dropdown-item" href="menu.html">Phụ kiện</a>
-								<a class="dropdown-item" href="menu.html">Chuồng/Nhà</a>
+								<a class="dropdown-item" href="menu.php">Đồ ăn</a>
+								<a class="dropdown-item" href="menu.php">Phụ kiện</a>
+								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.html">blog</a>
-								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+								<a class="dropdown-item" href="blog.php">blog</a>
+								<a class="dropdown-item" href="blog-details.php">blog Single</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
 						<li class="nav-link"><a class="search">
 							Search
 							<div class="search-bar">
@@ -143,95 +139,103 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>Reservation</h1>
+					<h1>Sản phẩm</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End All Pages -->
 	
-	<!-- Start Reservation -->
-	<div class="reservation-box">
+	<!-- Start Menu -->
+	<div class="menu-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Reservation</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>Jack & Nat pet care</h2>
+						<p>Thú cưng là gia đình</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12 col-sm-12 col-xs-12">
-					<div class="contact-block">
-						<form id="contactForm">
-							<div class="row">
-								<div class="col-md-6">
-									<h3>Book a table</h3>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input id="input_date" class="datepicker picker__input form-control" name="date" type="text" value="" equired data-error="Please enter Date">
-											<div class="help-block with-errors"></div>
-										</div>                                 
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input id="input_time" class="time form-control picker__input" required data-error="Please enter time">
-											<div class="help-block with-errors"></div>
-										</div>                                 
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<select class="custom-select d-block form-control" id="person" required data-error="Please select Person">
-											  <option disabled selected>Select Person*</option>
-											  <option value="1">1</option>
-											  <option value="2">2</option>
-											  <option value="3">3</option>
-											  <option value="4">4</option>
-											  <option value="5">5</option>
-											  <option value="6">6</option>
-											  <option value="7">7</option>
-											</select>
-											<div class="help-block with-errors"></div>
-										</div> 
-									</div>
-								</div>
-								<div class="col-md-6">
-									<h3>Contact Details</h3>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
-											<div class="help-block with-errors"></div>
-										</div>                                 
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
-											<div class="help-block with-errors"></div>
-										</div> 
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="text" placeholder="Your Numbar" id="phone" class="form-control" name="phone" required data-error="Please enter your Numbar">
-											<div class="help-block with-errors"></div>
-										</div> 
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="submit-button text-center">
-										<button class="btn btn-common" id="submit" type="submit">Book Table</button>
-										<div id="msgSubmit" class="h3 text-center hidden"></div> 
-										<div class="clearfix"></div> 
-									</div>
-								</div>
-							</div>            
-						</form>
+				<div class="col-lg-12">
+					<div class="special-menu text-center">
+						<div class="button-group filter-button-group">
+							<button class="active" data-filter="*">Tất cả</button>
+							<button data-filter=".thucan">Thức ăn</button>
+							<button data-filter=".phukien">Phụ kiện</button>
+							<button data-filter=".chuongnha">Chuồng/Nhà</button>
+						</div>
 					</div>
+				</div>
+			</div>
+				
+			<div class="row special-list">
+				<div class="col-lg-4 col-md-6 special-grid thucan">
+					<div class="gallery-single fix">
+						<a href="product-detail.php">
+						<img src="images/san-pham/anh1.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Thức ăn cho chó con ROYAL CANIN Bulldog Puppy</h4>
+							<p></p>
+							<h5> 230.000 VND</h5>
+						</div>
+					</a>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid thucan">
+					<div class="gallery-single fix">
+						<img src="images/san-pham/anh2.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition</h4>
+							<p></p>
+							<h5> 470.000 VND</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid phukien">
+					<div class="gallery-single fix">
+						<img src="images/san-pham/anh3.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Dây dắt cho chó mèo tự động DELE 007G</h4>
+							<h5> 465.000 VND</h5>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-6 special-grid phukien">
+					<div class="gallery-single fix">
+						<img src="images/san-pham/anh4.jpg" style="width: 290px;height: 214px;"class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Vòng cổ cho chó gắn chuông kèm dây dắt HAND IN HAND</h4>
+							<h5> 130.000 VND</h5>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+		</div>
+	</div>
+	<!-- End Menu -->
+	
+	<!-- Start QT -->
+	<div class="qt-box qt-background">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 ml-auto mr-auto text-left">
+					<p class="lead ">
+						" Thú cưng là cả gia đình "
+					</p>
+					<span class="lead">Jack & Nat pet care</span>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Reservation -->
+	<!-- End QT -->
 	
 	<!-- Start Customer Reviews -->
 	<div class="customer-reviews-box">
@@ -239,8 +243,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Customer Reviews</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>From Admin</h2>
+						<p>"Một chú cún con không phải là toàn bộ cuộc sống của bạn nhưng chúng có thể biến cuộc sống của bạn trở nên muôn màu và toàn diện hơn."</p>
 					</div>
 				</div>
 			</div>
@@ -250,27 +254,45 @@
 						<div class="carousel-inner mt-4">
 							<div class="carousel-item text-center active">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/profile-1.jpg" alt="">
+									<img class="d-block w-100 rounded-circle" src="images/hoa.png" alt="" style="width: 100%; height:auto">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Paul Mitchel</strong></h5>
-								<h6 class="text-dark m-0">Web Developer</h6>
-								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">HOA NGUYEN</strong></h5>
+								<!-- <h6 class="text-dark m-0">Web Developer</h6> -->
+								<p class="m-0 pt-3">Những “người bạn nhỏ” dạy chúng ta cách lên kế hoạch và sắp xếp cuộc sống. Có một chú thú cưng đồng nghĩa với việc bạn phải chăm sóc chúng. Trong quá trình đó, đưa chúng đi dạo, tắm rửa hay đặt lịch hẹn với phòng khám thú y chắc chắn sẽ tiêu tốn thời gian của bạn như nhờ vậy, bạn cũng trưởng thành hơn, học được cách sắp xếp thời gian, tiền bạc và có trách nhiệm với người khác.</p>
+								
 							</div>
 							<div class="carousel-item text-center">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/profile-3.jpg" alt="">
+									<img class="d-block w-100 rounded-circle" src="images/148598838_2795103064140673_7654981318286258597_n.jpg" alt="">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Steve Fonsi</strong></h5>
-								<h6 class="text-dark m-0">Web Designer</h6>
-								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">NHUNG NGUYEN</strong></h5>
+								<!-- <h6 class="text-dark m-0">Web Designer</h6> -->
+								<p class="m-0 pt-3">Thú cưng nhắc nhở chúng ta về giá trị của lòng biết ơn. Bài học cuộc sống này đi đôi với khái niệm về sự hài lòng. Đầu tiên, chúng ta học cách hài lòng với những gì chúng ta có, và sau đó chúng ta học cách bày tỏ lòng biết ơn đối với những điều đó.</p>
+								<p class="m-0 pt-3"></p>
 							</div>
 							<div class="carousel-item text-center">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/profile-7.jpg" alt="">
+									<img class="d-block w-100 rounded-circle" src="images/trung.png" alt="">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Daniel vebar</strong></h5>
-								<h6 class="text-dark m-0">Seo Analyst</h6>
-								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">TRUNG MAI</strong></h5>
+								<!-- <h6 class="text-dark m-0">Seo Analyst</h6> -->
+								<p class="m-0 pt-3">Một chú mèo sẽ giữ trạng thái cuộn mình lơ mơ trên chân bạn cho tới khi bạn gần như đứng thẳng. Cho tới phút cuối cùng nó vẫn đợi bạn nghe theo lương tâm mình và ngồi lại xuống.</p> 
+							</div>
+							<div class="carousel-item text-center">
+								<div class="img-box p-1 border rounded-circle m-auto">
+									<img class="d-block w-100 rounded-circle" src="images/tung.png" alt="">
+								</div>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">TUNG THACH</strong></h5>
+								<!-- <h6 class="text-dark m-0">Web Designer</h6> -->
+								<p class="m-0 pt-3">Một con mèo con thật tài giỏi khi lao đi như điên chẳng vì cái gì cả, và thường dừng lại trước khi nó đến được đó.</p>
+							</div>
+							<div class="carousel-item text-center">
+								<div class="img-box p-1 border rounded-circle m-auto">
+									<img class="d-block w-100 rounded-circle" src="images/anhcanhan.jpg" alt="">
+								</div>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">TUAN NGUYEN</strong></h5>
+								<!-- <h6 class="text-dark m-0">Web Designer</h6> -->
+								<p class="m-0 pt-3">Thú cưng biết ơn những điều đơn giản nhất trong cuộc sống, và chúng bày tỏ lòng biết ơn của mình theo những cách riêng. Khi bạn thấy chú cún ngoắc đuôi hay chú mèo cọ đầu vào chân bạn, chúng đang bày tỏ lòng biết ơn đấy. Những lúc ấy, hãy dừng lại đôi chút và tự hỏi bản thân xem hôm nay bạn biết ơn điều gì nhất. Sau khi gửi đi lời cảm ơn đến những điều tốt đẹp đã đến với bạn trong ngày, bạn sẽ thấy cuộc sống dễ chịu hơn rất nhiều.</p>
 							</div>
 						</div>
 						<a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">
@@ -390,10 +412,6 @@
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/baguetteBox.min.js"></script>
-	<script src="js/picker.js"></script>
-	<script src="js/picker.date.js"></script>
-	<script src="js/picker.time.js"></script>
-	<script src="js/legacy.js"></script>
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>

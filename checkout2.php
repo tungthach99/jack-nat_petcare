@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-	<link href="css/main.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title>Yamifood Restaurant - Responsive HTML5 Template</title>  
+    <title>Jack NAT - Hệ thống cửa hàng chăm sóc thú nuôi</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -21,6 +21,10 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">    
 	<!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">    
+	<!-- Pickadate CSS -->
+    <link rel="stylesheet" href="css/classic.css">    
+	<link rel="stylesheet" href="css/classic.date.css">    
+	<link rel="stylesheet" href="css/classic.time.css">    
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
@@ -38,7 +42,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="index.php">
 					<img class="logo" src="images/.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,25 +50,25 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Trang chủ</a></li>
-						<li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
+						<li class="nav-item"><a class="nav-link" href="service.php">Dịch vụ</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="menu.html" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
+							<a class="nav-link dropdown-toggle" href="menu.php" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="menu.html">Đồ ăn</a>
-								<a class="dropdown-item" href="menu.html">Phụ kiện</a>
-								<a class="dropdown-item" href="menu.html">Chuồng/Nhà</a>
+								<a class="dropdown-item" href="menu.php">Đồ ăn</a>
+								<a class="dropdown-item" href="menu.php">Phụ kiện</a>
+								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.html">blog</a>
-								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+								<a class="dropdown-item" href="blog.php">blog</a>
+								<a class="dropdown-item" href="blog-details.php">blog Single</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
 						<li class="nav-link"><a class="search">
 							Search
 							<div class="search-bar">
@@ -139,99 +143,101 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>Dịch vụ</h1>
+					<h1>CHECKOUT DETAILS</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End All Pages -->
 	
-	<!-- Start Menu -->
-	<div class="menu-box">
+	<!-- Start Reservation -->
+	<div class="reservation-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Jack & Nat pet care</h2>
-						<p>Thú cưng là gia đình</p>
+						<h2>Thanh toán</h2>
+						<p>Bạn vui lòng cung điền một số thông tin bên dưới để hoàn tất bước cuối đặt hàng nha!</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12">
-					<div class="special-menu text-center">
-						<div class="button-group filter-button-group">
-							<button class="active" data-filter="*">Tất cả</button>
-						</div>
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<div class="contact-block">
+						<form id="contactForm">
+							<div class="row">
+								<div class="col-md-6">
+									<h3>Thông tin thanh toán</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên" required data-error="Please enter your name">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" placeholder="Email của bạn" id="email" class="form-control" name="email" required data-error="Please enter your email">
+											<div class="help-block with-errors"></div>
+										</div> 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="form-group">
+											<input type="text" placeholder="Số điện thoại" id="phone" class="form-control" name="phone" required data-error="Please enter your Numbar">
+											<div class="help-block with-errors"></div>
+										</div> 
+										</div> 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<div class="form-group">
+											<input type="text" placeholder="Địa chỉ nhận hàng" id="diaChi" class="form-control" name="phone" required data-error="Vui lòng nhập địa chỉ">
+											<div class="help-block with-errors"></div>
+										</div> 
+										</div> 
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h3>ĐƠN HÀNG CỦA BẠN</h3>
+									<div class="col-md-12 form-group" style="border: 1px solid rgba(1,1,1,0.25);">
+										<div class="row form-group">
+											<div class="col-md-9"><b>SẢN PHẨM</b></div>
+											<div class="col-md-3"><b>TẠM TÍNH</b></div>
+											<div class="col-md-12"><b>Tạm tính</b></div>
+											<div class="col-md-12"><b>Phí vận chuyển</b></div>
+											<div class="col-md-12"><b>Giảm giá</b></div>
+											<div class="col-md-12"><b style="color: red;">TỔNG</b></div>
+										</div>                             
+									</div>
+									<div class="col-md-12 form-group" style="border: 1px solid rgba(1,1,1,0.25);">
+										<input type="radio" id="phuongThucThanhToan1" class="custom-radio" name="phuongThucThanhToan" required data-error="Vui lòng chọn phương thức thanh toán">
+										<label for="phuongThucThanhToan1"><b>Chuyển khoản ngân hàng</b></label><br>
+										<input type="radio" id="phuongThucThanhToan2" class="custom-radio" name="phuongThucThanhToan" required data-error="Vui lòng chọn phương thức thanh toán">
+										<label for="phuongThucThanhToan2"><b>Thanh toán khi nhận hàng</b></label><br>
+										<input type="radio" id="phuongThucThanhToan3" class="custom-radio" name="phuongThucThanhToan" required data-error="Vui lòng chọn phương thức thanh toán">
+										<label for="phuongThucThanhToan3"><b>Thanh toán bằng vi điện tử</b></label>
+									</div>
+									<div class="col-md-12 form-group">
+										<input type="checkbox" id="checkBox" class="custom-checkbox" name="checkBox" required data-error="Đồng ý với điều khoản mua hàng để tiếp tục">
+										<label for="checkBox"><b>Tôi đồng ý với các điều khoản của Jack NAT</b></label>
+										<div class="help-block with-errors"></div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="submit-button text-center">
+										<button class="btn btn-common" id="submit" type="submit">Đặt ngay</button>
+										<div id="msgSubmit" class="h3 text-center hidden"></div> 
+										<div class="clearfix"></div> 
+									</div>
+								</div>
+							</div>            
+						</form>
 					</div>
 				</div>
 			</div>
-				
-			<div class="row special-list">
-				<div class="col-lg-4 col-md-6 special-grid thucan">
-					<div class="gallery-single fix">
-						<a href="checkout.html">
-						<img src="images/dv_cat-tia-long.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Dịch vụ cắt tỉa lông</h4>
-							<p></p>
-							<h5> 230.000 VND</h5>
-						</div>
-					</a>
-					</div>
-				</div>
-
-                <div class="row special-list">
-                    <div class="col-lg-4 col-md-6 special-grid thucan">
-                        <div class="gallery-single fix">
-                            <a href="checkout.html">
-                            <img src="images/dv_kham-suc-khoe.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-                            <div class="why-text">
-                                <h4>Dịch vụ khám sức khỏe</h4>
-                                <p></p>
-                                <h5> 230.000 VND</h5>
-                            </div>
-                        </a>
-                        </div>
-                    </div>
-
-                    <div class="row special-list">
-                        <div class="col-lg-4 col-md-6 special-grid thucan">
-                            <div class="gallery-single fix">
-                                <a href="checkout.html">
-                                <img src="images/dv_massage-thu-cung.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-                                <div class="why-text">
-                                    <h4>Dịch vụ massage thú cưng</h4>
-                                    <p></p>
-                                    <h5> 230.000 VND</h5>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-				
-				
-				
-				
-				
-			</div>
 		</div>
 	</div>
-	<!-- End Menu -->
-	
-	<!-- Start QT -->
-	<div class="qt-box qt-background">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto text-left">
-					<p class="lead ">
-						" Thú cưng là cả gia đình "
-					</p>
-					<span class="lead">Jack & Nat pet care</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End QT -->
+	<!-- End Reservation -->
 	
 	<!-- Start Customer Reviews -->
 	<div class="customer-reviews-box">
@@ -239,8 +245,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>From Admin</h2>
-						<p>"Một chú cún con không phải là toàn bộ cuộc sống của bạn nhưng chúng có thể biến cuộc sống của bạn trở nên muôn màu và toàn diện hơn."</p>
+						<h2>Tham khảo thêm</h2>
+						<p>Các dịch vụ nổi bật của chúng tôi</p>
 					</div>
 				</div>
 			</div>
@@ -250,45 +256,27 @@
 						<div class="carousel-inner mt-4">
 							<div class="carousel-item text-center active">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/hoa.png" alt="" style="width: 100%; height:auto">
+									<img class="d-block w-100 rounded-circle" src="images/dv_cat-tia-long.jpg" alt="">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">HOA NGUYEN</strong></h5>
-								<!-- <h6 class="text-dark m-0">Web Developer</h6> -->
-								<p class="m-0 pt-3">Những “người bạn nhỏ” dạy chúng ta cách lên kế hoạch và sắp xếp cuộc sống. Có một chú thú cưng đồng nghĩa với việc bạn phải chăm sóc chúng. Trong quá trình đó, đưa chúng đi dạo, tắm rửa hay đặt lịch hẹn với phòng khám thú y chắc chắn sẽ tiêu tốn thời gian của bạn như nhờ vậy, bạn cũng trưởng thành hơn, học được cách sắp xếp thời gian, tiền bạc và có trách nhiệm với người khác.</p>
-								
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Cắt tỉa lông</a></strong></h5>
+								<h6 class="text-dark m-0">1,000,000 VND</h6>
+								<p class="m-0 pt-3">Cắt tỉa lông và cắt tỉa lông và và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông.</p>
 							</div>
 							<div class="carousel-item text-center">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/148598838_2795103064140673_7654981318286258597_n.jpg" alt="">
+									<img class="d-block w-100 rounded-circle" src="images/dv_massage-thu-cung.jpg" alt="">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">NHUNG NGUYEN</strong></h5>
-								<!-- <h6 class="text-dark m-0">Web Designer</h6> -->
-								<p class="m-0 pt-3">Thú cưng nhắc nhở chúng ta về giá trị của lòng biết ơn. Bài học cuộc sống này đi đôi với khái niệm về sự hài lòng. Đầu tiên, chúng ta học cách hài lòng với những gì chúng ta có, và sau đó chúng ta học cách bày tỏ lòng biết ơn đối với những điều đó.</p>
-								<p class="m-0 pt-3"></p>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Massage cho thú cưng</a></strong></h5>
+								<h6 class="text-dark m-0">1,000,000 VND</h6>
+								<p class="m-0 pt-3">Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng.</p>
 							</div>
 							<div class="carousel-item text-center">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/trung.png" alt="">
+									<img class="d-block w-100 rounded-circle" src="images/dv_kham-suc-khoe.jpg" alt="">
 								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">TRUNG MAI</strong></h5>
-								<!-- <h6 class="text-dark m-0">Seo Analyst</h6> -->
-								<p class="m-0 pt-3">Một chú mèo sẽ giữ trạng thái cuộn mình lơ mơ trên chân bạn cho tới khi bạn gần như đứng thẳng. Cho tới phút cuối cùng nó vẫn đợi bạn nghe theo lương tâm mình và ngồi lại xuống.</p> 
-							</div>
-							<div class="carousel-item text-center">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/tung.png" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">TUNG THACH</strong></h5>
-								<!-- <h6 class="text-dark m-0">Web Designer</h6> -->
-								<p class="m-0 pt-3">Một con mèo con thật tài giỏi khi lao đi như điên chẳng vì cái gì cả, và thường dừng lại trước khi nó đến được đó.</p>
-							</div>
-							<div class="carousel-item text-center">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/anhcanhan.jpg" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">TUAN NGUYEN</strong></h5>
-								<!-- <h6 class="text-dark m-0">Web Designer</h6> -->
-								<p class="m-0 pt-3">Thú cưng biết ơn những điều đơn giản nhất trong cuộc sống, và chúng bày tỏ lòng biết ơn của mình theo những cách riêng. Khi bạn thấy chú cún ngoắc đuôi hay chú mèo cọ đầu vào chân bạn, chúng đang bày tỏ lòng biết ơn đấy. Những lúc ấy, hãy dừng lại đôi chút và tự hỏi bản thân xem hôm nay bạn biết ơn điều gì nhất. Sau khi gửi đi lời cảm ơn đến những điều tốt đẹp đã đến với bạn trong ngày, bạn sẽ thấy cuộc sống dễ chịu hơn rất nhiều.</p>
+								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Kiểm tra sức khỏe</a></strong></h5>
+								<h6 class="text-dark m-0">1,000,000 VND</h6>
+								<p class="m-0 pt-3">Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe.</p>
 							</div>
 						</div>
 						<a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">
@@ -408,6 +396,10 @@
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/baguetteBox.min.js"></script>
+	<script src="js/picker.js"></script>
+	<script src="js/picker.date.js"></script>
+	<script src="js/picker.time.js"></script>
+	<script src="js/legacy.js"></script>
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>

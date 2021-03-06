@@ -57,7 +57,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="index.php">
 					<img class="logo" src="images/.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,25 +65,25 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Trang chủ</a></li>
-						<li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
+						<li class="nav-item"><a class="nav-link" href="service.php">Dịch vụ</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="menu.html" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
+							<a class="nav-link dropdown-toggle" href="menu.php" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="menu.html">Đồ ăn</a>
-								<a class="dropdown-item" href="menu.html">Phụ kiện</a>
-								<a class="dropdown-item" href="menu.html">Chuồng/Nhà</a>
+								<a class="dropdown-item" href="menu.php">Đồ ăn</a>
+								<a class="dropdown-item" href="menu.php">Phụ kiện</a>
+								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.html">blog</a>
-								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+								<a class="dropdown-item" href="blog.php">blog</a>
+								<a class="dropdown-item" href="blog-details.php">blog Single</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
             <li class="nav-link"><a class="search">
 							Search
 							<div class="search-bar">
@@ -200,7 +200,7 @@
                 </div>
 
                 <div class="content">
-                  <form id="contact" action="checkout2.html" method="post">
+                  <form id="contact" action="checkout2.php" method="post">
                     <div class="row">
                       <div class="col-md-6 col-sm-12">
                         <fieldset>
@@ -224,7 +224,7 @@
                       </div>
                       <div class="col-lg-12">
                         <fieldset>
-                          <a href="checkout2.html"><button type="submit" style="margin-top: 5px;" id="form-submit" class="btn btn-primary"><i class='fa fa-cart-plus'>
+                          <a href="checkout2.php"><button type="submit" style="margin-top: 5px;" id="form-submit" class="btn btn-primary"><i class='fa fa-cart-plus'>
                           </i> Add to Cart</button></a>
                           <button type="button" style="margin-top: 5px;" id="form-submit" class="btn btn-success"><i class="fa fa-share-alt">
                           </i> Share</button>

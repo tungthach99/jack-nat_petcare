@@ -1,3 +1,58 @@
+
+/*----------------------------TUNG-------------*/
+/*form tai khoan*/
+#formDangNhap{
+	transition: 0.5s;
+	position: fixed;
+	top: 48px;
+	left: 70%;
+	background-color: #fff;
+	width: 30%;
+	height: 100%;
+	z-index: 990;
+	text-align: center;
+	animation-name: trenDuoi;
+	animation-duration: 0.6s;
+	animation-iteration-count: 1;
+	overflow: hidden;
+	display: none;
+	box-shadow: 1px 1px 20px #000;
+}
+#formDangNhap h4{
+	margin: 10% 0 5% 0;
+}
+#formDangNhap form input[type='text'], #formDangNhap form input[type='password']{
+	text-align: center;
+	width: 120px;
+	transition: 0.4s;
+	border: none;
+	border-bottom: 1px solid;
+	margin: 2.5% 0;
+	padding: 5px 0;
+}
+#formDangNhap form input[type='text']:focus{
+	width: 60%;
+}
+#formDangNhap form input[type='password']:focus{
+	width: 60%;
+}
+form input[type='submit']{
+	width: 60%;
+	background-color: #000;
+	color: #fff;
+	padding: 5px 0;
+}
+.noiDungFormDangNhap{
+	margin: 5% 0;
+}
+.noiDungFormDangNhap a{
+	color: #000;
+}
+.noiDungFormDangNhap a:hover{
+	color: #007bff;
+}
+/*----------------------------TUNG:END-------------*/
+
 /*------------------------------------------------------------------
     IMPORT FONTS
 -------------------------------------------------------------------*/

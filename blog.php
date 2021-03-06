@@ -38,7 +38,7 @@
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="container">
-				<a class="navbar-brand" href="index.html">
+				<a class="navbar-brand" href="index.php">
 					<img class="logo" src="images/.png" alt="" />
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,25 +46,25 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.html">Trang chủ</a></li>
-						<li class="nav-item"><a class="nav-link" href="service.html">Dịch vụ</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">Giới thiệu</a></li>
+						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
+						<li class="nav-item"><a class="nav-link" href="service.php">Dịch vụ</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="menu.html" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
+							<a class="nav-link dropdown-toggle" href="menu.php" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="menu.html">Đồ ăn</a>
-								<a class="dropdown-item" href="menu.html">Phụ kiện</a>
-								<a class="dropdown-item" href="menu.html">Chuồng/Nhà</a>
+								<a class="dropdown-item" href="menu.php">Đồ ăn</a>
+								<a class="dropdown-item" href="menu.php">Phụ kiện</a>
+								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.html">blog</a>
-								<a class="dropdown-item" href="blog-details.html">blog Single</a>
+								<a class="dropdown-item" href="blog.php">blog</a>
+								<a class="dropdown-item" href="blog-details.php">blog Single</a>
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
 						<li class="nav-link"><a class="search">
 							Search
 							<div class="search-bar">
@@ -139,72 +139,191 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>Contact</h1>
+					<h1>Blog</h1>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End All Pages -->
 	
-	<!-- Start Contact -->
-	<div class="map-full"></div>
-	<div class="contact-box">
+	<!-- Start blog -->
+	<div class="blog-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Contact</h2>
+						<h2>Blog</h2>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-12">
-					<form id="contactForm">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
-									<div class="help-block with-errors"></div>
-								</div>                                 
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
-									<div class="help-block with-errors"></div>
-								</div> 
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<select class="custom-select d-block form-control" id="guest" required data-error="Please Select Person">
-									  <option disabled selected>Please Select Person*</option>
-									  <option value="1">1</option>
-									  <option value="2">2</option>
-									  <option value="3">3</option>
-									  <option value="4">4</option>
-									  <option value="5">5</option>
-									</select>
-									<div class="help-block with-errors"></div>
-								</div> 
-							</div>
-							<div class="col-md-12">
-								<div class="form-group"> 
-									<textarea class="form-control" id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
-									<div class="help-block with-errors"></div>
-								</div>
-								<div class="submit-button text-center">
-									<button class="btn btn-common" id="submit" type="submit">Send Message</button>
-									<div id="msgSubmit" class="h3 text-center hidden"></div> 
-									<div class="clearfix"></div> 
-								</div>
-							</div>
-						</div>            
-					</form>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-01.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-02.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-03.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-04.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-05.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-06.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-07.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-08.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-12">
+					<div class="blog-box-inner">
+						<div class="blog-img-box">
+							<img class="img-fluid" src="images/blog-img-09.jpg" alt="">
+						</div>
+						<div class="blog-detail">
+							<h4>Duis feugiat neque sed dolor cursus.</h4>
+							<ul>
+								<li><span>Post by Admin</span></li>
+								<li>|</li>
+								<li><span>27 February 2018</span></li>
+							</ul>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem. </p>
+							<p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. </p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Read More</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Contact -->
+	<!-- End blog -->
 	
 	<!-- Start Contact info -->
 	<div class="contact-imfo-box">
@@ -309,22 +428,8 @@
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/isotope.min.js"></script>
 	<script src="js/baguetteBox.min.js"></script>
-	<script src="js/jquery.mapify.js"></script>
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
-	<script>
-		$('.map-full').mapify({
-			points: [
-				{
-					lat: 40.7143528,
-					lng: -74.0059731,
-					marker: true,
-					title: 'Marker title',
-					infoWindow: 'Yamifood Restaurant'
-				}
-			]
-		});	
-	</script>
 </body>
 </html>
