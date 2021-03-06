@@ -29,6 +29,8 @@ session_start();
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+	
+	<script type="text/javascript" src="js/main.js"></script>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -134,7 +136,7 @@ session_start();
 							?>--> 
 							</a>
 						  </li>
-						<li class="nav-item"><a class="nav-link" href="layout/taikhoan.php"><i class="fa fa-user"></i> Đăng nhập</a></li>
+						<li class="nav-item"><a onClick="hienthiform('formDangNhap');" class="nav-link"><i class="fa fa-user"></i> Tài khoản</a></li>
 					</ul>
 				</div>
 			</div>
@@ -514,7 +516,7 @@ session_start();
 	</footer>
 	<!-- End Footer -->
 	
-	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+	<a id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>

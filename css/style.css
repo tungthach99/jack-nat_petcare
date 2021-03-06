@@ -1,12 +1,17 @@
 
 /*----------------------------TUNG-------------*/
 /*form tai khoan*/
+a{
+	cursor: pointer;
+}
+a:hover{
+	color: #d0a772;
+}
 #formDangNhap{
 	transition: 0.5s;
 	position: fixed;
-	top: 48px;
+	top: 92px;
 	left: 70%;
-	background-color: #fff;
 	width: 30%;
 	height: 100%;
 	z-index: 990;
@@ -16,7 +21,8 @@
 	animation-iteration-count: 1;
 	overflow: hidden;
 	display: none;
-	box-shadow: 1px 1px 20px #000;
+/*	box-shadow: 1px 1px 20px #000;*/
+	background-color: #f8f9fa;
 }
 #formDangNhap h4{
 	margin: 10% 0 5% 0;
@@ -29,18 +35,25 @@
 	border-bottom: 1px solid;
 	margin: 2.5% 0;
 	padding: 5px 0;
+	height: 50px;
+	font-size: 12px;
+	background-color: #f8f9fa;
 }
 #formDangNhap form input[type='text']:focus{
 	width: 60%;
+	border: 1px solid;
 }
 #formDangNhap form input[type='password']:focus{
 	width: 60%;
+	border: 1px solid;
 }
 form input[type='submit']{
+	border: none;
 	width: 60%;
-	background-color: #000;
+	background-color: #d0a772;
 	color: #fff;
 	padding: 5px 0;
+	cursor: pointer;
 }
 .noiDungFormDangNhap{
 	margin: 5% 0;
@@ -51,6 +64,42 @@ form input[type='submit']{
 .noiDungFormDangNhap a:hover{
 	color: #007bff;
 }
+@keyframes trenDuoi{
+	0%{
+		height: 0;
+/*		opacity: 0;*/
+	}
+}.noiDungFormDangNhap{
+	margin: 5% 0;
+}
+.noiDungFormDangNhap a{
+	color: #000;
+}
+.noiDungFormDangNhap a:hover{
+	color: #d0a772;
+}
+.danhMucDieuHuong{
+/*	padding: 10px 0;*/
+	height: 50px;
+	font-size: 18px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	box-shadow: 0px 0px 0.6px rgba(0,0,0,0.6);
+}
+.danhMucDieuHuong a{
+	color: #000;
+}
+.danhMucDieuHuong a:hover{
+	color: #d0a772;
+}
+.danhMucDieuHuong:hover{
+	background-color: rgba(242,243,245,0.7);
+	font-size: 20px;
+	color: #d0a772;
+}
+/*phan tai khoan*/
 /*----------------------------TUNG:END-------------*/
 
 /*------------------------------------------------------------------

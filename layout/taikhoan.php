@@ -1,7 +1,6 @@
 <div id="formDangNhap">
 	<?php 
 	if(!isset($_SESSION["id-user"])){?>
-	<h4>ĐĂNG NHẬP</h4>
 	<form action="customer/Account/xldangnhap.php" method="post">
 		<input type="text" placeholder="Tên đăng nhập" id="txttendangnhap" name="txttendangnhap"><br>
 		<input type="password" placeholder="Mật khẩu" id="txtmatkhau" name="txtmatkhau"><br>
