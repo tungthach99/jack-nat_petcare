@@ -1,7 +1,7 @@
 <div id="formDangNhap">
+	<br><br>
 	<?php 
 	if(!isset($_SESSION["id-user"])){?>
-	<h4>ĐĂNG NHẬP</h4>
 	<form action="customer/Account/xldangnhap.php" method="post">
 		<input type="text" placeholder="Tên đăng nhập" id="txttendangnhap" name="txttendangnhap"><br>
 		<input type="password" placeholder="Mật khẩu" id="txtmatkhau" name="txtmatkhau"><br>
@@ -11,7 +11,8 @@
 		<input type="submit" value="Đăng nhập">
 	</form>
 	<div class="noiDungFormDangNhap">
-		Bạn chưa có tài khoản? <a href="chitiettk.php">Tạo tài khoản.</a>
+		Bạn chưa có tài khoản? <a href="taotaikhoan.php">Tạo tài khoản.</a><br><br>
+		<a><img width="60%" src="images/facebook_signup_with_facebook.png"></a>
 	</div>
 	<?php }?>
 	<?php if(isset($_SESSION["id-user"])){?>
@@ -24,6 +25,7 @@
 	<div class="danhMucDieuHuong"><a href="lichsumuahang.php">Lịch sử mua hàng</a></div>
 	<div class="danhMucDieuHuong"><a href="thongtintaikhoan.php?&thaotac=doi">Đổi mật khẩu</a></div>
 	<div class="danhMucDieuHuong"><a href="customer/Account/xldangxuat.php"><b>Đăng xuất&nbsp;</b></a></div>
-	<div class="danhMucDieuHuong"><a onClick="dongform('formDangNhap')"><b>Đóng</b></a></div>
+	
 	<?php }?>
+	<div class="danhMucDieuHuong"><a onClick="dongform('formDangNhap')"><b>Đóng</b></a></div>
 </div>

@@ -1,0 +1,11 @@
+<?php
+ob_start(); 
+session_start();
+?>
+<?php
+	if(isset($_SESSION["id-user"]))
+	{
+		session_destroy();
+		header("location:../../index.php");
+	}
+?>
