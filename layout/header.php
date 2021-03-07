@@ -29,8 +29,9 @@
 							</div>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
-						<li class="nav-link"><a onClick="hienthiform('box-tim-kiem'),dongFrom('formDangNhap');">
-							Search</a>
+						
+						
+						<li class="nav-item"><a onClick="hienthiform('box-tim-kiem'),dongFrom('formDangNhap');" class="nav-link"><i class="fa fa-search"></i > Search</a></li>
 						<li class="nav-item"><a href="giohang.php" onClick="dongFrom('formDangNhap');" class="nav-link"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
 						<li class="nav-item"><a onClick="hienthiform('formDangNhap');" class="nav-link"><i class="fa fa-user"></i> Tài khoản</a></li>
 
