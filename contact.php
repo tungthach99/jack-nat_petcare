@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title>Yamifood Restaurant - Responsive HTML5 Template</title>  
+    <title>Jack & Nat pet care</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -139,7 +139,7 @@
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1>Contact</h1>
+					<h1>Liên Hệ</h1>
 				</div>
 			</div>
 		</div>
@@ -153,8 +153,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Contact</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>Liên Hệ</h2>
+						<p>Đặt lịch hẹn tư vấn</p>
 					</div>
 				</div>
 			</div>
@@ -162,42 +162,51 @@
 				<div class="col-lg-12">
 					<form id="contactForm">
 						<div class="row">
-							<div class="col-md-12">
+							<div class="col-md-6">
+								<img src="images/contact-1536x1206.jpg"  class="img-fluid" alt="Image">
+							</div>
+							<div class="col-md-6">
 								<div class="form-group">
-									<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+									<input type="text" class="form-control" id="name" name="name" placeholder="Họ tên(Bắt buộc)" required data-error="Hãy nhập họ tên của bạn">
 									<div class="help-block with-errors"></div>
 								</div>                                 
-							</div>
-							<div class="col-md-12">
+							
+							
 								<div class="form-group">
-									<input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+									<input type="text" placeholder="Email của bạn" id="email" class="form-control" name="name" required data-error="Hãy nhập địa chỉ email của bạn">
 									<div class="help-block with-errors"></div>
 								</div> 
-							</div>
-							<div class="col-md-12">
+							
+							
+								<div class="form-group">
+									<input type="text" placeholder="Số điện thoại" id="sdt" class="form-control" name="name" required data-error="Hãy nhập số điện thoại của bạn">
+									<div class="help-block with-errors"></div>
+								</div> 
+							
+							
 								<div class="form-group">
 									<select class="custom-select d-block form-control" id="guest" required data-error="Please Select Person">
-									  <option disabled selected>Please Select Person*</option>
-									  <option value="1">1</option>
-									  <option value="2">2</option>
-									  <option value="3">3</option>
-									  <option value="4">4</option>
-									  <option value="5">5</option>
+									  <option disabled selected>Hãy chọn yêu cầu</option>
+									  <option value="1">Thú Y</option>
+									  <option value="2">Spa</option>
+									  <option value="3">Hotel</option>
+									  <option value="4">Hậu Sự</option>
 									</select>
 									<div class="help-block with-errors"></div>
 								</div> 
-							</div>
-							<div class="col-md-12">
+							
+							
 								<div class="form-group"> 
-									<textarea class="form-control" id="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+									<textarea class="form-control" id="message" placeholder="Yêu cầu chi tiết" rows="4" data-error="Write your message" required></textarea>
 									<div class="help-block with-errors"></div>
 								</div>
 								<div class="submit-button text-center">
-									<button class="btn btn-common" id="submit" type="submit">Send Message</button>
+									<button class="btn btn-common" id="submit_contact" type="submit">Gửi Đi</button>
 									<div id="msgSubmit" class="h3 text-center hidden"></div> 
 									<div class="clearfix"></div> 
 								</div>
 							</div>
+							
 						</div>            
 					</form>
 				</div>
@@ -317,14 +326,67 @@
 		$('.map-full').mapify({
 			points: [
 				{
-					lat: 40.7143528,
-					lng: -74.0059731,
+					lat: 21.0080555,
+					lng: 105.8266573,
 					marker: true,
 					title: 'Marker title',
-					infoWindow: 'Yamifood Restaurant'
+					infoWindow: 'Jack & Nat pet care'
 				}
 			]
 		});	
 	</script>
 </body>
 </html>
+
+<?php  
+  if (isset($_POST['submit_contact'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+
+    // Tiến hành gửi email cho khách
+    include_once 'PHPMailer/class.phpmailer.php';
+    include_once 'PHPMailer/class.smtp.php';
+
+    $data = "Họ tên: ".$name."<br>";
+    $data .= "Email: ".$email."<br>";
+    $data .= "Tiêu đề: ".$subject."<br>";
+    $data .= "Nội dung: ".$message."<br>";
+
+    // Instantiation and passing `true` enables exceptions
+    $mail = new PHPMailer(true);
+
+    try {
+        //Server settings
+        $mail->SMTPDebug = 0;                      // Enable verbose debug output
+        $mail->CharSet = "UTF-8";
+        $mail->isSMTP();                                            // Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+        $mail->SMTPAuth   = true;  
+        $email_send = 'jacknatpetcare@gmail.com';    // Enable SMTP 
+
+        $mail->Username   = 'jacknatpetcare@gmail.com';                     // SMTP username
+        $mail->Password   = 'JNpetcare';  // SMTP password
+        $mail->SMTPSecure = 'tls';         // Enable TLS encryption; 
+        $mail->Port       = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+
+        //Recipients
+        $mail->setFrom('jacknatpetcare@gmail.com', 'Jack & Nat pet care');
+        $mail->addAddress($email_send, $name);     // Add a recipient
+
+        // Content
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = 'Thông tin liên hệ';
+        $mail->Body    = $data;
+
+        $mail->send();
+        echo 'Message has been sent';
+    }catch(Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+    echo "<script>alert('Yêu cầu của QK đã được chúng tôi ghi nhận. Xin cảm ơn!!');";
+    echo "location.href = 'index.php';</script>";
+    }
+?>
