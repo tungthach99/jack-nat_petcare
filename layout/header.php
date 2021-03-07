@@ -89,7 +89,16 @@
 							?>--> 
 							</a>
 						  </li>
+<<<<<<< Updated upstream
 						<li class="nav-item"><a class="nav-link" href="login/index.php"><i class="fa fa-user"></i> Đăng nhập</a></li>	
+=======
+<<<<<<< HEAD
+						<li class="nav-item"><a href="giohang.php" onClick="hienthiform('formDangNhap');" class="nav-link"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
+						<li class="nav-item"><a onClick="hienthiform('formDangNhap');" class="nav-link"><i class="fa fa-user"></i> Tài khoản</a></li>
+=======
+						<li class="nav-item"><a class="nav-link" href="login/index.php"><i class="fa fa-user"></i> Đăng nhập</a></li>	
+>>>>>>> c061b777d4a8e34b0678c7ff086c487c793c688e
+>>>>>>> Stashed changes
 					</ul>
 				</div>
 			</div>
