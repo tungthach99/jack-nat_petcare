@@ -60,7 +60,7 @@ if($result->num_rows>0)
 		}
 		if($_POST["step"]==3 and isset($_SESSION["datlaimatkhau"]) and $_SESSION["datlaimatkhau"]==1)
 		{
-			$sqlupdate="UPDATE tbl_khach_hang SET mat_khau='".$_POST["matkhaumoi"]."' WHERE email='".$_POST["email"]."'";
+			$sqlupdate="UPDATE tbl_khach_hang SET mat_khau='".$_POST["matkhaumoi"]."' WHERE ten_dang_nhap='".$_POST["tendangnhap"]."'";
 			$result=$con->query($sqlupdate);
 			unset($_SESSION["datlaimatkhau"]);
 			$dieuhuong="location:../../quenmatkhau.php?&action=hoantat";

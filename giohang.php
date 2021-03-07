@@ -35,7 +35,7 @@ session_start();
     <link rel="stylesheet" href="css/custom.css">
 	
 	<script type="text/javascript" src="js/main.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 		
 
     <!--[if lt IE 9]>
@@ -311,8 +311,6 @@ session_start();
 	include("layout/footer.php");
 	?>
 	
-	<a href="#" id="back-to-top" title="Back to top" style="">&uarr;</a>
-
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
@@ -328,5 +326,7 @@ session_start();
 	<script src="js/legacy.js"></script>
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
+	
+	<?php include("layout/vedautrang.php")?>
 </body>
 </html>

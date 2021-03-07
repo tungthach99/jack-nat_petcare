@@ -132,7 +132,7 @@
 				}
 				?>
 					<button style="<?php
-					if(isset($_GET["step"]) and isset($_GET["step"])==3) echo "display:none"
+					if(isset($_GET["step"]) and $_GET["step"]==3) echo "display:none";
 					?>" form="quenmatkhau" type="submit" class="btn btn-primary">Tiếp theo
 					</button>
 				</form>
@@ -141,12 +141,12 @@
 				if(isset($_GET["step"]) and $_GET["step"]==3)
 				{
 				?>
-					<form action="customer/Account/xldoimatkhau.php" method="post" class="was-validated" id="doimatkhau">
+					<form action="customer/Account/xlquenmatkhau.php" method="post" class="was-validated" id="doimatkhau">
 						<div class="from-group">
 							<input type="text" style="display: none;" name="step" value="3">
 							<label>Nhập mật khẩu mới:</label>
 							<input type="password" class="form-control" placeholder="Nhập mật khẩu mới" name="matkhaumoi" required>
-							<input type="text" style="display: none" name="tendn" value="<?php echo $_GET["tendangnhap"]?>">
+							<input type="text" style="display: none" name="tendangnhap" value="<?php echo $_GET["tendangnhap"]?>">
 						</div>
 						<button form="doimatkhau" type="submit" class="btn btn-primary">Đổi mật khẩu</button>
 					</form>
