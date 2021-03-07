@@ -201,7 +201,7 @@
 									<div class="help-block with-errors"></div>
 								</div>
 								<div class="submit-button text-center">
-									<button class="btn btn-common" id="submit_contact" type="submit">Gửi Đi</button>
+									<button class="btn btn-common" name="submit_contact" type="submit">Gửi Đi</button>
 									<div id="msgSubmit" class="h3 text-center hidden"></div> 
 									<div class="clearfix"></div> 
 								</div>
