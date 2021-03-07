@@ -3,7 +3,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>From Admin</h2>
+						<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">FROM ADMIN</strong></h5>
 						<p>"Một chú cún con không phải là toàn bộ cuộc sống của bạn nhưng chúng có thể biến cuộc sống của bạn trở nên muôn màu và toàn diện hơn."</p>
 					</div>
 				</div>
