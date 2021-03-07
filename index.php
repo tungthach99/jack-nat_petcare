@@ -52,9 +52,9 @@
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="menu.php" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="menu.php">Đồ ăn</a>
-								<a class="dropdown-item" href="menu.php">Phụ kiện</a>
-								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
+								<a class="dropdown-item" href="menu.php?&tensanpham=">Đồ ăn</a>
+								<a class="dropdown-item" href="menu.php?&tensanpham=">Phụ kiện</a>
+								<a class="dropdown-item" href="menu.php?&tensanpham=">Chuồng/Nhà</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">

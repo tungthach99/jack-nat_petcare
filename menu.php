@@ -139,8 +139,7 @@ require("public/ketnoi.php");
 	<!-- End header -->
 	<!--nội dung-->
 	
-    <?php	
-	include("customer/Product/product_info.php");
+    <?php
 		if(isset($_GET["maloai"]))
 		{
 				include("customer/Product/product_info.php");
