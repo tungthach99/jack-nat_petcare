@@ -20,7 +20,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">    
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">  
+	<link rel="stylesheet" href="css/style1.css">      
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
@@ -34,6 +35,9 @@
 </head>
 
 <body>
+<?php
+require("public/ketnoi.php");
+?>
 	<!-- Start header -->
 	<header class="top-navbar">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -133,94 +137,31 @@
 		</nav>
 	</header>
 	<!-- End header -->
+	<!--nội dung-->
 	
-	<!-- Start All Pages -->
-	<div class="all-page-title page-breadcrumb">
-		<div class="container text-center">
-			<div class="row">
-				<div class="col-lg-12">
-					<h1>Sản phẩm</h1>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End All Pages -->
-	
-	<!-- Start Menu -->
-	<div class="menu-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Jack & Nat pet care</h2>
-						<p>Thú cưng là gia đình</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="special-menu text-center">
-						<div class="button-group filter-button-group">
-							<button class="active" data-filter="*">Tất cả</button>
-							<button data-filter=".thucan">Thức ăn</button>
-							<button data-filter=".phukien">Phụ kiện</button>
-							<button data-filter=".chuongnha">Chuồng/Nhà</button>
-						</div>
-					</div>
-				</div>
-			</div>
-				
-			<div class="row special-list">
-				<div class="col-lg-4 col-md-6 special-grid thucan">
-					<div class="gallery-single fix">
-						<a href="product-detail.php">
-						<img src="images/san-pham/anh1.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Thức ăn cho chó con ROYAL CANIN Bulldog Puppy</h4>
-							<p></p>
-							<h5> 230.000 VND</h5>
-						</div>
-					</a>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-md-6 special-grid thucan">
-					<div class="gallery-single fix">
-						<img src="images/san-pham/anh2.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition</h4>
-							<p></p>
-							<h5> 470.000 VND</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-md-6 special-grid phukien">
-					<div class="gallery-single fix">
-						<img src="images/san-pham/anh3.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Dây dắt cho chó mèo tự động DELE 007G</h4>
-							<h5> 465.000 VND</h5>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-md-6 special-grid phukien">
-					<div class="gallery-single fix">
-						<img src="images/san-pham/anh4.jpg" style="width: 290px;height: 214px;"class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Vòng cổ cho chó gắn chuông kèm dây dắt HAND IN HAND</h4>
-							<h5> 130.000 VND</h5>
-						</div>
-					</div>
-				</div>
-				
-				
-				
-			</div>
-		</div>
-	</div>
-	<!-- End Menu -->
+    <?php	
+	include("customer/Product/product_info.php");
+		if(isset($_GET["maloai"]))
+		{
+				include("customer/Product/product_info.php");
+		}
+		if(isset($_GET["product"]))
+		{
+				include("customer/Product/product_detail.php");
+			if ($_GET["product"]=="0")
+		
+				include("customer/product/product_info.php");
+		}
+		
+		//code tim kiem san pham
+		if(isset($_GET["tensanpham"]))
+		{
+				include("customer/Product/product_info.php");
+		}
+		//end tim kiem.
+        ?>
+	</span>
+
 	
 	<!-- Start QT -->
 	<div class="qt-box qt-background">

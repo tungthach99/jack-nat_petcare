@@ -506,13 +506,26 @@ button:focus{
 	border-bottom: 1px dashed #010101;
 	margin: 0px;
 	padding-bottom: 15px;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 .why-text h5{
+    text-align: center;
 	font-size: 28px;
 	font-weight: 600;
-	color: #ffffff;
+	color: red;
+}
+
+.nutChiTiet{
+    width: 60%;
+	color: #fff;
+	background-color:rgba(0,0,0,1);
+	font-size: 18px;
+	height: 40px;
+	border-radius: 25px;
+	margin: 5px 0 0 20%;
+	border: none;
+    cursor: pointer;
 }
 
 .gallery-single:hover .why-text{

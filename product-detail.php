@@ -38,6 +38,9 @@
 </head>
 
 <body>
+  <?php
+require("public/ketnoi.php");
+?>
 <!--	Phong to anh								-->
 <div id="noiDungPhongTo">
   <div class="menuAnh">
@@ -165,7 +168,7 @@
 	</div>
 	<!-- End All Pages -->
 
-    <!-- Thông tin nhà-->
+    <!-- Thông tin sản phẩm-->
 
     <section class="blog-posts grid-system blog">
       <div class="container">
@@ -225,9 +228,9 @@
                       <div class="col-lg-12">
                         <fieldset>
                           <a href="checkout2.php"><button type="submit" style="margin-top: 5px;" id="form-submit" class="btn btn-primary"><i class='fa fa-cart-plus'>
-                          </i> Add to Cart</button></a>
+                          </i> Đặt hàng</button></a>
                           <button type="button" style="margin-top: 5px;" id="form-submit" class="btn btn-success"><i class="fa fa-share-alt">
-                          </i> Share</button>
+                          </i> Chia sẻ</button>
                         </fieldset>
                       </div>
                     </div>
@@ -280,6 +283,38 @@
       </div>
     </div>
     <!-- End Thông tin nhà-->
+
+<!-- Binh luan  -->
+<form action="xlbinhluansp.php" method="POST">
+		<div class="binh-luan-group">
+        	<p id="binh-luan-label">Viết bình luận ...<i class="fa fa-pencil"></i></p>
+			<input type="text" id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây"> </input>
+			<button type="submit"  class="btn btn-primary" style="margin: 0 0 10px 5%;">Gửi</button>
+			<input type="text" style="display: none;" name="ma_san_pham" value="<?php echo $_GET["masanpham"]?>">
+		</div>
+		</form>
+		<div style="margin: 15px 0 10px 0;width: 100%;border-bottom: 2px solid var(--light);"></div>
+<?php
+$sql3="select * from tbl_binh_luan_sp JOIN tbl_khach_hang ON tbl_khach_hang.id_khach_hang=tbl_binh_luan_sp.id_khach_hang
+ where id_san_pham='".$_GET['masanpham']."' order by ngay_tao DESC";
+$result3=$con->query($sql3);
+if($result->num_rows>0)
+	{
+	while($row3=$result3->fetch_assoc())
+	{
+?>
+		<div class="hien-thi-binh-luan">
+			<div class="hien-thi-ten"><?php echo $row3['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row3['ngay_tao']?></span></div>
+			<div class="hien-thi-noi-dung" value= null><?php echo $row3['noi_dung']?></div>
+			<div style="margin: 10px 0 10px 0;width: 90%;border-bottom: 2px solid var(--light);"></div>
+		</div>
+<?php
+	}//end_while	
+	} //end if
+?>
+</form>
+<!-- Binh luan end   -->
+
     <!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/popper.min.js"></script>
