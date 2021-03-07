@@ -1,13 +1,20 @@
 
 /*----------------------------TUNG-------------*/
+a{
+	cursor: pointer;
+}
+a:hover{
+	color: #d0a772;
+}
 /*form tai khoan*/
 #formDangNhap{
 	transition: 0.5s;
 	position: fixed;
-	top: 48px;
-	left: 70%;
-	background-color: #fff;
+	top: 70px;
+	right: 0;
+	background-color: #f8f9fa;
 	width: 30%;
+	min-width: 360px;
 	height: 100%;
 	z-index: 990;
 	text-align: center;
@@ -16,10 +23,13 @@
 	animation-iteration-count: 1;
 	overflow: hidden;
 	display: none;
-	box-shadow: 1px 1px 20px #000;
+/*	box-shadow: 1px 1px 20px #000;*/
 }
 #formDangNhap h4{
 	margin: 10% 0 5% 0;
+}
+#formDangNhap a:hover{
+	color: #d0a772;
 }
 #formDangNhap form input[type='text'], #formDangNhap form input[type='password']{
 	text-align: center;
@@ -29,6 +39,7 @@
 	border-bottom: 1px solid;
 	margin: 2.5% 0;
 	padding: 5px 0;
+	background-color: #f8f9fa;
 }
 #formDangNhap form input[type='text']:focus{
 	width: 60%;
@@ -37,13 +48,15 @@
 	width: 60%;
 }
 form input[type='submit']{
+	border: none;
 	width: 60%;
-	background-color: #000;
+	height: 44px;
+	background-color: #d0a772;
 	color: #fff;
 	padding: 5px 0;
 }
 .noiDungFormDangNhap{
-	margin: 5% 0;
+	margin: 5% 20%;
 }
 .noiDungFormDangNhap a{
 	color: #000;
@@ -51,6 +64,92 @@ form input[type='submit']{
 .noiDungFormDangNhap a:hover{
 	color: #007bff;
 }
+@keyframes trenDuoi{
+	0%{
+		height: 0;
+/*		opacity: 0;*/
+	}
+}
+@keyframes opacity{
+	0%{
+		opacity: 0;
+	}
+
+	100%{
+		opacity: 1;
+	}
+}
+.danhMucDieuHuong{
+/*	padding: 10px 0;*/
+	height: 50px;
+	font-size: 18px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	box-shadow: 0px 0px 0.6px rgba(0,0,0,0.6);
+}
+.danhMucDieuHuong a{
+	color: #000;
+}
+.danhMucDieuHuong a:hover{
+	color: #007bff;
+}
+.danhMucDieuHuong:hover{
+	background-color: rgba(242,243,245,0.7);
+	font-size: 20px;
+	color: #007bff;
+}
+/*tim kiem*/
+#box-tim-kiem{
+	position: fixed;
+	z-index: 998;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0,0,0,0.7);
+	animation-name: opacity;
+	animation-duration: 0.8s;
+	animation-iteration-count: 1;
+}
+#box-tim-kiem #text-box-tim-kiem{
+	position: absolute;
+	width: 70%;
+	left: 15%;
+	top: 24%;
+	height: 58px;
+	padding: 0% 7% 0% 5%;
+	font-size: 20px;
+}
+#nut-tim-kiem{
+	height: 58px;
+	color: #1f1f1f;
+	background-color: rgba(0,0,0,0);
+	border: none;
+	position: absolute;
+	top: 23.6%;
+	right: 19%;
+	font-size: 30px;
+}
+#nut-thoat-tim-kiem{
+	height: 8%;
+	position: absolute;
+	top: 15%;
+	right: 19.4%;
+	font-size: 38px;
+	color: #fff;
+}
+#box-tim-kiem label{
+	height: 8%;
+	position: absolute;
+	top: 13%;
+	left: 20%;
+	font-size: 340%;
+	color: #fff;
+	font-weight: 700;
+}
+
+/*tim kiem:end*/
 /*----------------------------TUNG:END-------------*/
 
 /*------------------------------------------------------------------
