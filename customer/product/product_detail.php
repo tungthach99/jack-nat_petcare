@@ -39,7 +39,7 @@ $row=$result->fetch_assoc();
 
             <br>
             <div class="sidebar-heading">
-              <h2>Giá: <span style="color:red;"><?php echo $row['don_gia']?> VND</span></h2>
+              <h2>Giá: <span style="color:red;"><?php echo number_format($row['don_gia'])?> VND</span></h2>
             </div>
             <br>
           
@@ -50,8 +50,9 @@ $row=$result->fetch_assoc();
                 </div>
 
                 <div class="content">
-                  <form id="contact" action="checkout2.php" method="post">
-                    <div class="row">
+					<form id="contact" action="customer/Order/xlthemgiohang.php" method="get">
+	                    <div class="row">
+<!--
                       <div class="col-md-6 col-sm-12">
                         <fieldset>
                           <label  for="sel1">Khối lượng</label>
@@ -63,25 +64,30 @@ $row=$result->fetch_assoc();
                           </select>
                         </fieldset>
                       </div>
-                    </div>
+-->
+                    	</div>
 
-                    <div class="row">
-                      <div class="col-md-6 col-sm-12">
-                        <fieldset>
-                          <label for="">Số lượng</label>
-                          <input type="text" class="form-control" value="1" required="">
-                        </fieldset>
-                      </div>
-                      <div class="col-lg-12">
-                        <fieldset>
-                          <a href="checkout2.php"><button type="submit" style="margin-top: 5px;" id="form-submit" class="btn btn-primary"><i class='fa fa-cart-plus'>
-                          </i> Đặt hàng</button></a>
-                          <button type="button" style="margin-top: 5px;" id="form-submit" class="btn btn-success"><i class="fa fa-share-alt">
-                          </i> Chia sẻ</button>
-                        </fieldset>
-                      </div>
-                    </div>
-                  </form>
+                    	<div class="row">
+                      		<div class="col-md-6 col-sm-12">
+                        		<fieldset>
+                          			<label for="">Số lượng</label>
+                        			<input type="number" class="form-control" value="1" required min="1" name="soluong">
+									<input type="text" value="<?php echo $_GET["masanpham"]?>" name="masanpham" style="display: none;">
+                        		</fieldset>
+                      		</div>
+                      		<div class="col-lg-12">
+                        		<fieldset>
+                          			<a>
+										<button type="submit" style="margin-top: 5px;" id="form-submit" class="btn btn-primary"><i class='fa fa-cart-plus'></i> Đặt hàng</button>
+									</a>
+							
+									<a href="#">
+										<button type="button" style="margin-top: 5px;"  class="btn btn-success"><i class='fa fa-share-alt'></i> Chia sẻ</button>
+									</a>
+                        		</fieldset>
+                      		</div>
+                    	</div>
+                  	</form>
                 </div>
               </div>
             </div>
