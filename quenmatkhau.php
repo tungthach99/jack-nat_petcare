@@ -32,7 +32,7 @@
 	
 	<script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
-		
+	<link rel="stylesheet" type="text/css" href="css/css3.css">	
 <!--	<script src='https://www.google.com/recaptcha/api.js' async defer ></script>-->
 
 </head>

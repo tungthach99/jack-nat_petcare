@@ -47,7 +47,7 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 	
 	<script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-		
+	<link rel="stylesheet" type="text/css" href="css/css3.css">
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
