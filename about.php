@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
     
     
     <!--[if lt IE 9]>
@@ -39,244 +41,78 @@
 </head>
 
 <body>
-	<header class="top-navbar">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container">
-				<a class="navbar-brand" href="index.php">
-					<img class="logo" src="images/.png" alt="" />
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbars-rs-food">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
-						<li class="nav-item"><a class="nav-link" href="service.php">Dịch vụ</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="menu.php" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="menu.php">Đồ ăn</a>
-								<a class="dropdown-item" href="menu.php">Phụ kiện</a>
-								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.php">blog</a>
-								<a class="dropdown-item" href="blog-details.php">blog Single</a>
-							</div>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
-						<li class="nav-link"><a class="search">
-							Search
-							<div class="search-bar">
-							  <form action="search.php" method="get">
-								<input type="text" name="search" placeholder="Search...">
-								
-							  </form>
-							</div>
-							
-							<!--<?php
-							// Nếu người dùng submit form thì thực hiện
-							if (isset($_REQUEST['ok'])) 
-							{
-								// Gán hàm addslashes để chống sql injection
-								$search = addslashes($_GET['search']);
-					
-								// Nếu $search rỗng thì báo lỗi, tức là người dùng chưa nhập liệu mà đã nhấn submit.
-								if (empty($search)) {
-									echo "Yeu cau nhap du lieu vao o trong";
-								} 
-								else
-								{
-									// Dùng câu lênh like trong sql và sứ dụng toán tử % của php để tìm kiếm dữ liệu chính xác hơn.
-									$query = "select * from users where username like '%$search%'";
-					
-									// Kết nối sql
-									mysql_connect("localhost", "", "", "");
-					
-									// Thực thi câu truy vấn
-									$sql = mysql_query($query);
-					
-									// Đếm số đong trả về trong sql.
-									$num = mysql_num_rows($sql);
-					
-									// Nếu có kết quả thì hiển thị, ngược lại thì thông báo không tìm thấy kết quả
-									if ($num > 0 && $search != "") 
-									{
-										// Dùng $num để đếm số dòng trả về.
-										echo "$num ket qua tra ve voi tu khoa <b>$search</b>";
-					
-										// Vòng lặp while & mysql_fetch_assoc dùng để lấy toàn bộ dữ liệu có trong table và trả về dữ liệu ở dạng array.
-										echo '<table border="1" cellspacing="0" cellpadding="10">';
-										while ($row = mysql_fetch_assoc($sql)) {
-											echo '<tr>';
-												echo "<td>{$row['user_id']}</td>";
-												echo "<td>{$row['username']}</td>";
-												echo "<td>{$row['password']}</td>";
-												echo "<td>{$row['email']}</td>";
-												echo "<td>{$row['address']}</td>";
-											echo '</tr>';
-										}
-										echo '</table>';
-									} 
-									else {
-										echo "Khong tim thay ket qua!";
-									}
-								}
-							}
-							?>--> 
-							</a>
-						  </li>
-						<li class="nav-item"><a class="nav-link" href="login/index.php"><i class="fa fa-user"></i> Đăng nhập</a></li>	
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
+	<!-- Start header -->
+	<?php
+	include("public/ketnoi.php");
+	include("layout/header.php");
+	include("layout/taikhoan.php");
+	?>
 	<!-- End header -->
-    <!--start search-->
-	<div class="s130">
-		<form method="get" action="http://www.google.com/cse" target="_blank">
-		  <div class="inner-form">
-			<div class="input-field first-wrap">
-			  <div class="svg-wrapper">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-				  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-				</svg>
-			  </div>
-			  	<input id="search" name="q" type="text" placeholder="Tìm kiếm với petcare?" />
-			  	<input type="hidden" name="cx" value="bbfd6a8909954d92f">
-				<input type="hidden" name="ie" value="UTF-8">
-			</div>
-			<div class="input-field second-wrap">
-			  <button class="btn-search" type="submit">TÌM KIẾM</button>
-			</div>
-		  </div>
-		  <span class="info">ex. Pet, Thức ăn, Đồ chơi... <div class=""></div></span>
-		  <div class="about-section-box">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9  ">
-						<div class="inner-column">
-							<h1>Welcome To <span>Jack&Nat Pet care</span></h1>	
-							<p>Trước tiên xin chân thành gửi lời tri ân đến toàn thể khách hàng đã quan tâm và tin tưởng dịch vụ của chúng tôi! Qua đó chúng tôi cảm thấy mình có ích hơn và thêm động lực để hoạt động. </p>
-							<p>Hiện nay, do điều kiện cuộc sống được nâng cao. Nhu cầu giải trí cũng được thay đổi, thú cảnh cũng đã được nhiều gia đình lựa chọn. Vì chúng là những con vật tình cảm, thân thiết, gần gũi và đặc biệt trung thành với chúng ta. Tuy nhiên hiểu biết của nhiều người nuôi còn chưa được thật đầy đủ.</p>
-							<p>Lĩnh vực hoạt động của chúng tôi bao gồm:</p>
-							<p>- Phòng khám thú y: khám chữa bệnh, tiêm phòng, phẫu thuật...v.v... cho chó mèo.</p>
-							<p>- Buôn bán các loại thuốc thú y dành cho chó mèo.</p>
-							<p>- Buôn bán các loại thức ăn cao cấp dành cho chó mèo.</p>
-							<p>- Buôn bán các mặt hàng khác như: Dầu tắm, mỹ phẩm, phụ kiện, đồ dùng, đồ chơi cho chó mèo.</p>
-							<p>Chúng tôi rất vui được phục vụ các bạn!</p>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-		</form>
-	  </div>
-	  <script src="js/extention/choices.js"></script>
-	<!-- End search -->
-	
-        	
-	<!-- Start Contact info -->
-	<div class="contact-imfo-box">
-		<div class="container">
+	<!-- Start header -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
 			<div class="row">
-				<div class="col-md-4">
-					<i class="fa fa-volume-control-phone"></i>
-					<div class="overflow-hidden">
-						<h4>Phone</h4>
-						<p class="lead">
-							+01 123-456-4590
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<i class="fa fa-envelope"></i>
-					<div class="overflow-hidden">
-						<h4>Email</h4>
-						<p class="lead">
-							yourmail@gmail.com
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<i class="fa fa-map-marker"></i>
-					<div class="overflow-hidden">
-						<h4>Location</h4>
-						<p class="lead">
-							800, Lorem Street, US
-						</p>
-					</div>
+				<div class="col-lg-12">
+					<h1>Giới Thiệu</h1>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- End Contact info -->
-	
-	<!-- Start Footer -->
-	<footer class="footer-area bg-f">
+	<!-- End header -->
+    <!--start search-->
+	<div class="about-section-box">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<h3>About Us</h3>
-					<p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui, at ornare turpis ultrices sit amet. Nulla cursus lorem ut nisi porta, ac eleifend arcu ultrices.</p>
+				<div class="col-lg-6 col-md-6">
+					<img src="images/about1.jpg" alt="" class="img-fluid">
 				</div>
-				<div class="col-lg-3 col-md-6">
-					<h3>Opening hours</h3>
-					<p><span class="text-color">Monday: </span>Closed</p>
-					<p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
-					<p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
-					<p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<h3>Contact information</h3>
-					<p class="lead">Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
-					<p class="lead"><a href="#">+01 2000 800 9999</a></p>
-					<p><a href="#"> info@admin.com</a></p>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<h3>Subscribe</h3>
-					<div class="subscribe_form">
-						<form class="subscribe_form">
-							<input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
-							<button type="submit" class="submit">SUBSCRIBE</button>
-							<div class="clearfix"></div>
-						</form>
+				<div class="col-lg-6 col-md-6 text-center">
+					<div class="inner-column">
+						<h1>Welcome To <span> Jack&Nat Pet care</span></h1>
+						<h4>Giới thiệu Jack&Nat pet care</h4>
+						<p>Jack&Nat pet care là khách sạn thú y đạt chuẩn 5* thành lập mang theo sứ mệnh “chăm sóc bằng tài năng, y đức và sự thấu cảm”. </p>
+						<p>Chúng tôi luôn cố gắng hết sức mình để bảo vệ an toàn cho những người bạn 4 chân đáng yêu. Trong những năm qua, Jack&Nat pet care không ngừng phấn đấu để khẳng định sứ mệnh lớn lao mà bệnh viện theo đuổi bằng việc trở thành bệnh viện đạt chuẩn 5* và sở hữu hệ thống cơ sở vật chất vượt trội nhập khẩu Châu Âu.</p>
+						
 					</div>
-					<ul class="list-inline f-social">
-						<li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					</ul>
+				</div>
+				<div class="col-md-12">
+					<div class="inner-pt">
+						<p>Jack&Nat pet care có các bác sĩ ở Pháp thường xuyên đến trao đổi kinh nghiệm điều trị và giảng dạy. Ngoài ra chúng tôi còn cung cấp đầy đủ các dịch vụ chăm sóc chó mèo như: hotel, spa, phụ kiện, hậu táng…. </p>
+						<p>Với sứ mệnh đưa ra những giải pháp tốt nhất để giúp cho vật nuôi luôn sạch sẽ và khỏe mạnh. Cửa hàng chăm sóc thú cưng Jack & Nat pet care với nhiều năm kinh nghiệm trong ngành sẽ đưa ra những lời khuyên, tư vấn để đảm bảo sức khỏe cho thú cưng của bạn. Vì vậy, nếu bạn ở Hà Nội và muốn thú cưng của mình được chăm sóc chu đáo, khám và kiểm tra tình hình sức khỏe theo định kỳ. Hãy chọn dịch vụ chăm sóc thú cưng của Jack & Nat pet care sẽ giúp bạn tiết kiệm nhiều thời gian không phải lo lắng vận chuyển thú cưng tới trung tâm chăm sóc thú y.</p>
+					</div>
+					<div class="inner-pt">
+					<h2 style="text-align: left;">Sứ mệnh</h2>
+					<p style="text-align: left;">Sứ mệnh của chúng tôi là mang đến cho độc giả, những người yêu thương thú cưng những thông tin nhanh chóng và chính xác nhất. Nhằm đảm bảo và giảm thiểu những trường hợp vì thiếu thông tin mà gây ra những việc hậu quả đáng tiếc.</p>
+					<p style="text-align: left;">J&N Petcare cam kết mang lại cho độc giả một trải nghiệm tốt nhất trong ngành chăm sóc thú cưng. Chúng tôi cũng như các chủ nuôi – hay những người yêu quý động vật, đều dành một tình yêu to lớn cho những người bạn bốn chân. J&Npetcare sẽ luôn đồng hành cùng với mọi người để giúp những người bạn bốn chân của chúng ta nhận ra rằng chúng đang được yêu thương và quý trọng như thế nào..</p>
+				</div>
+				<div class="inner-pt">
+					<h2 style="text-align: left;">Tầm nhìn</h2>
+					<p style="text-align: ;efts;">Chúng tôi mong muốn J&N Petcare sẽ trở thành địa chỉ tìm kiếm thông tin đáng tin cậy cho những người quan tâm và yêu thương động vật. Và quan trọng hơn, J&N Petcare sẽ là người bạn đồng hành thân cậy với mọi người trong quá trình chăm sóc thú nuôi.</p>
+					<p style="text-align: left ;">Chúng tôi sẽ không ngừng nỗ lực và phát triển, phủ rộng thông tin đến mọi miền đất nước, đến những nơi cần chúng tôi trong hành trình chăm sóc động vật – thú cưng..</p>
+				</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	<!-- End About -->
+	<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12"sta>
+					<h1></h1>
 				</div>
 			</div>
 		</div>
-		
-		<div class="copyright">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<p class="company-name">All Rights Reserved. &copy; 2018 <a href="#">Yamifood Restaurant</a> Design By : 
-					<a href="https://html.design/">html design</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</footer>
+	
+
+	<!-- Start Footer -->
+	
+	<?php include_once 'layout/footer.php'; ?>
+	
 	<!-- End Footer -->
 	
 	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
-        
-          
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>
@@ -290,5 +126,6 @@
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+	<?php include_once 'layout/vedautrang.php'; ?>
 </body>
 </html>
