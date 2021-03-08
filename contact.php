@@ -28,6 +28,8 @@
 	<script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
 
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -36,15 +38,11 @@
 </head>
 
 <body>
-	<!-- Start header -->
-	<!-- Start Footer -->
-	<?php include_once 'layout/header.php'; ?>
-	<?php include_once 'layout/taikhoan.php'; ?>
-	<?php include_once 'layout/vedautrang.php'; ?>
-	
-	<!-- End Footer -->
-	<!-- End header -->
-	
+	<?php
+	include("public/ketnoi.php");
+	include("layout/header.php");
+	include("layout/taikhoan.php");
+	?>
 	<!-- Start All Pages -->
 	<div class="all-page-title page-breadcrumb">
 		<div class="container text-center">

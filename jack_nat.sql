@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 07, 2021 lúc 11:41 AM
+-- Thời gian đã tạo: Th3 07, 2021 lúc 04:26 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -141,6 +141,15 @@ CREATE TABLE `tbl_don_hang` (
   `dien_thoai` varchar(11) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
+--
+-- Đang đổ dữ liệu cho bảng `tbl_don_hang`
+--
+
+INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`, `dien_thoai`) VALUES
+(89, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:01:53 pm', '', '', '', '', ''),
+(90, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:04:45 pm', '', '', '', '', ''),
+(91, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:05:45 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', '', '', '0357756343');
+
 -- --------------------------------------------------------
 
 --
@@ -155,8 +164,16 @@ CREATE TABLE `tbl_khach_hang` (
   `dia_chi` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ma_kich_hoat` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '1',
   `mat_khau` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ten_dang_nhap` varchar(55) COLLATE utf8_unicode_ci NOT NULL
+  `ten_dang_nhap` varchar(55) COLLATE utf8_unicode_ci NOT NULL,
+  `gioi_tinh` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_khach_hang`
+--
+
+INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ma_kich_hoat`, `mat_khau`, `ten_dang_nhap`, `gioi_tinh`) VALUES
+(6, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', '1', '1', 'tungthach', 'Nam');
 
 -- --------------------------------------------------------
 
@@ -437,13 +454,13 @@ ALTER TABLE `tbl_dich_vu`
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
 --
 ALTER TABLE `tbl_khach_hang`
-  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_khach_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_nhan_vien`

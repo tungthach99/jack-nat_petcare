@@ -26,6 +26,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
 
+	<script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -34,44 +36,12 @@
 </head>
 
 <body>
-	<!-- Start header -->
-	<header class="top-navbar">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<div class="container">
-				<a class="navbar-brand" href="index.php">
-					<img class="logo" src="images/.png" alt="" />
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-				  <span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbars-rs-food">
-					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
-						<li class="nav-item"><a class="nav-link" href="service.php">Dịch vụ</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="menu.php" id="dropdown-a" data-toggle="dropdown">Sản phẩm</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="menu.php">Đồ ăn</a>
-								<a class="dropdown-item" href="menu.php">Phụ kiện</a>
-								<a class="dropdown-item" href="menu.php">Chuồng/Nhà</a>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="blog.php">blog</a>
-								<a class="dropdown-item" href="blog-details.php">blog Single</a>
-							</div>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
-						<li class="nav-item"><a class="nav-link" href="login/index.php"><i class="fa fa-user"></i> Đăng nhập</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
-	<!-- End header -->
+	
+	<?php
+	include("public/ketnoi.php");
+	include("layout/header.php");
+	include("layout/taikhoan.php");
+	?>
 	
 	<!-- Start All Pages -->
 	<div class="all-page-title page-breadcrumb">
