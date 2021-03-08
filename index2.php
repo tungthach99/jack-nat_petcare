@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-    <link href="css/main.css" rel="stylesheet" />
+   
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
@@ -34,6 +34,8 @@
     <![endif]-->
     
     <link href="css/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/css3.css">
     
 </head>
 
