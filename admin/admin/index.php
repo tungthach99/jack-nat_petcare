@@ -42,7 +42,7 @@ if(!session_start())
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="../../home.php">
-        <img src=".././assets/media/lienhe/Cell.png" class="navbar-brand-img" alt="...">
+        <img src=".././assets/media/lienhe/logo.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
       <ul class="nav align-items-center d-md-none">
@@ -128,17 +128,20 @@ if(!session_start())
             <a class="nav-link" href="index.php">
               <i class="ni ni-tv-2 text-primary"></i> Trang chủ
             </a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?ql=danhmuc/ds">
               <i class="ni ni-align-left-2  text-blue"></i> Danh mục
             </a>
+
           </li>
           <li class="nav-item">
             <a class="nav-link" href="?ql=nhanvien/ds">
               <i class="ni ni-circle-08 text-red"></i> Nhân viên
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="?ql=sanpham/ds">
               <i class="ni ni-shop text-green"></i> Sản phẩm
@@ -165,23 +168,6 @@ if(!session_start())
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="?ql=khuyenmai/ds">
-            <i class="fa fa-tags text-red"></i> Khuyến mại
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="?ql=tintuc/ds">
-            <i class="fa fa-list-alt text-green"></i> Tin tức
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="?ql=binhluantt/ds">
-            <i class="fa fa-comment text-yellow"></i> Bình luận tin tức
-            </a>
-          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="?ql=binhluansp/ds">

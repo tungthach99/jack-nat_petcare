@@ -449,13 +449,13 @@ button:focus{
 	font-size: 24px;
 	font-weight: 500;
 	font-family: 'Arbutus Slab', serif;
+    text-align: center;
 }
 .why-text p{
 	color: #ffffff;
 	font-size: 18px;
 	border-bottom: 1px dashed #010101;
 	margin: 0px;
-	padding-bottom: 15px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 }
@@ -632,7 +632,7 @@ button:focus{
 	padding-bottom: 0px;
 }
 .bg-f{
-	background-image: url("../images/footer-bg.jpg");
+	background-image: url("../images/bg-f.jpg");
 	background-attachment: scroll;
 	background-clip: initial;
 	background-color: rgba(0, 0, 0, 0);
