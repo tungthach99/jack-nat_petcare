@@ -14,7 +14,7 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/icon-logo.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Bootstrap CSS -->
@@ -226,7 +226,61 @@
     </div>
     </section><!-- End Services Section -->
 	<!-- End Menu -->
-    <div class="menu-box">
+    
+	
+	 <!-- Start Gallery -->
+	 <div class="gallery-box">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Bộ Sưu Tập</h2>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+					</div>
+				</div>
+			</div>
+			<div class="tz-gallery">
+				<div class="row">
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery_10.png">
+							<img class="img-fluid" src="images/gallery_10.png" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery_02.jpeg">
+							<img class="img-fluid" src="images/gallery_02.jpeg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery_07.jpeg">
+							<img class="img-fluid" src="images/gallery_07.jpeg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery_11.jpg">
+							<img class="img-fluid" src="images/gallery_11.jpg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery_06.jpg">
+							<img class="img-fluid" src="images/gallery_06.jpg" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="images/gallery_09.jpg">
+							<img class="img-fluid" src="images/gallery_09.jpg" alt="Gallery Images">
+						</a>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div> -->
+	
+	
+	<!-- End Gallery -->
+	
+	<div class="menu-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
@@ -288,28 +342,13 @@
 					</div>
 				</div>
 				
-				<div class="col-lg-4 col-md-6 special-grid phukien">
-					<div class="gallery-single fix">
-                    <a href="product-detail.php"> 
-						<img src="images/san-pham/anh4.jpg" style="width: 290px;height: 214px;"class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Vòng cổ cho chó gắn chuông kèm dây dắt HAND IN HAND</h4>
-							<h5> 130.000 VND</h5>
-						</div>
-                    </a>
-					</div>
-				</div>
+				
 				
 				
 				
 			</div>
 		</div>
 	</div>
-	<!-- Start Gallery -->
-	 
-	<!-- End Gallery -->
-	
-
 	
 	<?php
 	include_once 'layout/fromAdmin.php';
