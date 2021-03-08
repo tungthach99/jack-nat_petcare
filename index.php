@@ -52,7 +52,7 @@
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
 							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
 						</div>
 					</div>
 				</div>
@@ -64,7 +64,7 @@
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
 							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
 						</div>
 					</div>
 				</div>
@@ -76,7 +76,7 @@
 						<div class="col-md-12">
 							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
 							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
 						</div>
 					</div>
 				</div>
@@ -179,6 +179,7 @@
 						<img src="images/san-pham/anh3.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
 						<div class="why-text">
 							<h4>Dây dắt cho chó mèo tự động DELE 007G</h4>
+							<p></p>
 							<h5> 465.000 VND</h5>
 						</div>
 					</div>
@@ -189,6 +190,7 @@
 						<img src="images/san-pham/anh4.jpg" style="width: 290px;height: 214px;"class="img-fluid" alt="Image">
 						<div class="why-text">
 							<h4>Vòng cổ cho chó gắn chuông kèm dây dắt HAND IN HAND</h4>
+							<p></p>
 							<h5> 130.000 VND</h5>
 						</div>
 					</div>

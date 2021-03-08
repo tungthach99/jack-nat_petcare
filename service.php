@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-    <title>Yamifood Restaurant - Responsive HTML5 Template</title>  
+    <title>Jack & Nat pet care</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -78,49 +78,31 @@
 				</div>
 			</div>
 				
-			<div class="row special-list">
-				<div class="col-lg-4 col-md-6 special-grid thucan">
-					<div class="gallery-single fix">
-						<a href="checkout.php">
-						<img src="images/dv_cat-tia-long.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Dịch vụ cắt tỉa lông</h4>
-							<p></p>
-							<h5> 230.000 VND</h5>
-						</div>
-					</a>
-					</div>
-				</div>
-
-                <div class="row special-list">
-                    <div class="col-lg-4 col-md-6 special-grid thucan">
-                        <div class="gallery-single fix">
-                            <a href="checkout.php">
-                            <img src="images/dv_kham-suc-khoe.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-                            <div class="why-text">
-                                <h4>Dịch vụ khám sức khỏe</h4>
-                                <p></p>
-                                <h5> 230.000 VND</h5>
-                            </div>
-                        </a>
-                        </div>
-                    </div>
-
-                    <div class="row special-list">
-                        <div class="col-lg-4 col-md-6 special-grid thucan">
-                            <div class="gallery-single fix">
-                                <a href="checkout.php">
-                                <img src="images/dv_massage-thu-cung.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-                                <div class="why-text">
-                                    <h4>Dịch vụ massage thú cưng</h4>
-                                    <p></p>
-                                    <h5> 230.000 VND</h5>
-                                </div>
-                            </a>
-                            </div>
-                        </div>
-				
-				
+			<?php
+					$sql="Select *, IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) AS 
+					gia_moi, tbl_san_pham.id_san_pham AS id_san_pham from tbl_san_pham LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
+					WHERE tbl_san_pham.id_danh_muc = 10";
+                    $result=$con->query($sql);
+                    if($result->num_rows>0)
+						{
+							while($row=$result->fetch_assoc())
+							{ //for->while
+					?>
+							<div class="col-lg-4 col-md-6 special-grid thucan">
+								<div class="gallery-single fix">
+									<img src="images/san-pham/<?php echo $row['anh'] ?>" alt="" style="width: 290px;height: 214px" class="img-fluid" alt="Image">
+									<div class="why-text">
+										<h4><?php  echo $row['ten_san_pham'] ?></h4>
+										<p></p>
+										<h5><?php echo number_format($row['don_gia']) ?>  VND</h5>
+										<a href="checkout.php"><button class="nutChiTiet">Chi tiết</button></a>
+									</div>
+								</div>
+							</div>
+						<?php
+							} //end if 
+						} //end while
+						?>
 				
 				
 				
