@@ -187,7 +187,7 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 				{
 					?>
 			<p>Giỏ hàng của bạn trống<p>
-			<a href="menu.php" >&lsaquo; Tiếp tục mua hàng</a>
+			<a href="menu.php?&tensanpham=" >&lsaquo; Tiếp tục mua hàng</a>
 					<?php
 				}
 		?>
