@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 07, 2021 lúc 04:26 PM
+-- Thời gian đã tạo: Th3 20, 2021 lúc 04:51 PM
 -- Phiên bản máy phục vụ: 10.4.6-MariaDB
 -- Phiên bản PHP: 7.3.8
 
@@ -25,42 +25,64 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `tag`
+--
+
+CREATE TABLE `tag` (
+  `id_tag` int(11) NOT NULL,
+  `ten_tag` varchar(50) COLLATE ucs2_unicode_ci NOT NULL,
+  `luot_xem` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `tbl_anh`
 --
 
 CREATE TABLE `tbl_anh` (
   `id_anh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `id_src` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `src` varchar(150) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_binh_luan`
+-- Cấu trúc bảng cho bảng `tbl_binh_luan_dich_vu`
 --
 
-CREATE TABLE `tbl_binh_luan` (
+CREATE TABLE `tbl_binh_luan_dich_vu` (
   `id_binh_luan` int(11) NOT NULL,
   `id_khach_hang` int(50) NOT NULL,
-  `id_tin_tuc` int(50) NOT NULL,
+  `id_dich_vu` int(50) NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
-  `ngay_sua` timestamp NOT NULL DEFAULT current_timestamp()
+  `ngay` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_binh_luan_sp`
+-- Cấu trúc bảng cho bảng `tbl_binh_luan_san_pham`
 --
 
-CREATE TABLE `tbl_binh_luan_sp` (
+CREATE TABLE `tbl_binh_luan_san_pham` (
   `id_binh_luan` int(11) NOT NULL,
   `id_khach_hang` int(50) NOT NULL,
   `id_san_pham` int(50) NOT NULL,
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `ngay_tao` timestamp NOT NULL DEFAULT current_timestamp(),
-  `ngay_sua` timestamp NOT NULL DEFAULT current_timestamp()
+  `ngay` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_chi_tiet_chung_loai`
+--
+
+CREATE TABLE `tbl_chi_tiet_chung_loai` (
+  `id_san_pham` int(11) NOT NULL,
+  `id_chung_loai` int(11) NOT NULL DEFAULT 1,
+  `so_luong_ton` int(20) NOT NULL DEFAULT 100
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -76,8 +98,19 @@ CREATE TABLE `tbl_chi_tiet_don_hang` (
   `so_luong` int(11) DEFAULT NULL,
   `thanh_tien` float(255,0) DEFAULT NULL,
   `ghi_chu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `id_phien_ban` int(11) NOT NULL
+  `id_chung_loai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_chung_loai`
+--
+
+CREATE TABLE `tbl_chung_loai` (
+  `id_chung_loai` int(11) NOT NULL,
+  `ten_chung_loai` varchar(50) COLLATE ucs2_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=ucs2 COLLATE=ucs2_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -97,7 +130,7 @@ CREATE TABLE `tbl_danh_muc` (
 --
 
 INSERT INTO `tbl_danh_muc` (`id_danh_muc`, `ten_danh_muc`, `mo_ta`, `anh`) VALUES
-(10, 'Dịch vụ', '', ''),
+(10, 'Test', '', ''),
 (11, 'Đồ ăn', '', ''),
 (12, 'Phụ kiện', '', ''),
 (13, 'Chuồng/Nhà', '', '');
@@ -116,7 +149,8 @@ CREATE TABLE `tbl_dich_vu` (
   `mo_ta_dv` varchar(256) COLLATE utf8_vietnamese_ci DEFAULT NULL,
   `id_anh_dv` varchar(50) COLLATE utf8_vietnamese_ci DEFAULT NULL,
   `so_luong_dv` int(11) NOT NULL,
-  `ngay_them_dv` timestamp NULL DEFAULT current_timestamp()
+  `ngay_them_dv` timestamp NULL DEFAULT current_timestamp(),
+  `tag` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_vietnamese_ci;
 
 -- --------------------------------------------------------
@@ -148,7 +182,8 @@ CREATE TABLE `tbl_don_hang` (
 INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`, `dien_thoai`) VALUES
 (89, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:01:53 pm', '', '', '', '', ''),
 (90, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:04:45 pm', '', '', '', '', ''),
-(91, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:05:45 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', '', '', '0357756343');
+(91, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:05:45 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', '', '', '0357756343'),
+(92, -1, 'hoa.jhr1999@gmail.com', 0, '', 1840000, 0, '03/07/2021 10:55:13 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', '', '', '0357756343');
 
 -- --------------------------------------------------------
 
@@ -173,7 +208,7 @@ CREATE TABLE `tbl_khach_hang` (
 --
 
 INSERT INTO `tbl_khach_hang` (`id_khach_hang`, `ten_khach_hang`, `email`, `so_dien_thoai`, `dia_chi`, `ma_kich_hoat`, `mat_khau`, `ten_dang_nhap`, `gioi_tinh`) VALUES
-(6, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', '1', '1', 'tungthach', 'Nam');
+(6, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '0357756343', 'Hà Nội', 'fLQyZPgg', '1', 'tungthach', 'Nam');
 
 -- --------------------------------------------------------
 
@@ -186,7 +221,7 @@ CREATE TABLE `tbl_khuyen_mai` (
   `id_san_pham` int(11) NOT NULL,
   `ten_khuyen_mai` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `muc_khuyen_mai` int(11) NOT NULL,
-  `anhkm` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `anh_km` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -228,29 +263,6 @@ INSERT INTO `tbl_nhan_vien` (`id_nhan_vien`, `ten_nhan_vien`, `email`, `so_dien_
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_phien_ban`
---
-
-CREATE TABLE `tbl_phien_ban` (
-  `id_phien_ban` int(11) NOT NULL,
-  `dung_luong` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `tbl_phien_ban_san_pham`
---
-
-CREATE TABLE `tbl_phien_ban_san_pham` (
-  `id_san_pham` int(11) NOT NULL,
-  `id_phien_ban` int(11) NOT NULL DEFAULT 1,
-  `so_luong_ton` int(20) NOT NULL DEFAULT 100
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Cấu trúc bảng cho bảng `tbl_san_pham`
 --
 
@@ -264,49 +276,23 @@ CREATE TABLE `tbl_san_pham` (
   `id_anh` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `so_luong` int(20) NOT NULL,
   `ngay_them` timestamp NULL DEFAULT current_timestamp(),
-  `id_thuong_hieu` int(11) NOT NULL DEFAULT 7
+  `id_chung_loai` int(11) NOT NULL DEFAULT 7,
+  `tag` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_san_pham`
 --
 
-INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`, `ngay_them`, `id_thuong_hieu`) VALUES
-(40, 'Thức ăn cho chó con ROYAL CANIN Bulldog Puppy', 230000, '11', 'anh1.jpg', 'Lợi ích chính Thức ăn cho chó con ROYAL CANIN Bulldog Puppy với công thức đặc chế riêng cho nhu cầu dinh dưỡng của chó Bull. Sản phẩm được chế biến theo công thức nâng cao sức đề kháng, bảo vệ da và lông cho chó con. Sản phẩm được thiết kế độc quyền để gi', '', 100, '2021-03-07 08:09:22', 7),
-(55, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7),
-(56, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7),
-(57, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7),
-(58, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7),
-(59, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7),
-(60, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7),
-(61, 'Dây dắt thú cưng', 150000, '12', 'anh3.jpg', '', '', 100, '2021-03-07 09:40:04', 7);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `tbl_thuong_hieu`
---
-
-CREATE TABLE `tbl_thuong_hieu` (
-  `id_thuong_hieu` int(11) NOT NULL,
-  `ten_thuong_hieu` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `tbl_tin_tuc`
---
-
-CREATE TABLE `tbl_tin_tuc` (
-  `id_tin_tuc` int(11) NOT NULL,
-  `tac_gia` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `tieu_de` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `anh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `noi_dung` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `add_date` date NOT NULL DEFAULT current_timestamp(),
-  `edit_date` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`, `ngay_them`, `id_chung_loai`, `tag`) VALUES
+(40, 'Thức ăn cho chó con ROYAL CANIN Bulldog Puppy', 230000, '11', 'anh1.jpg', 'Lợi ích chính Thức ăn cho chó con ROYAL CANIN Bulldog Puppy với công thức đặc chế riêng cho nhu cầu dinh dưỡng của chó Bull. Sản phẩm được chế biến theo công thức nâng cao sức đề kháng, bảo vệ da và lông cho chó con. Sản phẩm được thiết kế độc quyền để gi', '', 100, '2021-03-07 08:09:22', 7, NULL),
+(55, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7, NULL),
+(56, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7, NULL),
+(57, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7, NULL),
+(58, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7, NULL),
+(59, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7, NULL),
+(60, 'Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition', 470000, '11', 'anh2.jpg', NULL, '', 100, '2021-03-07 08:37:58', 7, NULL),
+(61, 'Dây dắt thú cưng', 150000, '12', 'anh3.jpg', '', '', 100, '2021-03-07 09:40:04', 7, NULL);
 
 -- --------------------------------------------------------
 
@@ -324,22 +310,40 @@ CREATE TABLE `tbl_yeu_thich` (
 --
 
 --
--- Chỉ mục cho bảng `tbl_binh_luan`
+-- Chỉ mục cho bảng `tag`
 --
-ALTER TABLE `tbl_binh_luan`
+ALTER TABLE `tag`
+  ADD PRIMARY KEY (`id_tag`);
+
+--
+-- Chỉ mục cho bảng `tbl_binh_luan_dich_vu`
+--
+ALTER TABLE `tbl_binh_luan_dich_vu`
   ADD PRIMARY KEY (`id_binh_luan`);
 
 --
--- Chỉ mục cho bảng `tbl_binh_luan_sp`
+-- Chỉ mục cho bảng `tbl_binh_luan_san_pham`
 --
-ALTER TABLE `tbl_binh_luan_sp`
+ALTER TABLE `tbl_binh_luan_san_pham`
   ADD PRIMARY KEY (`id_binh_luan`);
+
+--
+-- Chỉ mục cho bảng `tbl_chi_tiet_chung_loai`
+--
+ALTER TABLE `tbl_chi_tiet_chung_loai`
+  ADD PRIMARY KEY (`id_san_pham`,`id_chung_loai`);
 
 --
 -- Chỉ mục cho bảng `tbl_chi_tiet_don_hang`
 --
 ALTER TABLE `tbl_chi_tiet_don_hang`
-  ADD PRIMARY KEY (`id_don_hang`,`id_san_pham`,`id_phien_ban`);
+  ADD PRIMARY KEY (`id_don_hang`,`id_san_pham`,`id_chung_loai`);
+
+--
+-- Chỉ mục cho bảng `tbl_chung_loai`
+--
+ALTER TABLE `tbl_chung_loai`
+  ADD PRIMARY KEY (`id_chung_loai`);
 
 --
 -- Chỉ mục cho bảng `tbl_danh_muc`
@@ -385,36 +389,12 @@ ALTER TABLE `tbl_nhan_vien`
   ADD PRIMARY KEY (`id_nhan_vien`) USING BTREE;
 
 --
--- Chỉ mục cho bảng `tbl_phien_ban`
---
-ALTER TABLE `tbl_phien_ban`
-  ADD PRIMARY KEY (`id_phien_ban`);
-
---
--- Chỉ mục cho bảng `tbl_phien_ban_san_pham`
---
-ALTER TABLE `tbl_phien_ban_san_pham`
-  ADD PRIMARY KEY (`id_san_pham`,`id_phien_ban`);
-
---
 -- Chỉ mục cho bảng `tbl_san_pham`
 --
 ALTER TABLE `tbl_san_pham`
   ADD PRIMARY KEY (`id_san_pham`) USING BTREE,
   ADD KEY `id_danh_muc` (`id_danh_muc`) USING BTREE,
   ADD KEY `id_anh` (`id_anh`);
-
---
--- Chỉ mục cho bảng `tbl_thuong_hieu`
---
-ALTER TABLE `tbl_thuong_hieu`
-  ADD PRIMARY KEY (`id_thuong_hieu`);
-
---
--- Chỉ mục cho bảng `tbl_tin_tuc`
---
-ALTER TABLE `tbl_tin_tuc`
-  ADD PRIMARY KEY (`id_tin_tuc`);
 
 --
 -- Chỉ mục cho bảng `tbl_yeu_thich`
@@ -427,16 +407,28 @@ ALTER TABLE `tbl_yeu_thich`
 --
 
 --
--- AUTO_INCREMENT cho bảng `tbl_binh_luan`
+-- AUTO_INCREMENT cho bảng `tag`
 --
-ALTER TABLE `tbl_binh_luan`
+ALTER TABLE `tag`
+  MODIFY `id_tag` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_binh_luan_dich_vu`
+--
+ALTER TABLE `tbl_binh_luan_dich_vu`
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT cho bảng `tbl_binh_luan_san_pham`
+--
+ALTER TABLE `tbl_binh_luan_san_pham`
   MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_binh_luan_sp`
+-- AUTO_INCREMENT cho bảng `tbl_chung_loai`
 --
-ALTER TABLE `tbl_binh_luan_sp`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `tbl_chung_loai`
+  MODIFY `id_chung_loai` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_danh_muc`
@@ -454,7 +446,7 @@ ALTER TABLE `tbl_dich_vu`
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
@@ -473,18 +465,6 @@ ALTER TABLE `tbl_nhan_vien`
 --
 ALTER TABLE `tbl_san_pham`
   MODIFY `id_san_pham` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
-
---
--- AUTO_INCREMENT cho bảng `tbl_thuong_hieu`
---
-ALTER TABLE `tbl_thuong_hieu`
-  MODIFY `id_thuong_hieu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT cho bảng `tbl_tin_tuc`
---
-ALTER TABLE `tbl_tin_tuc`
-  MODIFY `id_tin_tuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
