@@ -143,7 +143,7 @@
 					<?php
 						$sql="SELECT a.ten_san_pham, a.don_gia,a.id_san_pham,SUM(b.so_luong), a.anh
 						FROM tbl_san_pham AS a INNER JOIN tbl_chi_tiet_don_hang AS b ON a.id_san_pham = b.id_san_pham 
-						GROUP BY a.id_san_pham ORDER BY SUM(b.so_luong) LIMIT 6";
+						GROUP BY a.id_san_pham ORDER BY SUM(b.so_luong) DESC LIMIT 6";
 						$result=$con->query($sql);
 						if($result->num_rows>0)
 						{
