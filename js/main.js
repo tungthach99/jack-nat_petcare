@@ -19,3 +19,9 @@ function dieuHuong(){
 			document.getElementById("bottom_4").style.backgroundColor="#a5a5a5";
 			document.getElementById("bottom_5").style.backgroundColor="#a5a5a5";
 }
+function zoom(image){
+	var anh= image.src;
+	image.style.opacity = "100%";
+	document.getElementById("noiDungPhongTo").style.display="block";
+	document.getElementById("anhPhongTo").src= anh;
+}

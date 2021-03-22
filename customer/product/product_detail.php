@@ -22,7 +22,7 @@ $row=$result->fetch_assoc();
         <div class="row">
           <div class="col-md-7">
             <div>
-              <img src="images/san-pham/<?php echo $row['anh'] ?>" onClick="zoom(this)" alt="" class="img-fluid wc-image">
+            <img style="cursor: pointer" src="images/san-pham/<?php echo $row['anh'];?>" onClick="zoom(this)" class="img-fluid wc-image">
             </div>
           </div>
 
