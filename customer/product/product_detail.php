@@ -127,8 +127,8 @@ $row=$result->fetch_assoc();
 		</form>
 		<div style="margin: 15px 0 10px 0;width: 100%;border-bottom: 2px solid var(--light);"></div>
 <?php
-$sql3="select * from tbl_binh_luan_sp JOIN tbl_khach_hang ON tbl_khach_hang.id_khach_hang=tbl_binh_luan_sp.id_khach_hang
- where id_san_pham='".$_GET['masanpham']."' order by ngay_tao DESC";
+$sql3="select * from tbl_binh_luan_san_pham JOIN tbl_khach_hang ON tbl_khach_hang.id_khach_hang=tbl_binh_luan_san_pham.id_khach_hang
+ where id_san_pham='".$_GET['masanpham']."' order by ngay DESC";
 $result3=$con->query($sql3);
 if($result->num_rows>0)
 	{
