@@ -25,3 +25,4 @@ function zoom(image){
 	document.getElementById("noiDungPhongTo").style.display="block";
 	document.getElementById("anhPhongTo").src= anh;
 }
+
