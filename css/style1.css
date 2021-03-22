@@ -657,4 +657,11 @@ input[name="dieuHuong"]{
 	color: #515154;
 	text-decoration: line-through;
 }
+#trai:checked ~ .s1{
+	margin-left: 0;
+}
+#phai:checked ~ .s1{
+	margin-left: -38%;
+}
+
 /*End san pham noi bat */
