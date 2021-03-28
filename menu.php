@@ -65,18 +65,14 @@ require("public/ketnoi.php");
 	<!--nội dung-->
 	
     <?php
-		if(isset($_GET["maloai"]))
-		{
-				include("customer/Product/product_info.php");
-		}
-		if(isset($_GET["product"]))
+		if(isset($_GET["masanpham"]))
 		{
 				include("customer/Product/product_detail.php");
-			if ($_GET["product"]=="0")
-		
-				include("customer/product/product_info.php");
 		}
-		
+		else
+		{
+			include("customer/Product/product_info.php");
+		}
 		//code tim kiem san pham
 		if(isset($_GET["tensanpham"]))
 		{
@@ -84,7 +80,6 @@ require("public/ketnoi.php");
 		}
 		//end tim kiem.
         ?>
-	</span>
 
 	
 	<!-- Start QT -->

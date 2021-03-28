@@ -19,7 +19,7 @@
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
-						<li class="nav-item"><a class="nav-link" href="menu.php?&tensanpham=">Sản phẩm</a></li>
+						<li class="nav-item"><a class="nav-link" href="menu.php">Sản phẩm</a></li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="service.php" id="dropdown-a" data-toggle="dropdown">Dịch vụ</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
