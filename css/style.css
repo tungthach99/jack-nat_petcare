@@ -217,20 +217,21 @@ button:focus{
 -------------------------------------------------------------------*/
 
 .cover-slides{
-	height: 100vh;
+	height: 450px;
 }
 .slides-navigation a {
-	background: #cfa671;
-    position: absolute;
-    height: 70px;
-    width: 70px;
-    top: 50%;
-    font-size: 20px;
-    display: block;
-    color: #fff;
-	line-height: 80px;
-	text-align: center;
-    transition: all .3s ease-in-out;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bolder;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
 }
 .slides-navigation a i{
 	font-size: 40px;
@@ -242,6 +243,7 @@ button:focus{
 	height: 100%;
 	position: relative;
 	z-index: 2;
+    
 }
 .cover-slides .container > .row {
 	-webkit-box-align: center;
@@ -293,12 +295,13 @@ button:focus{
     left: 0;
     top: 0;
 	opacity: 0.5;
+    
 }
 
 .cover-slides h1{
 	font-family: 'Arbutus Slab', serif;
 	font-weight: 500;
-	font-size: 64px;
+	font-size: 50px;
 	color: #fff;
 }
 .cover-slides p{

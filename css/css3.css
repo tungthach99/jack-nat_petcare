@@ -108,6 +108,9 @@ form input[type='submit']{
 	animation-name: opacity;
 	animation-duration: 0.8s;
 	animation-iteration-count: 1;
+	border-radius: 34px;
+	overflow: hidden;
+	
 }
 #box-tim-kiem #text-box-tim-kiem{
 	position: absolute;
@@ -117,6 +120,8 @@ form input[type='submit']{
 	height: 58px;
 	padding: 0% 7% 0% 5%;
 	font-size: 20px;
+	border-radius: 34px;
+	overflow: hidden;
 }
 #nut-tim-kiem{
 	height: 58px;

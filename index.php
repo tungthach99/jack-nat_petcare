@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">   
-   
+    <link href="css/main.css" rel="stylesheet" />
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
@@ -21,21 +21,19 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">    
 	<!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">    
+	<link rel="stylesheet" href="css/style1.css">  
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
     <script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
-
+	<link href="css/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/css3.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-    <link href="css/boxicons/css/boxicons.min.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/css3.css">
     
 </head>
 
@@ -50,48 +48,54 @@
 	<!-- End header -->
 	
 	<!-- Start slides -->
-	<div id="slides" class="cover-slides">
-		<ul class="slides-container">
-			<li class="text-center">
-				<img src="images/dog.jfif" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+	<div class="container" >
+		<div class="col-8" >
+			<div id="slides" class="cover-slides" >
+				<ul class="slides-container">
+					<li class="text-center">
+						<img src="images/dog.jfif" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</li>
-			<li class="text-center">
-				<img src="images/photod.jfif" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+					</li>
+					<li class="text-center">
+						<img src="images/photod.jfif" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</li>
-			<li class="text-center">
-				<img src="images/four.jfif" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+					</li>
+					<li class="text-center">
+						<img src="images/four.jfif" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+								</div>
+							</div>
 						</div>
-					</div>
+					</li>
+				</ul>
+				<div class="slides-navigation">
+					<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
 				</div>
-			</li>
-		</ul>
-		<div class="slides-navigation">
-			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+			</div>
+		</div>
+		<div class="col-4">
 		</div>
 	</div>
 	<!-- End slides -->
@@ -129,7 +133,8 @@
 
   </div>
 </section><!-- End Clients Section -->
-	<!-- Start About -->
+
+	<!-- Start About
 	<div class="about-section-box">
 		<div class="container">
 			<div class="row">
@@ -148,9 +153,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- End About -->
+	End About -->
 	
-	<!-- Start QT -->
+	<!-- Start QT 
 	<div class="qt-box qt-background">
 		<div class="container">
 			<div class="row">
@@ -163,7 +168,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- End QT -->
+	 End QT -->
     
 	<!-- Start Menu -->
 	<!-- End Counts Section -->
@@ -187,48 +192,104 @@
             </div>
         </div>
         <div class="col-lg-8">
-        <div class="row">
-            <div class="col-md-6 d-flex align-items-stretch">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4><a href="">Uy Tín</a></h4>
-                <p>Luông là sự lựa chọn số 1 dành cho khách hàng</p>
-            </div>
-            </div>
+			<div class="row">
+				<div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+					<div class="icon-box" style="width: 350px" data-aos="zoom-in" data-aos-delay="200">
+						<div class="icon"><i class="bx bxl-dribbble"></i></div>
+						<h4><a href="">Uy Tín</a></h4>
+						<p>   Luông là sự lựa chọn số 1 dành cho khách hàng     </p>
+					</div>
+				</div>
 
-            <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4><a href="">Chất Lượng</a></h4>
-                <p>Chúng tôi luôn đặt sự lựa chọn sản phẩm lên hàng đầu và được chọn lọc kỹ càng.</p>
-            </div>
-            </div>
+				<div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+					<div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+						<div class="icon"><i class="bx bx-file"></i></div>
+						<h4><a href="">Chất Lượng</a></h4>
+						<p>Chúng tôi luôn đặt sự lựa chọn sản phẩm lên hàng đầu và được chọn lọc kỹ càng.</p>
+					</div>
+				</div>
 
-            <div class="col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4><a href="">Đội Ngũ</a></h4>
-                <p>Với đội ngũ 5 nhân viên, được lựa chọn để phục vụ khách hàng một cách chu đáo nhất</p>
-            </div>
-            </div>
-            <div class="col-md-6 d-flex align-items-stretch mt-4">
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-                <div class="icon"><i class="bx bx-world"></i></div>
-                <h4><a href="">Khách Hàng</a></h4>
-                <p>Đạt tỷ lệ 80% khách hàng cũ quay lại với Jack&Nat pet care</p>
-            </div>
-            </div>
+				<div class="col-md-6 d-flex align-items-stretch mt-4">
+					<div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+						<div class="icon"><i class="bx bx-tachometer"></i></div>
+						<h4><a href="">Đội Ngũ</a></h4>
+						<p>Với đội ngũ 5 nhân viên, được lựa chọn để phục vụ khách hàng một cách chu đáo nhất</p>
+					</div>
+				</div>
+				<div class="col-md-6 d-flex align-items-stretch mt-4">
+					<div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
+						<div class="icon"><i class="bx bx-world"></i></div>
+						<h4><a href="">Khách Hàng</a></h4>
+						<p>Đạt tỷ lệ 80% khách hàng cũ quay lại với Jack&Nat pet care</p>
+					</div>
+				</div>
 
-        </div>
+			</div>
         </div>
     </div>
 
     </div>
     </section><!-- End Services Section -->
 	<!-- End Menu -->
-    
+    <!-- Start Menu -->
+	<div class= "container">
+	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;">
+		<span class="col-sm-1"></span>
+		<span class="col-sm-10 noiDungGioiThieu">
+			<h1 style="font-size: 40px; text-align: center; font-weight: bold">SẢN PHẨM BÁN CHẠY NHẤT</h1>
+			<div style="text-align: center;">
+			
+			<div class="row" style=" width: 101%;">
+				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
+				<label id="lablePhai" for="phai"><i class="fa fa-angle-right"></i></label>
+				<div class="slide_sp">
+				<div class="slides_sp">
+					<input type="radio" name="dieuHuong" id="trai" checked>
+					<input type="radio" name="dieuHuong" id="phai">
+					<?php
+						$sql="SELECT a.ten_san_pham, a.don_gia,a.id_san_pham,SUM(b.so_luong), a.anh
+						FROM tbl_san_pham AS a INNER JOIN tbl_chi_tiet_don_hang AS b ON a.id_san_pham = b.id_san_pham 
+						GROUP BY a.id_san_pham ORDER BY SUM(b.so_luong) DESC LIMIT 6";
+						$result=$con->query($sql);
+						if($result->num_rows>0)
+						{
+							$i=0;
+							while($row=$result->fetch_assoc())
+							{
+								$i=$i+1;
+								?>
+								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
+									<span class="hoverSanPham">
+									<a href="menu.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+									</span>
+									<div class="anhSanPham">
+										<img src="images/san-pham/<?php echo $row['anh']; ?>">
+									</div>
+									<div style="font-size: 16px;">
+										<?php echo $row["ten_san_pham"];?>
+									</div>
+									<div style="font-size: 16px; color: red; font-weight: bold;">
+									Giá: <?php echo number_format($row["don_gia"]) ?>"<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span>
+									</div>
+									<span class="giaDo"></span>
+								</div>
+					<?php
+							}
+						}
+					?>
+				</div>
+				</div>
+			</div>
+			
+			</div>
+		</span>
+	</div>
+	</div>
+	<!-- End Menu -->
 	
 	 <!-- Start Gallery -->
+	 <div class="container">
 	 <div class="gallery-box">
 		<div class="container-fluid">
 			<div class="row">
@@ -276,79 +337,11 @@
 			</div>
 		</div>
 	</div> -->
-	
+	</div>
 	
 	<!-- End Gallery -->
 	
-	<div class="menu-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Jack & Nat pet care</h2>
-						<p>Thú cưng là gia đình</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="special-menu text-center">
-						<div class="button-group filter-button-group">
-							<button class="active" data-filter="*">Tất cả</button>
-							<button data-filter=".thucan">Thức ăn</button>
-							<button data-filter=".phukien">Phụ kiện</button>
-							<button data-filter=".chuongnha">Chuồng/Nhà</button>
-						</div>
-					</div>
-				</div>
-			</div>
-				
-			<div class="row special-list">
-				<div class="col-lg-4 col-md-6 special-grid thucan">
-					<div class="gallery-single fix">
-						<a href="product-detail.php">
-						<img src="images/san-pham/anh1.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Thức ăn cho chó con ROYAL CANIN Bulldog Puppy</h4>
-							<p></p>
-							<h5> 230.000 VND</h5>
-						</div>
-					</a>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-md-6 special-grid thucan">
-					<div class="gallery-single fix">
-                    <a href="product-detail.php">   
-						<img src="images/san-pham/anh2.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Thức ăn cho chó MOSHM Yorkshire Grain Free Nutrition</h4>
-							<p></p>
-							<h5> 470.000 VND</h5>
-						</div>
-                        </a>
-					</div>
-				</div>
-				
-				<div class="col-lg-4 col-md-6 special-grid phukien">
-					<div class="gallery-single fix">
-                    <a href="product-detail.php"> 
-						<img src="images/san-pham/anh3.jpg" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
-						<div class="why-text">
-							<h4>Dây dắt cho chó mèo tự động DELE 007G</h4>
-							<h5> 465.000 VND</h5>
-						</div>
-                    </a>
-					</div>
-				</div>
-				
-				
-				
-				
-				
-			</div>
-		</div>
-	</div>
+	
 	
 	<?php
 	include_once 'layout/fromAdmin.php';
@@ -370,7 +363,9 @@
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
-    <?php include_once 'layout/vedautrang.php'; ?>
+    
+	<?php include_once 'layout/vedautrang.php'; ?>
     <script src="css/aos/aos.js"></script>
+	
 </body>
 </html>

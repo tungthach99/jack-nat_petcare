@@ -44,50 +44,59 @@
 	include("layout/taikhoan.php");
 	?>
 	<!-- Start slides -->
-	<div id="slides" class="cover-slides">
-		<ul class="slides-container">
-			<li class="text-center">
-				<img src="images/dog.jfif" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
+	<div class="container">
+		<div class="col-8">
+			<div id="slides" class="cover-slides" style="max-height=450px" >
+				<ul class="slides-container">
+					<li class="text-center" >
+						<img src="images/dog.jfif" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12	">
+									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p sclass="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</li>
-			<li class="text-center">
-				<img src="images/photod.jfif" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
+					</li>
+					<li class="text-center">
+						<img src="images/photod.jfif" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			</li>
-			<li class="text-center">
-				<img src="images/four.jfif" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-							<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
+					</li>
+					<li class="text-center" >
+						<img src="images/four.jfif" alt="">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php?&tensanpham=">Xem thêm</a></p>
+								</div>
+							</div>
 						</div>
-					</div>
+					</li>
+				</ul>
+
+				<div class="slides-navigation">
+					<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+					<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
 				</div>
-			</li>
-		</ul>
-		<div class="slides-navigation">
-			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-			<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+			</div>
+
 		</div>
-	</div>
+		
+	<div>
+	<div class="col-ms-4" style ="background: red">
+		</div>
 	<!-- End slides -->
 	
 	<!-- Start About -->
