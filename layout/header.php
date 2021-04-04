@@ -21,11 +21,27 @@
 						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
 						<li class="nav-item"><a class="nav-link" href="menu.php">Sản phẩm</a></li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="service.php" id="dropdown-a" data-toggle="dropdown">Dịch vụ</a>
+							<a class="nav-link dropdown-toggle" href="dichvu.php" id="dropdown-a" data-toggle="dropdown">Dịch vụ</a>
 							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<?php
+	$sql="select * from tbl_danh_muc where id_danh_muc not in (1,2) ";
+	$result=$con->query($sql);
+	$row=$result->fetch_assoc();
+		if($result->num_rows>0)
+		{
+			while($row=$result->fetch_assoc())
+			{
+				?>
+								<a class="dropdown-item" href="dichvu.php?&a=<?php echo $row["ten_danh_muc"] ?>"><?php echo $row["ten_danh_muc"] ?></a>
+				<?php
+			}
+		}
+			   					?>
+<!--
 								<a class="dropdown-item" href="service.php">Cắt tỉa lông chó mèo</a>
 								<a class="dropdown-item" href="service.php">Tắm spa chó mèo</a>
 								<a class="dropdown-item" href="service.php">Khách sạn chó mèo</a>
+-->
 							</div>
 						</li>
 						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>

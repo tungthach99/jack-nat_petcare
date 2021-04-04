@@ -30,9 +30,9 @@
 					<div class="special-menu text-center">
 						<div class="button-group filter-button-group">
 							<button class="active" data-filter="*">Tất cả</button>
-							<button data-filter=".thucan">Thức ăn</button>
-							<button data-filter=".phukien">Phụ kiện</button>
-							<button data-filter=".chuongnha">Chuồng/Nhà</button>
+							<button data-filter=".thuy">Thú y</button>
+							<button data-filter=".trongcoi">Trông coi</button>
+							<button data-filter=".thammy">Thẩm mỹ</button>
 						</div>
 					</div>
 				</div>
@@ -50,7 +50,7 @@
 							if($row['id_danh_muc']=='11')
 							{
 					?>
-							<div class="col-lg-4 col-md-6 special-grid thucan">
+							<div class="col-lg-4 col-md-6 special-grid thuy">
 								<div class="gallery-single fix">
 									<img src="images/san-pham/<?php echo $row['anh'] ?>" alt="" style="width: 290px;height: 214px" class="img-fluid" alt="Image">
 									<div class="why-text">
@@ -66,7 +66,7 @@
 								if($row['id_danh_muc']=='12')
 								{
 							?>
-							<div class="col-lg-4 col-md-6 special-grid phukien">
+							<div class="col-lg-4 col-md-6 special-grid trongcoi">
 								<div class="gallery-single fix">
 									<img src="images/san-pham/<?php echo $row['anh'] ?>" alt="" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
 									<div class="why-text">
@@ -82,7 +82,7 @@
 								if($row['id_danh_muc']=='13')
 								{
 							?>
-							<div class="col-lg-4 col-md-6 special-grid chuongnha">
+							<div class="col-lg-4 col-md-6 special-grid thammy">
 								<div class="gallery-single fix">
 									<img src="images/san-pham/<?php echo $row['anh'] ?>" alt="" style=" width: 290px;height: 214px;" class="img-fluid" alt="Image">
 									<div class="why-text">
