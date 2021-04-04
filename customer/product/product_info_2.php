@@ -39,9 +39,8 @@
 			</div>
 			<div class="row special-list">
 			<?php
-					$sql="Select *, IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) AS 
-					gia_moi, tbl_san_pham.id_san_pham AS id_san_pham from tbl_san_pham LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
-					WHERE tbl_san_pham.id_danh_muc != 10";
+					$sql="Select *
+								FROM tbl_dich_vu";
                     $result=$con->query($sql);
                     if($result->num_rows>0)
 						{
