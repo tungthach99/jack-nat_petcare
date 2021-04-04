@@ -39,8 +39,8 @@
 			</div>
 			<div class="row special-list">
 			<?php
-					$sql="Select *
-								FROM tbl_dich_vu";
+					$sql="SELECT *,
+								FROM tbl_dich_vu ";
                     $result=$con->query($sql);
                     if($result->num_rows>0)
 						{
