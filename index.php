@@ -37,7 +37,7 @@
     
 </head>
 
-<body>
+<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
 	<!-- Start header -->
     <?php
 	include("public/ketnoi.php");
@@ -100,7 +100,7 @@
 	</div>
 	<!-- End slides -->
 	<!-- ======= Clients Section ======= -->
-<section id="clients" class="clients">
+<section id="clients" class="clients" >
   <div class="container">
 
     <div class="row">
@@ -193,7 +193,7 @@
         </div>
         <div class="col-lg-8">
 			<div class="row">
-				<div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+				<div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" >
 					<div class="icon-box" style="width: 350px" data-aos="zoom-in" data-aos-delay="200">
 						<div class="icon"><i class="bx bxl-dribbble"></i></div>
 						<h4><a href="">Uy Tín</a></h4>

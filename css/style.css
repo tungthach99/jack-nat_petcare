@@ -217,7 +217,7 @@ button:focus{
 -------------------------------------------------------------------*/
 
 .cover-slides{
-	height: 450px;
+	height: 600px;
 }
 .slides-navigation a {
 	cursor: pointer;
@@ -301,7 +301,7 @@ button:focus{
 .cover-slides h1{
 	font-family: 'Arbutus Slab', serif;
 	font-weight: 500;
-	font-size: 50px;
+	font-size: 40px;
 	color: #fff;
 }
 .cover-slides p{
