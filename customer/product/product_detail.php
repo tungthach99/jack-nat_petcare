@@ -121,7 +121,7 @@ $row=$result->fetch_assoc();
 		<div class="binh-luan-group">
         	<p id="binh-luan-label">Viết bình luận ...<i class="fa fa-pencil"></i></p>
 			<input type="text" id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây"> </input>
-			<button type="submit"  class="btn btn-primary" style="margin: 0 0 10px 5%;">Gửi</button>
+			<button type="submit"  class="btn btn-primary" >Gửi</button>
 			<input type="text" style="display: none;" name="ma_san_pham" value="<?php echo $_GET["masanpham"]?>">
 		</div>
 		</form>
