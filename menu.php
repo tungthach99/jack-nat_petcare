@@ -1,3 +1,7 @@
+<?php
+ob_start(); 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
@@ -103,6 +107,29 @@ require("public/ketnoi.php");
 	include("layout/fromAdmin.php");
 	include("layout/footer.php");
 	?>
+	<?php
+	include("layout/header.php");
+	include("layout/taikhoan.php");
+	require("public/ketnoi.php");
+	if(isset($_GET["loi"]))
+	{
+		if($_GET["loi"]=='1') include("layout/message5.php");
+		if($_GET["loi"]=='2') include("layout/message6.php");
+	}
+	if(isset($_GET["error"]))
+	{
+		if($_GET["error"]=='2') include("layout/message8.php");
+	}
+	if(isset($_GET["action"]))
+	{
+		if($_GET["action"]=='hoantat') include("layout/message7.php");
+		if($_GET["action"]=='fail') include("layout/message8.php");
+	}
+	if(isset($_GET["login"]))
+	{
+		if($_GET["login"]=='1') include("layout/message7.php");
+	}
+?>
 	
 
 	<!-- ALL JS FILES -->

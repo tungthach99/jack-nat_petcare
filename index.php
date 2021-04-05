@@ -1,3 +1,7 @@
+<?php
+ob_start(); 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en"><!-- Basic -->
 <head>
@@ -21,11 +25,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">    
 	<!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">    
-<<<<<<< Updated upstream
-	<link rel="stylesheet" href="css/style1.css">  
-=======
 	<link rel="stylesheet" href="css/style1.css">    
->>>>>>> Stashed changes
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
@@ -42,6 +42,7 @@
 </head>
 
 <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+	
 	<!-- Start header -->
     <?php
 	include("public/ketnoi.php");
@@ -251,7 +252,7 @@
 					<input type="radio" name="dieuHuong" id="trai" checked>
 					<input type="radio" name="dieuHuong" id="phai">
 					<?php
-						$sql="SELECT a.ten_san_pham, a.don_gia,a.id_san_pham,SUM(b.so_luong), a.anh
+						$sql="SELECT  a.id_san_pham, a.ten_san_pham, a.don_gia,a.id_san_pham,SUM(b.so_luong), a.anh
 						FROM tbl_san_pham AS a INNER JOIN tbl_chi_tiet_don_hang AS b ON a.id_san_pham = b.id_san_pham 
 						GROUP BY a.id_san_pham ORDER BY SUM(b.so_luong) DESC LIMIT 6";
 						$result=$con->query($sql);
@@ -265,6 +266,40 @@
 								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
 									<span class="hoverSanPham">
 									<a href="menu.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+									<?php
+										if (isset($_SESSION["id-user"]))
+										{
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
+											$resultyt=$con->query($sqlcheckyeuthich);
+											if($resultyt->num_rows>0)
+											{
+										?>
+										<a href="customer/product/xlxoasanphamyeuthich.php?&idsanpham=<?php 
+										echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>">
+										<i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										</a>
+										<?php
+											}
+											else
+											{
+										?>
+										<a href="customer/product/xlthemsanphamyeuthich.php?&idsanpham=<?php 
+										echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>">
+										<i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+											}
+										}
+										else
+										{
+										?>
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php 
+										echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>">
+										<i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+										}
+										?>
 									</span>
 									<div class="anhSanPham">
 										<img src="images/san-pham/<?php echo $row['anh']; ?>">
@@ -345,10 +380,6 @@
 	
 	<!-- End Gallery -->
 	
-<<<<<<< Updated upstream
-	
-	
-=======
 	<!---- Menu           -->
 	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;">
 		<span class="col-sm-1"></span>
@@ -364,7 +395,7 @@
 					<input type="radio" name="dieuHuong" id="trai" checked>
 					<input type="radio" name="dieuHuong" id="phai">
 					<?php
-						$sql="SELECT a.ten_san_pham, a.don_gia,a.id_san_pham,SUM(b.so_luong), a.anh
+						$sql="SELECT a.id_san_pham, a.ten_san_pham, a.don_gia,a.id_san_pham,SUM(b.so_luong), a.anh
 						FROM tbl_san_pham AS a INNER JOIN tbl_chi_tiet_don_hang AS b ON a.id_san_pham = b.id_san_pham 
 						GROUP BY a.id_san_pham ORDER BY SUM(b.so_luong) DESC LIMIT 6";
 						$result=$con->query($sql);
@@ -382,7 +413,7 @@
 									<?php
 										if (isset($_SESSION["id-user"]))
 										{
-											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id"]."'";
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$row["id_san_pham"]."'";
 											$resultyt=$con->query($sqlcheckyeuthich);
 											if($resultyt->num_rows>0)
 											{
@@ -432,7 +463,6 @@
 		</span>
 	</div>
 	<!---- End Menu           -->
->>>>>>> Stashed changes
 	<?php
 	include_once 'layout/fromAdmin.php';
     include_once 'layout/footer.php';

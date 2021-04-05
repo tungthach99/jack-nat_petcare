@@ -40,6 +40,7 @@ $row=$result->fetch_assoc();
             <br>
             <div class="sidebar-heading">
               <h2>Giá: <span style="color:red;"><?php echo number_format($row['don_gia'])?> VND</span></h2>
+              <?php $giasp = number_format($row['don_gia']) ?>
             </div>
             <br>
           
@@ -136,7 +137,7 @@ if($result->num_rows>0)
 	{
 ?>
 		<div class="hien-thi-binh-luan">
-			<div class="hien-thi-ten"><?php echo $row3['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row3['ngay_tao']?></span></div>
+			<div class="hien-thi-ten"><?php echo $row3['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row3['ngay']?></span></div>
 			<div class="hien-thi-noi-dung" value= null><?php echo $row3['noi_dung']?></div>
 			<div style="margin: 10px 0 10px 0;width: 90%;border-bottom: 2px solid var(--light);"></div>
 		</div>
@@ -146,3 +147,98 @@ if($result->num_rows>0)
 ?>
 </form>
 <!-- Binh luan end   -->
+
+	<!----  Goi y san pham           -->
+	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;">
+		<span class="col-sm-1"></span>
+		<span class="col-sm-10 noiDungGioiThieu">
+			<h1 style="font-size: 40px; text-align: center; font-weight: bold">SẢN PHẨM BÁN CHẠY NHẤT</h1>
+			<div style="text-align: center;">
+			
+			<div class="row" style=" width: 101%;">
+				<label id="labelTrai" for="trai"><i style="color: white" class="fa fa-angle-left"></i></label>
+				<label id="lablePhai" for="phai"><i  style="color: white" class="fa fa-angle-right"></i></label>
+				<div class="slide_sp">
+				<div class="slides_sp">
+					<input type="radio" name="dieuHuong" id="trai" checked>
+					<input type="radio" name="dieuHuong" id="phai">
+					<?php
+						$sqllq="SELECT *
+                            FROM tbl_san_pham 
+                            WHERE id_san_pham<>'".$_GET["masanpham"]."' 
+                                AND ABS(don_gia-".$row["don_gia"].") < 500000 AND id_danh_muc='".$row["id_danh_muc"]."' 
+                            LIMIT 5";
+						$resultlq=$con->query($sqllq);
+						if($resultlq->num_rows>0)
+						{
+							$i=0;
+							while($rowlq= $resultlq->fetch_assoc())
+							{
+								$i=$i+1;
+								?>
+								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
+									<span class="hoverSanPham">
+									<a href="menu.php?product=1&masanpham=<?php echo $rowlq['id_san_pham']?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+									<!--										Them san pham yeu thich-->
+									<?php
+										if (isset($_SESSION["id-user"]))
+										{
+											$sqlcheckyeuthich="select * from tbl_yeu_thich where id_khach_hang='".$_SESSION["id-user"]."' and id_san_pham='".$rowlq["id_san_pham"]."'";
+											$resultyt=$con->query($sqlcheckyeuthich);
+											if($resultyt->num_rows>0)
+											{
+										?>
+										<a href="customer/product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $rowlq["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										</a>
+										<?php
+											}
+											else
+											{
+										?>
+										<a href="customer/product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $rowlq["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+											}
+										}
+										else
+										{
+										?>
+										<a href="customer/product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $rowlq["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										</a>
+										<?php
+										}
+										?>
+									</span>
+									<div class="anhSanPham">
+										<img src="images/san-pham/<?php echo $rowlq['anh']; ?>">
+									</div>
+									<div style="font-size: 16px;">
+										<?php echo $rowlq["ten_san_pham"];?>
+									</div>
+									<div style="font-size: 16px; color: red; font-weight: bold;">
+									Giá: <?php echo number_format($rowlq["don_gia"]) ?>"<sup><u>đ</u></sup></span>
+									<span class='giaGachNgang'></span>
+									</div>
+									<span class="giaDo"></span>
+								</div>
+					<?php
+							}
+						}
+					?>
+				</div>
+				</div>
+			</div>
+			
+			</div>
+		</span>
+	</div>
+	<!---- End Goi y san pham         -->
+
+<?php	
+if(isset($_SESSION["kiemtrasua"]) && $_SESSION["kiemtrasua"]==1)
+	require("layout/message.php");
+?>
+<?php	
+if(isset($_SESSION["kiemtrasua"]) && $_SESSION["kiemtrasua"]==2)
+	require("layout/message2.php");
+?>

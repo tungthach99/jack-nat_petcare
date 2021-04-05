@@ -476,7 +476,8 @@ ul.page-numbers li a:hover {
 	padding-top: 15px;
 }
 .hien-thi-binh-luan{ 
-	margin: 10px 0 0 50px;
+	width: 80%;
+	margin: 10px 0 0 10%;
 }
 .hien-thi-ten{
 	font-size: 20px;
@@ -511,6 +512,16 @@ ul.page-numbers li a:hover {
 	animation-name: tren-xuong;
 	animation-duration: 0.3s;
 	animation-iteration-count: 1;
+}
+
+.linkXanh{
+	width: auto;
+	padding: 10px 20px;
+	background-color: #d0a772;
+	transition: 1s;
+}
+.linkXanh:hover{
+	background-color: black;
 }
 @keyframes tren-xuong{
 	0%{
@@ -607,7 +618,7 @@ background-color: var(--maingray);
 	position: relative;
 }
 .slides_sp{
-	width: 1600px;
+	width: 1640px;
 	height: 100%;
 	display: flex;
 	flex-direction: row;
@@ -624,7 +635,7 @@ background-color: var(--maingray);
 .hoverSanPham{
 	position: absolute;
 	z-index: 2;
-	width: 25%;
+	width: 312px;
 	height: 96%;
 	background: rgba(0,0,0,0.7);
 	display: none;

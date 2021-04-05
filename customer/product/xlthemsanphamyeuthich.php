@@ -16,5 +16,5 @@ if(isset($_SESSION["id-user"]))
 		echo "Không thêm được ".$sql;
 	}
 }
-else header("location:../../home.php?loi=1");
+else header("location:../../index.php?loi=1");
 ?>
