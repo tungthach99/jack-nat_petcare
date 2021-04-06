@@ -65,7 +65,7 @@ require("public/ketnoi.php");
 	<!--nội dung-->
 	
     <?php
-		if(isset($_GET["masanpham"]))
+		if(isset($_GET["m"]))
 		{
 				include("customer/Product/product_detail_2.php");
 		}
@@ -74,7 +74,7 @@ require("public/ketnoi.php");
 			include("customer/Product/product_info_2.php");
 		}
 		//code tim kiem san pham
-		if(isset($_GET["tensanpham"]))
+		if(isset($_GET["m"]))
 		{
 				include("customer/Product/product_info_2.php");
 		}
