@@ -46,33 +46,30 @@ $row=$result->fetch_assoc();
             <div class="contact-us">
               <div class="sidebar-item contact-form">
                 <div class="sidebar-heading">
-                  <h2>Thêm vào giỏ hàng</h2>
+                  <h2>Đặt lịch</h2>
                 </div>
 
                 <div class="content">
-					<form id="contact" action="customer/Order/xlthemgiohang.php" method="get">
-	                    <div class="row">
-<!--
-                      <div class="col-md-6 col-sm-12">
-                        <fieldset>
-                          <label  for="sel1">Khối lượng</label>
-                          <select class="form-control" id="sel1" name="sellist1">
-                            <option value="0">500g</option>
-                            <option value="0">1000g</option>
-                            <option value="0">1500g</option>
-                            <option value="0">2000g</option>
-                          </select>
-                        </fieldset>
-                      </div>
--->
-                    	</div>
-
+					<form id="contact" action="customer/Order/xlthemdichvu.php" method="get">
                     	<div class="row">
                       		<div class="col-md-6 col-sm-12">
                         		<fieldset>
-                          			<label for="">Số lượng</label>
+                          			<label for="">Số lượng thú cưng</label>
                         			<input type="number" class="form-control" value="1" required min="1" name="soluong">
 									<input type="text" value="<?php echo $_GET["m"]?>" name="masanpham" style="display: none;">
+                        		</fieldset>
+                      		</div>
+							<div class="col-md-6"></div>
+							<div class="col-md-6">
+                        		<fieldset>
+                          			<label for="">Bắt đầu</label>
+                        			<input type="datetime-local" class="form-control" value="" required min="" name="thoiGianBatDau">
+                        		</fieldset>
+                      		</div>
+							<div class="col-md-6">
+                        		<fieldset>
+                          			<label for="">Kết thúc</label>
+                        			<input type="datetime-local" class="form-control" value="" required min="" name="thoiGianKetThuc">
                         		</fieldset>
                       		</div>
                       		<div class="col-lg-12">
@@ -81,7 +78,7 @@ $row=$result->fetch_assoc();
 										<button type="submit" style="margin-top: 5px;" id="form-submit" class="btn btn-primary"><i class='fa fa-cart-plus'></i> Đặt hàng</button>
 									</a>
 							
-									<a href="#">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/jacknatPetcare/dichvu.php?&m=<?php echo $_GET['m']; ?>">
 										<button type="button" style="margin-top: 5px;"  class="btn btn-success"><i class='fa fa-share-alt'></i> Chia sẻ</button>
 									</a>
                         		</fieldset>

@@ -38,6 +38,7 @@ require("public/ketnoi.php");
 	include("layout/taikhoan.php");
 ?>
 <!-- Phong to anh -->
+	
 <div id="noiDungPhongTo" style="100%">
 		<div class="menuAnh">
 		<?php
