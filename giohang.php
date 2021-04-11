@@ -1,7 +1,20 @@
 <?php
 ob_start(); 
 session_start();
-if(isset($_GET['action']) and $_GET['action']=='hoantat')
+
+if(isset($_SESSION['datDichVuThanhCong']) and $_SESSION['datDichVuThanhCong']==1)
+{
+	if(isset($_SESSION["giohang2"]))
+		unset($_SESSION["giohang2"]);
+	if(isset($_SESSION["soluong2"]))
+		unset($_SESSION["soluong2"]);
+	if(isset($_SESSION["giatinh2"]))
+		unset($_SESSION["giatinh2"]);
+	if(isset($_SESSION["stt_gio_hang2"]))
+		unset($_SESSION["stt_gio_hang2"]);
+	unset($_SESSION['datDichVuThanhCong']);
+}
+if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']==1)
 {
 	if(isset($_SESSION["giohang"]))
 		unset($_SESSION["giohang"]);
@@ -11,15 +24,7 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 		unset($_SESSION["giatinh"]);
 	if(isset($_SESSION["stt_gio_hang"]))
 		unset($_SESSION["stt_gio_hang"]);
-	
-	if(isset($_SESSION["giohang2"]))
-		unset($_SESSION["giohang2"]);
-	if(isset($_SESSION["soluong2"]))
-		unset($_SESSION["soluong2"]);
-	if(isset($_SESSION["giatinh2"]))
-		unset($_SESSION["giatinh2"]);
-	if(isset($_SESSION["stt_gio_hang2"]))
-		unset($_SESSION["stt_gio_hang2"]);
+	unset($_SESSION['datSanPhamThanhCong']);
 }
 ?>
 <!DOCTYPE html>
@@ -74,17 +79,26 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 	{
 		?>
 		<div id="che-man-hinh">
-<div class="mess" id="mess-sua">
-	<br><br><br><br><h1>Cảnh báo !!!</h1>
-	<p>Xin lỗi! Sản phẩm bạn cần hiện không còn đủ số lượng. </p>
-	<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('che-man-hinh');" class="linkXanh" cursor="pointer">Đã hiểu</a>
-</div>
-</div>
+			<div class="mess" id="mess-sua">
+				<br><br><br><br><h1>Cảnh báo !!!</h1>
+				<p>Xin lỗi! Sản phẩm bạn cần hiện không còn đủ số lượng. </p>
+				<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('che-man-hinh');" class="linkXanh" cursor="pointer">Đã hiểu</a>
+			</div>
+		</div>
 		<?php
 	}
 	?>
 	<div class="reservation-box">
 		<div class="container">
+			<?php
+			if(isset($_GET["thongBao"]))
+			{
+			?>
+				<br><h1>Cảnh báo !!!</h1>
+				<p><?php echo $_GET['thongBao']?></p>
+			<?php
+			}
+			?>
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
@@ -297,7 +311,7 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 				{
 					?>
 			<p>Bạn chưa chọn dịch vụ nào<p>
-			<a href="dichvu.php" >&lsaquo; Tiếp tục mua hàng</a>
+			<a href="dichvu.php" >&lsaquo; Tiếp tục đặt dịch vụ</a>
 					<?php
 				}
 		?>

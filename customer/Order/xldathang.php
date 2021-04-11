@@ -112,7 +112,8 @@ session_start();
 		$noidunegmail="Vào lúc ".$ngayDat." bạn đã thực hiện đặt hàng thành công. Mã đơn hàng: ".$_SESSION["id_don_hang"];
 		include("../../sendemail/index.php");
 		//		Gửi email xác nhận: end.
-		header("location:../../giohang.php?&action=hoantat");
+		$_SESSION['datSanPhamThanhCong']=1;
+		header("location:../../giohang.php");
 	}
 ////	Them hóa đơn bán sản phẩm: end.
 
@@ -178,17 +179,39 @@ session_start();
 						}
 //						gop hang hoa giong nhau: end.
 						
-//						Xử lý trường hợp hàng hóa hết
-//						if(isset($_SESSION["soluong"][$key]) and $_SESSION["soluong"][$key]>$row_11['so_luong'])
-//						{
-//							$sqldelete="DELETE FROM tbl_chi_tiet_don_hang WHERE id_don_hang='".$_SESSION["id_don_hang"]."'";
-//							$result_13=$con->query($sqldelete);
-//							$sqldelete="DELETE FROM tbl_don_hang WHERE id_don_hang='".$_SESSION["id_don_hang"]."'";
-//							$result_13=$con->query($sqldelete);
-//							header("location:../../giohang.php?&action=hethang");
-//							die();
-//						}
-//						Xử lý trường hợp hàng hóa hết: end.
+//						Xử lý trường hợp quá tải
+						for($i=strtotime($_SESSION["tgBatDau"][$key]); $i<strtotime($_SESSION["tgKetThuc"][$key]); $i=$i+600)
+						{
+							$sqlCheckQuaTai="SELECT SUM(so_luong_thu_cung) as sl FROM tbl_chi_tiet_don_dich_vu WHERE timestamp('".date('Y/m/d H:i:s',$i)."') BETWEEN thoi_gian_bat_dau AND thoi_gian_ket_thuc";
+							$resultCheckQuaTai=$con->query($sqlCheckQuaTai);
+							if($resultCheckQuaTai->num_rows>0)
+							{
+								while($rowCheckQuaTai=$resultCheckQuaTai->fetch_assoc())
+								{
+									if($rowCheckQuaTai['sl']>100)
+									{
+										$sqlDelete="DELETE FROM tbl_chi_tiet_don_dich_vu WHERE id_don_dich_vu='".$_SESSION["id_don_hang"]."'";
+										$result_13=$con->query($sqlDelete);
+										$sqlDelete="DELETE FROM tbl_don_dich_vu WHERE id_don_hang='".$_SESSION["id_don_hang"]."'";
+										$result_13=$con->query($sqlDelete);
+										$dieuHuong = "location:../../giohang.php?thongBao="."Xin lỗi! Vào ".date('Y/m/d H:i:s',$i)." cửa hàng của chúng tôi đã hết chỗ, bạn vui lòng chọn khung giờ khác hoặc giảm lượng thú cưng đến vào khung giờ này để chúng tôi có thể phục vụ tốt nhất.<br>Các đơn hàng khác của bạn (nếu có) đã được chúng tôi tiếp nhận";
+										header($dieuHuong);
+										die();
+									}
+								}
+							}
+							echo $sqlCheckQuaTai;
+						}
+						if(isset($_SESSION["soluong"][$key]) and $_SESSION["soluong"][$key]>$row_11['so_luong'])
+						{
+							$sqldelete="DELETE FROM tbl_chi_tiet_don_hang WHERE id_don_hang='".$_SESSION["id_don_hang"]."'";
+							$result_13=$con->query($sqldelete);
+							$sqldelete="DELETE FROM tbl_don_hang WHERE id_don_hang='".$_SESSION["id_don_hang"]."'";
+							$result_13=$con->query($sqldelete);
+							header("location:../../giohang.php?&action=hethang");
+							die();
+						}
+//						Xử lý trường hợp hàng quá tải: end.
 					}
 					
 				}
@@ -199,8 +222,8 @@ session_start();
 		$chude="Thông báo đặt hàng thành công";
 		$noidunegmail="Vào lúc ".$ngayDat." bạn đã thực hiện đặt dịch vụ thú cưng thành công. Mã đơn hàng: ".$_SESSION["id_don_hang"];
 		include("../../sendemail/index.php");
-		header("location:../../giohang.php?&action=hoantat");
 		//		Gửi email xác nhận: end.
-		header("location:../../giohang.php?&action=hoantat");
+		$_SESSION['datDichVuThanhCong']=1;
+		header("location:../../giohang.php");
 	}
 ?>
