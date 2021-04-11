@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 07, 2021 lúc 11:51 AM
+-- Thời gian đã tạo: Th4 11, 2021 lúc 04:02 PM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -92,8 +92,20 @@ CREATE TABLE `tbl_chi_tiet_don_dich_vu` (
   `so_luong_thu_cung` int(11) NOT NULL,
   `don_gia` int(11) NOT NULL,
   `thanh_tien` int(11) NOT NULL,
-  `ghi_chu` text COLLATE utf8_unicode_ci NOT NULL
+  `ghi_chu` text COLLATE utf8_unicode_ci NOT NULL,
+  `thoi_gian_bat_dau` timestamp NOT NULL DEFAULT current_timestamp(),
+  `thoi_gian_ket_thuc` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_chi_tiet_don_dich_vu`
+--
+
+INSERT INTO `tbl_chi_tiet_don_dich_vu` (`id_don_dich_vu`, `id_dich_vu`, `so_luong_thu_cung`, `don_gia`, `thanh_tien`, `ghi_chu`, `thoi_gian_bat_dau`, `thoi_gian_ket_thuc`) VALUES
+(1, 2, 1, 100000, 100000, '', '2021-04-11 12:31:00', '2021-04-12 09:31:00'),
+(2, 2, 1, 100000, 100000, '', '2021-04-11 12:31:00', '2021-04-12 09:31:00'),
+(3, 2, 1, 100000, 100000, '', '2021-04-11 13:31:00', '2021-04-18 13:31:00'),
+(4, 2, 1, 100000, 100000, '', '2021-04-18 13:47:00', '2021-04-17 13:47:00');
 
 -- --------------------------------------------------------
 
@@ -106,25 +118,17 @@ CREATE TABLE `tbl_chi_tiet_don_hang` (
   `id_san_pham` int(11) NOT NULL,
   `don_gia` float(255,0) DEFAULT NULL,
   `so_luong` int(11) DEFAULT NULL,
-  `thanh_tien` float(255,0) DEFAULT NULL,
-  `ghi_chu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `thanh_tien` float(255,0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_chi_tiet_don_hang`
 --
 
-INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `so_luong`, `thanh_tien`, `ghi_chu`) VALUES
-(1, 40, NULL, 25, NULL, NULL),
-(2, 60, NULL, 2, NULL, NULL),
-(3, 61, NULL, 3, NULL, NULL),
-(4, 40, NULL, 4, NULL, NULL),
-(5, 40, NULL, 1, NULL, NULL),
-(6, 60, NULL, 3, NULL, NULL),
-(7, 61, NULL, 4, NULL, NULL),
-(8, 61, NULL, 5, NULL, NULL),
-(9, 40, NULL, 6, NULL, NULL),
-(10, 40, NULL, 7, NULL, NULL);
+INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `so_luong`, `thanh_tien`) VALUES
+(3, 55, 170000, 2, 340000),
+(4, 55, 170000, 3, 510000),
+(4, 55, 170000, 2, 340000);
 
 -- --------------------------------------------------------
 
@@ -185,29 +189,27 @@ INSERT INTO `tbl_dich_vu` (`id_dich_vu`, `ten_dich_vu`, `don_gia_dv`, `anh_dv`, 
 CREATE TABLE `tbl_don_dich_vu` (
   `id_don_hang` int(11) NOT NULL,
   `id_khach_hang` int(11) DEFAULT -1,
-  `thoi_gian_bat_dau` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `thoi_gian_ket_thuc` timestamp NULL DEFAULT NULL,
   `phu_thu` int(11) DEFAULT 0,
   `tong_tien` int(11) DEFAULT 0,
   `ten_khach_hang` text COLLATE utf8_unicode_ci NOT NULL,
-  `dia_chi` text COLLATE utf8_unicode_ci NOT NULL,
+  `dia_chi` text COLLATE utf8_unicode_ci DEFAULT NULL,
   `so_dien_thoai` int(11) NOT NULL,
   `trang_thai` int(1) NOT NULL DEFAULT 1,
-  `id_dich_vu` int(11) NOT NULL
+  `hinh_thuc_mua_hang` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ghi_chu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ngay_dat` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_don_dich_vu`
 --
 
-INSERT INTO `tbl_don_dich_vu` (`id_don_hang`, `id_khach_hang`, `thoi_gian_bat_dau`, `thoi_gian_ket_thuc`, `phu_thu`, `tong_tien`, `ten_khach_hang`, `dia_chi`, `so_dien_thoai`, `trang_thai`, `id_dich_vu`) VALUES
-(2, -1, '2021-04-06 16:19:42', NULL, 0, 250000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 1),
-(3, -1, '2021-04-08 01:20:06', '2021-04-08 02:20:06', 0, 150000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 3),
-(4, -1, '2021-04-08 01:20:06', '2021-04-08 02:20:06', 0, 150000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 3),
-(5, -1, '2021-04-08 01:20:06', '2021-04-08 02:20:06', 0, 150000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 3),
-(6, -1, '2021-04-08 01:20:06', '2021-04-08 02:20:06', 0, 150000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 3),
-(7, -1, '2021-04-08 01:20:06', '2021-04-08 02:20:06', 0, 150000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 3),
-(8, -1, '2021-04-08 01:20:06', '2021-04-08 02:20:06', 0, 150000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 3);
+INSERT INTO `tbl_don_dich_vu` (`id_don_hang`, `id_khach_hang`, `phu_thu`, `tong_tien`, `ten_khach_hang`, `dia_chi`, `so_dien_thoai`, `trang_thai`, `hinh_thuc_mua_hang`, `ghi_chu`, `email`, `ngay_dat`) VALUES
+(1, -1, 0, 100000, 'test', '12 Chùa Bộc', 1, 1, 'COD', '', 'test@gmail.com', '2021-04-11 12:36:02'),
+(2, -1, 0, 100000, 'test', '12 Chùa Bộc', 1, 1, 'COD', '', 'test@gmail.com', '2021-04-11 12:38:23'),
+(3, -1, 0, 100000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 'COD', '', 'hiimtung123@gmail.com', '2021-04-11 13:34:57'),
+(4, -1, 0, 100000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 1, 1, 'COD', '', 'hiimtung123@gmail.com', '2021-04-11 13:47:46');
 
 -- --------------------------------------------------------
 
@@ -223,23 +225,21 @@ CREATE TABLE `tbl_don_hang` (
   `ma_giam_gia` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tong_tien` float(255,0) DEFAULT NULL,
   `trang_thai` int(4) DEFAULT 0,
-  `ngay_dat` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ten_khach_hang` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
+  `ten_khach_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dia_chi_nhan_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `hinh_thuc_mua_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ghi_chu` varchar(255) CHARACTER SET utf8 COLLATE utf8_vietnamese_ci DEFAULT NULL,
-  `dien_thoai` varchar(11) COLLATE utf8_unicode_ci NOT NULL
+  `ghi_chu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dien_thoai` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `ngay_dat` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=DYNAMIC;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_don_hang`
 --
 
-INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ngay_dat`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`, `dien_thoai`) VALUES
-(89, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:01:53 pm', '', '', '', '', ''),
-(90, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:04:45 pm', '', '', '', '', ''),
-(91, -1, 'hiimtung123@gmail.com', 0, '', 3290000, 0, '03/07/2021 10:05:45 pm', 'Thạch Thọ Tùng', 'Số 12 Chùa Bộc, Đống Đa', '', '', '0357756343'),
-(92, -1, 'hoa.jhr1999@gmail.com', 0, '', 1840000, 0, '03/07/2021 10:55:13 pm', 'Thạch Thọ Tùng', 'Đội 1, Công Đình, Đình Xuyên, Gia Lâm', '', '', '0357756343');
+INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`, `dien_thoai`, `ngay_dat`) VALUES
+(3, -1, 'hiimtung123@gmail.com', NULL, '', 340000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 13:45:49'),
+(4, -1, 'hiimtung123@gmail.com', NULL, '', 850000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 13:47:46');
 
 -- --------------------------------------------------------
 
@@ -498,13 +498,13 @@ ALTER TABLE `tbl_dich_vu`
 -- AUTO_INCREMENT cho bảng `tbl_don_dich_vu`
 --
 ALTER TABLE `tbl_don_dich_vu`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`

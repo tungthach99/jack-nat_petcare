@@ -265,7 +265,7 @@ session_start();
 								?>
 								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
 									<span class="hoverSanPham">
-									<a href="menu.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+									<a href="menu.php?&masanpham=<?php echo $row['id_san_pham']?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
 									<?php
 										if (isset($_SESSION["id-user"]))
 										{
@@ -293,8 +293,7 @@ session_start();
 										else
 										{
 										?>
-										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php 
-										echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>">
+										<a href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"]?>">
 										<i class="fa fa-heart-o" title="Yêu thích"></i>
 										</a>
 										<?php
@@ -406,9 +405,9 @@ session_start();
 							{
 								$i=$i+1;
 								?>
-								<div class="thanhPhan <?php if($i==1) echo "s1"; ?>">
+								<div class="thanhPhan <?php if($i==1) echo "s2"; ?>">
 									<span class="hoverSanPham">
-									<a href="menu.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
+									<a href="menu.php?masanpham=<?php echo $row['id_san_pham']?>"><i class="fa fa-external-link" title="Mở liên kết"></i></a>
 									<!--										Them san pham yeu thich-->
 									<?php
 										if (isset($_SESSION["id-user"]))
@@ -418,7 +417,7 @@ session_start();
 											if($resultyt->num_rows>0)
 											{
 										?>
-										<a href="customer/product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
+										<a href="customer/product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: #c60909" class="fa fa-heart" title="Bỏ thích"></i>
 										</a>
 										<?php
 											}
@@ -433,7 +432,7 @@ session_start();
 										else
 										{
 										?>
-										<a href="customer/product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
+										<a href="customer/product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i class="fa fa-heart-o" title="Yêu thích"></i>
 										</a>
 										<?php
 										}
@@ -469,7 +468,7 @@ session_start();
     
 	?>
 	
-	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+<!--	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>-->
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery-3.2.1.min.js"></script>

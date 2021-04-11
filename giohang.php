@@ -11,6 +11,15 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 		unset($_SESSION["giatinh"]);
 	if(isset($_SESSION["stt_gio_hang"]))
 		unset($_SESSION["stt_gio_hang"]);
+	
+	if(isset($_SESSION["giohang2"]))
+		unset($_SESSION["giohang2"]);
+	if(isset($_SESSION["soluong2"]))
+		unset($_SESSION["soluong2"]);
+	if(isset($_SESSION["giatinh2"]))
+		unset($_SESSION["giatinh2"]);
+	if(isset($_SESSION["stt_gio_hang2"]))
+		unset($_SESSION["stt_gio_hang2"]);
 }
 ?>
 <!DOCTYPE html>
@@ -61,20 +70,19 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 	include("public/ketnoi.php");
 	include("layout/header.php");
 	include("layout/taikhoan.php");
+	if(isset($_GET["action"]) and $_GET["action"]=="hethang")
+	{
+		?>
+		<div id="che-man-hinh">
+<div class="mess" id="mess-sua">
+	<br><br><br><br><h1>Cảnh báo !!!</h1>
+	<p>Xin lỗi! Sản phẩm bạn cần hiện không còn đủ số lượng. </p>
+	<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('che-man-hinh');" class="linkXanh" cursor="pointer">Đã hiểu</a>
+</div>
+</div>
+		<?php
+	}
 	?>
-	<!-- Start All Pages -->
-	<div class="all-page-title page-breadcrumb">
-		<div class="container text-center">
-			<div class="row">
-				<div class="col-lg-12">
-					<h1>GIỎ HÀNG</h1>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End All Pages -->
-	
-	<!-- Start Reservation -->
 	<div class="reservation-box">
 		<div class="container">
 			<div class="row">
@@ -92,7 +100,7 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 							<div class="row">
 								<div class="col-md-9">
 <!--					Chi tiết giỏ hàng						-->
-									<h3>Chi tiết giỏ hàng</h3>
+									<h3>Hàng hóa đã chọn</h3>
 
 	<div class="row" style="width: 100%;">
 		<span class="col-12">
@@ -170,11 +178,11 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 				</div>
 				</form>
 				
-				<br><br><br>
+				<br>
 				<?php if(isset($_SESSION["giohang"])) {?>
 				<div style="float: right;"><b>Tổng Tiền: </b><b style="color: red;"><?php echo number_format($_SESSION["tongtien"]) ?></b><b> VND</b></div><?php }?>
 				<div><br>
-					<a href="menu.php?&tensanpham=" >&lsaquo; Tiếp tục mua hàng</a>
+					<a href="menu.php?">&lsaquo; Tiếp tục mua hàng</a>
 					<?php if(isset($_SESSION["giohang"]) and $_SESSION["tongtien"]>0) {?>
 					<a onClick="hienthiform('formGioHang')" class="linkDen" style="color: #fff; border-radius: 5px; float: right;">Đặt hàng</a>
 					<?php }?>
@@ -186,7 +194,7 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 				else
 				{
 					?>
-			<p>Giỏ hàng của bạn trống<p>
+			<p>Bạn chưa chọn sản phẩm nào<p>
 			<a href="menu.php" >&lsaquo; Tiếp tục mua hàng</a>
 					<?php
 				}
@@ -194,6 +202,108 @@ if(isset($_GET['action']) and $_GET['action']=='hoantat')
 		<span class="col-2"></span>
 	</div>
 <!--					Chi tiết giỏ hàng:end.						-->
+								
+<!--Chi tiết dịch vụ-->
+	<h3>Dịch vụ đã chọn</h3>
+	<div class="row" style="width: 100%;">
+		<span class="col-12">
+			<?php
+				if(isset($_SESSION["giohang2"]))
+				 {	 
+			?>
+			<div class="container">
+				<div class="table-responsive">
+   					<table style="text-align: center;" class="table table-bordered">
+						<thead>
+							<tr style="background-color: rgba(208, 167, 114,0.1)">
+								<th>Tên dịch vụ</th>
+								<th>Số lượng thú</th>
+								<th>Đơn giá</th>
+								<th>Thời gian bắt đầu</th>
+								<th>Thời gian kết thúc</th>
+								<th>Thành tiền</th>
+								<th>+</th>
+								<th>-</th>
+								<th>x</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							$_SESSION["tongtien2"]=0;
+							if(isset($_SESSION["giohang2"]))
+							{
+								foreach($_SESSION["giohang2"] as $key2=>$value2){
+									$sql2="select * from tbl_dich_vu where id_dich_vu=".$value2;
+									$result2=$con->query($sql2);
+									if($result2->num_rows>0)
+									{
+										while($row2=$result2->fetch_assoc())
+										{
+											if($_SESSION["soluong2"][$key2] >0)
+											{
+							?>
+							<tr>
+								<td style="display: none;"><?php echo $row2['id_dich_vu'] ?></td>
+								<td><?php echo $row2['ten_dich_vu']?></td>
+<!--								<td></td>-->
+								<td><?php echo number_format($_SESSION["soluong2"][$key2]) ?></td>
+								<?php
+								$giatinh2=$row2['don_gia_dv'];
+								$_SESSION["giatinh2"][$key2]=$giatinh2;
+								?>
+								<td><?php echo number_format($giatinh2) ?></td>
+								<td><?php echo ($_SESSION["tgBatDau"][$key2])?></td>
+								<td><?php echo ($_SESSION["tgKetThuc"][$key2])?></td>
+								<?php
+									$thanhtien2=$_SESSION["soluong2"][$key2]*$giatinh2;
+									$_SESSION["tongtien2"]+=$thanhtien2;
+								?>
+								<td><?php echo number_format($thanhtien2) ?></td>
+								<td>
+								<a class="fa fa-plus" href="customer/Order/xltangdonhang2.php?&stt=<?php echo $key2?>"></a>
+
+								</td>
+								<td>
+								<a class="fa fa-minus" href="customer/Order/xlgiamdonhang2.php?&stt=<?php echo $key2?>"></a>
+								</td>
+								<td><a class="fa fa-trash" href="customer/Order/xlxoadonhang2.php?&stt=<?php echo $key2?>"></a></td>
+							</tr>
+							<?php
+											}
+										}
+									}
+								}
+							}
+							?>
+						</tbody>
+					</table>
+				</div>
+				</form>
+				
+				<br>
+				<?php if(isset($_SESSION["giohang2"])) {?>
+				<div style="float: right;"><b>Tổng Tiền: </b><b style="color: red;"><?php echo number_format($_SESSION["tongtien2"]) ?></b><b> VND</b></div><?php }?>
+				<div><br>
+					<a href="dichvu.php?">&lsaquo; Tiếp tục đặt dịch vụ</a>
+					<?php if(isset($_SESSION["giohang2"]) and $_SESSION["tongtien2"]>0) {?>
+					<a onClick="hienthiform('formGioHang')" class="linkDen" style="color: #fff; border-radius: 5px; float: right;">Đặt hàng</a>
+					<?php }?>
+				</div>
+			</div>
+		</span>
+		<?php
+				}
+				else
+				{
+					?>
+			<p>Bạn chưa chọn dịch vụ nào<p>
+			<a href="dichvu.php" >&lsaquo; Tiếp tục mua hàng</a>
+					<?php
+				}
+		?>
+		<span class="col-2"></span>
+	</div>
+<!--Chi tiết dịch vụ: end-->
 								</div>
 								<div class="col-md-3">
 									<h3>Thông tin liên hệ</h3>

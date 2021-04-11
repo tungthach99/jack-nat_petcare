@@ -60,19 +60,19 @@ $row=$result->fetch_assoc();
                         		</fieldset>
                       		</div>
 							<div class="col-md-6"></div>
-							<div class="col-md-6">
+							<div class="col-md-9">
                         		<fieldset>
                           			<label for="">Bắt đầu</label>
                         			<input type="datetime-local" class="form-control" value="" required min="" name="thoiGianBatDau">
                         		</fieldset>
                       		</div>
-							<div class="col-md-6">
+							<div class="col-md-9">
                         		<fieldset>
                           			<label for="">Kết thúc</label>
                         			<input type="datetime-local" class="form-control" value="" required min="" name="thoiGianKetThuc">
                         		</fieldset>
                       		</div>
-                      		<div class="col-lg-12">
+                      		<div class="col-md-12">
                         		<fieldset>
                           			<a>
 										<button type="submit" style="margin-top: 5px;" id="form-submit" class="btn btn-primary"><i class='fa fa-cart-plus'></i> Đặt hàng</button>
