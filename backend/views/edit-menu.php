@@ -8,16 +8,16 @@
         $row = mysqli_fetch_array($query);
 
        if (isset($_POST['submit'])) {
-           $tensanpham=$_POST['tensanpham'];
-             $dongia = $_POST['dongia'];
-             $soluong = $_POST['soluong'];
-            $danhmuc= $_POST['danhmuc'];
-            $mota = $_POST['mota'];
+           $tensanpham=$_POST['ten_san_pham'];
+             $dongia = $_POST['don_gia'];
+             $soluong = $_POST['so_luong'];
+            $danhmuc= $_POST['danh_muc'];
+            $mota = $_POST['mo_ta'];
              $anh = $_FILES['anh']['name'];
 
 
            $sql = "UPDATE tbl_san_pham 
-                    SET ten_san_pham = '$tensanpham', don_gia = '$dongia', anh = '$anh', mo_ta = '$mota',so_luong = '$soluong', id_danh_muc='$danhmuc' 
+                    SET ten_san_pham = '$tensanpham', don_gia = '$dongia',so_luong = '$soluong', id_danh_muc='$danhmuc' , mo_ta = '$mota', anh = '$anh'
                     WHERE id_san_pham = $id";
 
             $query = mysqli_query($conn, $sql);
