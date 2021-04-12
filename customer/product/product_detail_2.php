@@ -64,6 +64,7 @@ $resultUpdateTag=$con->query($sqlUpdateTag);
                       		<div class="col-md-6 col-sm-12">
                         		<fieldset>
                           			<label for="">Số lượng thú cưng</label>
+									<input type="text" value="<?php echo $_GET["m"]?>" name="masanpham" style="display: none;">
                         			<input type="number" class="form-control" value="1" required min="1" name="soluong">
                         		</fieldset>
                       		</div>

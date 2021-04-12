@@ -202,15 +202,6 @@ session_start();
 							}
 							echo $sqlCheckQuaTai;
 						}
-						if(isset($_SESSION["soluong"][$key]) and $_SESSION["soluong"][$key]>$row_11['so_luong'])
-						{
-							$sqldelete="DELETE FROM tbl_chi_tiet_don_hang WHERE id_don_hang='".$_SESSION["id_don_hang"]."'";
-							$result_13=$con->query($sqldelete);
-							$sqldelete="DELETE FROM tbl_don_hang WHERE id_don_hang='".$_SESSION["id_don_hang"]."'";
-							$result_13=$con->query($sqldelete);
-							header("location:../../giohang.php?&action=hethang");
-							die();
-						}
 //						Xử lý trường hợp hàng quá tải: end.
 					}
 					
