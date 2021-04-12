@@ -113,7 +113,7 @@
 		$mota = $_POST['mota'];
 		$anh = $_FILES['anh']['name'];
 		$soluong = $_POST['soluong'];
-
+        $ngay = $_POST['ngay_them']
 
         $sql_check = "SELECT *FROM tbl_san_pham WHERE ten_san_pham = '$name'";
         $query_check = mysqli_query($conn, $sql_check);
@@ -121,7 +121,7 @@
 
         if ($check != 1) {
             $sql = "INSERT INTO tbl_san_pham 
-            SET ten_san_pham = '$tensanpham', don_gia = '$dongia',so_luong = '$soluong', id_danh_muc='$danhmuc' , mo_ta = '$mota', anh = '$anh'
+            SET ten_san_pham = '$tensanpham', don_gia = '$dongia',so_luong = '$soluong', id_danh_muc='$danhmuc' , mo_ta = '$mota', anh = '$anh',ngay_them = '$ngay'
             WHERE id_san_pham = $id";
             $query = mysqli_query($conn, $sql);
             if ($query) {
@@ -143,7 +143,6 @@
             <h1 class="page-header">
                 SẢN pHẨM <small>JACK&NAT</small>
             </h1>
-
             <ol class="breadcrumb">
                 <li class="active">
                     <i class="fa fa-dashboard"></i> Thêm mới sản phẩm
@@ -159,10 +158,7 @@
             <form action="" method="POST" role="form">
                 <legend>
                     <i class="fa fa-user-plus"></i>
-
                 </legend>
-                
-
                 <div class="form-group">
                     <label for="">
                         <i class="fa fa-male"></i>
@@ -171,7 +167,6 @@
                 </label>
                     <input type="text" class="form-control" name="name" value="<?php if(isset($name)){ echo $name; } ?>" required="" placeholder="Nhập đầy đủ tên sản phẩm...">
                 </div>
-
                 <div class="form-group">
                     <label for="">
                         <i class="fa fa-phone"></i>
@@ -204,9 +199,7 @@
                         Danh mục
                     <span style="color: red;">*</span>
                     </label>
-                     <input type="mota" class="form-control" name="mota" value="<?php echo $row_dm['id_danh_muc'] ?>">
-								                    <?php echo $row_dm['ten_danh_muc'] ?>
-								                  <?php } ?>  required="" placeholder="Nhập soluong...">
+                     <input type="mota" class="form-control" name="mota" value=""  required="" placeholder="Nhập soluong...">
                 </div>
 
                 

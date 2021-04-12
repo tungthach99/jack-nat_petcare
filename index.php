@@ -108,7 +108,7 @@ session_start();
 <section id="clients" class="clients" >
   <div class="container">
 
-    <div class="row">
+    <div class="row" style="margin-left= 0px">
 
       <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100">
         <img src="images/clients/client-1.png" class="img-fluid" alt="">
@@ -181,7 +181,6 @@ session_start();
 <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
     <div class="container">
-
         <div class="row">
             <div class="col-lg-4">
                 <div class="section-title" data-aos="fade-right">
@@ -189,7 +188,7 @@ session_start();
                 
                 <h1>DỊCH VỤ</h1>
                 <p>
-                    Jack&Nat pet care | luôn chú trọng nguồn nguyên liệu XANH – SẠCH, chất lượng hảo hạng, đảm bảo lần chăm sóc tốt nhất cho khách. 
+                    Jack&Nat pet care | luôn chú trọng nguồn nguyên liệu XANH – SẠCH, chất lượng hảo hạng, đảm bảo lần chăm sóc tốt nhất cho khách hàng. 
                     <br> <br>
                 </p>
                 Jack&Nat pet care mong muốn mang đến trải nghiệm tuyệt vời, tạo nên cuộc vui hết ý cho nhiều thực khách.
