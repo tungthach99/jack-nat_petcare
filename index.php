@@ -420,44 +420,32 @@ session_start();
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Bộ Sưu Tập</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+						<h2>Feedback Của Khách Hàng  <i class="fa fa-heart" style="font-size:30px;color:red"></i></h2>
 					</div>
 				</div>
 			</div>
 			<div class="tz-gallery">
 				<div class="row">
-					<div class="col-sm-12 col-md-4 col-lg-4">
-						<a class="lightbox" href="images/gallery_10.png">
-							<img class="img-fluid" src="images/gallery_10.png" alt="Gallery Images">
-						</a>
-					</div>
+				<?php
+					$sql="SELECT * 
+									FROM tbl_feedback
+									ORDER BY id_feedback DESC
+									LIMIT 6 ";
+                    $result=$con->query($sql);
+                    if($result->num_rows>0)
+						{
+							while($row=$result->fetch_assoc())
+							{ //for->while
+					?>
 					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="images/gallery_02.jpeg">
-							<img class="img-fluid" src="images/gallery_02.jpeg" alt="Gallery Images">
+						<a class="lightbox" href="images/uploads/<?php echo $row['img'] ?>">
+							<img class="img-fluid" src="images/uploads/<?php echo $row['img'] ?>" alt="Gallery Images">
 						</a>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="images/gallery_07.jpeg">
-							<img class="img-fluid" src="images/gallery_07.jpeg" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-12 col-md-4 col-lg-4">
-						<a class="lightbox" href="images/gallery_11.jpg">
-							<img class="img-fluid" src="images/gallery_11.jpg" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="images/gallery_06.jpg">
-							<img class="img-fluid" src="images/gallery_06.jpg" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="images/gallery_09.jpg">
-							<img class="img-fluid" src="images/gallery_09.jpg" alt="Gallery Images">
-						</a>
-					</div>
-					
+					<?php 
+					}
+				}
+				?>
 				</div>
 			</div>
 		</div>

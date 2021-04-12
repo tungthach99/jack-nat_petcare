@@ -51,8 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	$tranghientai="location:feedback.php";
 	if ($noidung != "" && empty($error))
 	{
-		$sql_insert="INSERT INTO tbl_feedback(id_khach_hang, ten_khach_hang, email, img,noi_dung) 
-                                values('".$tenkhachhang."','".$email."', '".$email."',  '".$img."',  '".$noidung."')";
+		$sql_insert="INSERT INTO tbl_feedback( ten_khach_hang, email, img,noi_dung) 
+                                values('".$tenkhachhang."', '".$email."',  '".$img."',  '".$noidung."')";
 		if($con->query($sql_insert)===TRUE)
 		{	
             $_SESSION["kiemtra"]=1;

@@ -161,7 +161,7 @@ if($result->num_rows>0)
 	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;">
 		<span class="col-sm-1"></span>
 		<span class="col-sm-10 noiDungGioiThieu">
-			<h1 style="font-size: 40px; text-align: center; font-weight: bold">SẢN PHẨM BÁN CHẠY NHẤT</h1>
+			<h1 style="font-size: 40px; text-align: center; font-weight: bold">SẢN PHẨM LIÊN QUAN</h1>
 			<div style="text-align: center;">
 			
 			<div class="row" style=" width: 101%;">
