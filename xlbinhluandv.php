@@ -7,7 +7,7 @@ session_start();
 	$_SESSION["kiemtrasua"]=0;
 	$noidung=$_POST['noi_dung'];
 	$idkhachhang=$_SESSION['id-user'];
-	$idsanpham=$_POST['masanpham'];
+	$idsanpham=$_POST['ma_san_pham'];
 	$tranghientai="location:dichvu.php?&m=".$idsanpham;
 	if ($noidung != "" && $idkhachhang != "")
 	{
