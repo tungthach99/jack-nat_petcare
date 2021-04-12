@@ -44,6 +44,7 @@ require("public/ketnoi.php");
 	<div class="row" style="width: 100%;">
 		<span  class="col-2"></span>
 		<span class="col-8">
+			<br><br><br><br>
 			<div id="product-content">
 <?php
 			if(isset($_SESSION["id-user"]))
@@ -70,14 +71,14 @@ require("public/ketnoi.php");
 			if($resultyt->num_rows>0)
 			{
 		?>
-		<a class="heart" class="heart" title="Yêu thích" href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart" title="Bỏ thích"></i>
+		<a class="heart" title="Yêu thích" href="customer/Product/xlxoasanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-bookmark" title="Bỏ thích"></i>
 		</a>
 		<?php
 			}
 			else
 			{
 		?>
-		<a class="heart" href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart-o" title="Yêu thích"></i>
+		<a class="heart" href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-bookmark-o" title="Yêu thích"></i>
 		</a>
 		<?php
 			}
@@ -85,7 +86,7 @@ require("public/ketnoi.php");
 		else
 		{
 		?>
-		<a class="heart" href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-heart-o" title="Yêu thích"></i>
+		<a class="heart" href="customer/Product/xlthemsanphamyeuthich.php?&idsanpham=<?php echo $row["id_san_pham"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-bookmark-o" title="Yêu thích"></i>
 		</a>
 		<?php
 		}
@@ -99,7 +100,7 @@ require("public/ketnoi.php");
 							else
 							echo  "<p id='title-product-2'>Giá: ".number_format($row["don_gia"])."đ </p>";
 							?>
-							<a href="sanpham.php?product=1&masanpham=<?php echo $row['id_san_pham']?>">
+							<a href="menu.php?&masanpham=<?php echo $row['id_san_pham']?>">
 							<button class="nutChiTiet">Chi tiết</button></a>
 						</div>
 		<!--product=1=>product_detail.php-->
@@ -110,9 +111,81 @@ require("public/ketnoi.php");
 			}
 ?>
 			</div>
-			<a href="sanpham.php?&maloai=1" >&lsaquo; Tiếp tục mua hàng</a>
+			<a href="menu.php" >&lsaquo; Tiếp tục mua hàng</a>
 		</span>
 		<span class="col-2" onClick="dongform('formGioHang')"></span>
+	</div>
+	
+	<div class="row" style="width: 100%;">
+		<span  class="col-2"></span>
+		<span class="col-8">
+			<br><br><br><br>
+			<div id="product-content">
+<?php
+			if(isset($_SESSION["id-user"]))
+			{
+				$sql="SELECT tbl_dich_vu.id_dich_vu, tbl_dich_vu.ten_dich_vu, tbl_dich_vu.don_gia_dv, tbl_dich_vu.anh_dv
+				FROM tbl_dich_vu JOIN tbl_yeu_thich_dich_vu ON tbl_dich_vu.id_dich_vu = tbl_yeu_thich_dich_vu.id_dich_vu AND tbl_yeu_thich_dich_vu.id_khach_hang = ".$_SESSION["id-user"];
+	  			$result=$con->query($sql);
+	 			if($result->num_rows>0)
+				{
+					while($row=$result->fetch_assoc())
+					{
+?>
+						<div id="product-1">
+							<a href="dichvu.php?m=<?php echo $row['id_dich_vu']?>"><img style="margin-top: 10px;" id="product-img" src="images/san-pham/<?php echo $row['anh_dv']; ?>"></a>
+							<!--			san pham yeu thich-->
+		<?php
+		if (isset($_SESSION["id-user"]))
+		{
+			$sqlcheckyeuthich="select * from tbl_yeu_thich_dich_vu where id_khach_hang='".$_SESSION["id-user"]."' and id_dich_vu='".$row["id_dich_vu"]."'";
+			$resultyt=$con->query($sqlcheckyeuthich);
+			if($resultyt->num_rows>0)
+			{
+		?>
+		<a class="heart" title="Yêu thích" href="customer/Product/xlxoadichvuyeuthich.php?&iddichvu=<?php echo $row["id_dich_vu"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-bookmark" title="Bỏ thích"></i>
+		</a>
+		<?php
+			}
+			else
+			{
+		?>
+		<a class="heart" href="customer/Product/xlthemdichvuyeuthich.php?&iddichvu=<?php echo $row["id_dich_vu"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-bookmark-o" title="Yêu thích"></i>
+		</a>
+		<?php
+			}
+		}
+		else
+		{
+		?>
+		<a class="heart" href="customer/Product/xlthemdichvuyeuthich.php?&iddichvu=<?php echo $row["id_dich_vu"];?>&id=<?php if(isset($_SESSION["id-user"])) echo $_SESSION["id-user"];?>"><i style="color: red;" class="fa fa-bookmark-o" title="Yêu thích"></i>
+		</a>
+		<?php
+		}
+		?>
+<!--			san pham yeu thich: end.-->
+							<p id="title-product-1"><?php echo $row["ten_dich_vu"];?></p>
+							<?php
+							if (isset($row["muc_khuyen_mai"]))
+							echo "<p id='title-product-2'>Giá: ".number_format($row["gia_moi"]).
+							"đ <span style='font-size:12px; color:#2c3e50; text-decoration: line-through'>".number_format($row["don_gia"])."đ</span></p>";
+							else
+							echo  "<p id='title-product-2'>Giá: ".number_format($row["don_gia_dv"])."đ </p>";
+							?>
+							<a href="dichvu.php?&m=<?php echo $row['id_dich_vu']?>">
+							<button class="nutChiTiet">Chi tiết</button></a>
+						</div>
+		<!--product=1=>product_detail.php-->
+
+<?php 
+					}//end while
+				}//if_num_row
+			}
+?>
+			</div>
+			<a href="dichvu.php" >&lsaquo; Tiếp tục đặt dịch vụ</a>
+		</span>
+		<span class="col-2"></span>
 	</div>
 	
 	<?php

@@ -91,7 +91,13 @@
 -->
 							</div>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.php">Liên hệ</a></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle"  id="dropdown-a" data-toggle="dropdown">Liên hệ</a>
+							<div class="dropdown-menu" aria-labelledby="dropdown-a">
+								<a class="dropdown-item" href="contact.php">Đặt lịch tư vấn</a>
+								<a class="dropdown-item" href="feedback.php">Gửi feedback</a>
+							</div>
+						</li>
 <!--						<li class="nav-item"><a onClick="hienthiform('box-tim-kiem'),dongFrom('formDangNhap');" class="nav-link"><i class="fa fa-search"></i > Search</a></li>-->
 						
 						<li class="nav-item dropdown">

@@ -91,7 +91,7 @@ $resultUpdateTag=$con->query($sqlUpdateTag);
 										<button type="submit" style="margin-top: 5px;" id="form-submit" class="btn btn-primary"><i class='fa fa-cart-plus'></i> Đặt hàng</button>
 									</a>
 							
-									<a href="#">
+									<a href="https://www.facebook.com/sharer/sharer.php?u=jacknatpetcare.000webhostapp.com/menu.php?masanpham=<?php echo $_GET["masanpham"]?>">
 										<button type="button" style="margin-top: 5px;"  class="btn btn-success"><i class='fa fa-share-alt'></i> Chia sẻ</button>
 									</a>
                         		</fieldset>

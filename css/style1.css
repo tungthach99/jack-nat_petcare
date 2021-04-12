@@ -616,6 +616,7 @@ background-color: var(--maingray);
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
+	min-width: 250px;
 }
 .slides_sp{
 	width: 1640px;
@@ -684,4 +685,106 @@ input[name="dieuHuong"]{
 	margin-left: -38%;
 }
 
+#labelTrai2{
+	background-color: #d0a772;;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	position: absolute;
+	top: 55%;
+	z-index: 4;
+	left: -2%;
+	box-shadow: 1px 1px 5px #AEAEAE;
+	cursor: pointer;
+}
+#lablePhai2{
+	position: absolute;
+	background-color: #d0a772;;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	top: 55%;
+	z-index: 4;
+	right: 1%;
+	box-shadow: 1px 1px 5px #AEAEAE;
+	cursor: pointer;
+}
+#trai2:checked ~ .s2{
+	margin-left: 0;
+}
+#phai2:checked ~ .s2{
+	margin-left: -38%;
+}
+#labelTrai3{
+	background-color: #d0a772;;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	position: absolute;
+	top: 55%;
+	z-index: 4;
+	left: -2%;
+	box-shadow: 1px 1px 5px #AEAEAE;
+	cursor: pointer;
+}
+#lablePhai3{
+	position: absolute;
+	background-color: #d0a772;;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	top: 55%;
+	z-index: 4;
+	right: 1%;
+	box-shadow: 1px 1px 5px #AEAEAE;
+	cursor: pointer;
+}
+#trai3:checked ~ .s3{
+	margin-left: 0;
+}
+#phai3:checked ~ .s3{
+	margin-left: -38%;
+}
+#labelTrai4{
+	background-color: #d0a772;;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	position: absolute;
+	top: 55%;
+	z-index: 4;
+	left: -2%;
+	box-shadow: 1px 1px 5px #AEAEAE;
+	cursor: pointer;
+}
+#lablePhai4{
+	position: absolute;
+	background-color: #d0a772;;
+	width: 40px;
+	height: 40px;
+	color: #000;
+	font-size: 24px;
+	text-align: center;
+	top: 55%;
+	z-index: 4;
+	right: 1%;
+	box-shadow: 1px 1px 5px #AEAEAE;
+	cursor: pointer;
+}
+#trai4:checked ~ .s4{
+	margin-left: 0;
+}
+#phai4:checked ~ .s4{
+	margin-left: -38%;
+}
 /*End san pham noi bat */

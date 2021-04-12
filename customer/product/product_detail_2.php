@@ -64,8 +64,8 @@ $resultUpdateTag=$con->query($sqlUpdateTag);
                       		<div class="col-md-6 col-sm-12">
                         		<fieldset>
                           			<label for="">Số lượng thú cưng</label>
-                        			<input type="number" class="form-control" value="1" required min="1" name="soluong">
 									<input type="text" value="<?php echo $_GET["m"]?>" name="masanpham" style="display: none;">
+                        			<input type="number" class="form-control" value="1" required min="1" name="soluong">
                         		</fieldset>
                       		</div>
 							<div class="col-md-6"></div>
@@ -123,10 +123,11 @@ $resultUpdateTag=$con->query($sqlUpdateTag);
     <!-- End Thông tin nhà-->
 
 <!-- Binh luan  -->
-<form action="xlbinhluansp.php" method="POST">
+<form action="xlbinhluandv.php" method="POST">
 		<div class="binh-luan-group">
         	<p id="binh-luan-label">Viết bình luận ...<i class="fa fa-pencil"></i></p>
 			<input type="text" id="comment-box" name="noi_dung" placeholder="Hãy nhập bình luận của bạn ở đây"> </input>
+			<input type="text" value="<?php echo $_GET["m"]?>" name="masanpham" style="display: none;">
 			<button type="submit"  class="btn btn-primary" style="margin: 0 0 10px 5%;">Gửi</button>
 			<input type="text" style="display: none;" name="ma_san_pham" value="<?php echo $_GET["m"]?>">
 		</div>
@@ -142,7 +143,7 @@ if($result->num_rows>0)
 	{
 ?>
 		<div class="hien-thi-binh-luan">
-			<div class="hien-thi-ten"><?php echo $row3['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row3['ngay_tao']?></span></div>
+			<div class="hien-thi-ten"><?php echo $row3['ten_khach_hang']?><span class="hien-thi-ngay"><?php echo $row3['ngay']?></span></div>
 			<div class="hien-thi-noi-dung" value= null><?php echo $row3['noi_dung']?></div>
 			<div style="margin: 10px 0 10px 0;width: 90%;border-bottom: 2px solid var(--light);"></div>
 		</div>

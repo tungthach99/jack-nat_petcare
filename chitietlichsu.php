@@ -106,7 +106,7 @@ session_start();
 	else echo "<p>Lịch sử mua hàng sẽ ghi lại những giao dịch của bạn tại đây.<p>";
 		?>
 			<a href="lichsumuahang.php">&lsaquo;&lsaquo; Lịch sử mua hàng</a><br>
-			<a href="home.php">&lsaquo;&lsaquo; Trang chủ</a>
+			<a href="index.php">&lsaquo;&lsaquo; Trang chủ</a>
 		</span>
 		<span class="col-2"></span>
 	</div>
