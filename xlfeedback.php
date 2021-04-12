@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 	{
 		$sql_insert="INSERT INTO tbl_feedback(id_khach_hang, ten_khach_hang, email, img,noi_dung) 
                                 values('".$tenkhachhang."','".$email."', '".$email."',  '".$img."',  '".$noidung."')";
-		if($con->query($sql_insert)===TRUE && $con->query($sql_insert1)===TRUE)
+		if($con->query($sql_insert)===TRUE)
 		{	
             $_SESSION["kiemtra"]=1;
 			header($tranghientai);
@@ -63,10 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 			header($tranghientai);
 		}   
     }
-else
-{
-    header($tranghientai);
+    else
+    {
+        header($tranghientai);
 
-}
-    $_SESSION["loi"]= $error['fileUpload'];
+    }
 ?>
