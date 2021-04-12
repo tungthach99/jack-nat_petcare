@@ -83,6 +83,7 @@
                                 <td>
                                     <form action="index.php?page=ordered&id=<?php echo $row['id_don_hang']; ?>" method="POST">
                                         <div class="input-group">
+<<<<<<< Updated upstream
 
                                             <select class="form-control" name="<?php echo $row['id_don_hang']; ?>" id="">
                                                 <option value="1" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 1) { ?> selected="selected"  <?php } ?> >Đã Tiếp Nhận</option>
@@ -94,6 +95,17 @@
                                             <span class="input-group-addon">
                                                 <button onclick="return confirm('Bạn có thực sự muốn cập nhật trạng thái đặt này không?');" 
                                                 style="line-height: 0px; padding: 0px;" type="submit" class="" name="submit">Cập nhật</button>
+=======
+                                            <select class="form-control" name="trangThai" id="">
+                                                <option value="1" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 1) { ?> selected="selected"  <?php } ?> >Đã tiếp nhận</option>
+                                                <option value="2" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 2) { ?> selected="selected"  <?php } ?> >Đang giao hàng</option>
+                                                <option value="3" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 3) { ?> selected="selected"  <?php } ?> >Đã giao hàng</option>
+												<option value="4" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 4) { ?> selected="selected"  <?php } ?> >Đã hủy</option>
+                                            </select>
+
+                                            <span class="input-group-addon">
+                                                <button onclick="return confirm('Bạn có thực sự muốn cập nhật trạng thái đặt này không?');" style="line-height: 0px; padding: 0px;" type="submit" name="submit">Cập nhật</button>
+>>>>>>> Stashed changes
                                             </span>
                                         </div>
                                     </form>
@@ -120,9 +132,9 @@
 </div>
 
 <?php  
-    if (isset($_POST['submit'])) {
-        $id = $_GET['id_don_hang'];
-        $status_order = $_POST[$id];
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+        $status_order = $_POST['trangThai'];
         
         $sql_status = "UPDATE tbl_don_hang SET trang_thai = '$status_order' WHERE id_don_hang = $id";
         $query = mysqli_query($conn, $sql_status);
