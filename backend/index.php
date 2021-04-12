@@ -78,7 +78,18 @@
                         <a href="index.php"><i class="fa fa-fw fa-file"></i> Tổng Quan</a>
                     </li>
                     <li>
-                            <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i> Danh Mục <i class="fa fa-fw fa-caret-down"></i></a>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i> Thành viên <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="users" class="collapse">
+                                <li>
+                                    <a href="index.php?page=users">Danh sách</a>
+                                </li>
+                                <li>
+                                    <a href="index.php?page=add-users">Thêm mới</a>
+                                </li>
+                            </ul>
+                        </li>
+                    <li>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#danhmuc"><i class="fa fa-fw fa-arrows-v"></i> Danh Mục <i class="fa fa-fw fa-caret-down"></i></a>
                             <ul id="users" class="collapse">
                                 <li>
                                     <a href="index.php?page=dsdanhmuc">Danh sách</a>
@@ -119,26 +130,17 @@
                             </li>
                         </ul>
                     </li>
-                    <?php  
+                    
+                        <li>
+                            <a href="index.php?page=baocao" data-toggle="collapse" data-target="#baocao"><i class="fa fa-fw fa-arrows-v"></i>Báo cáo <i class="fa fa-fw fa-caret-down"></i></a>
+                        </li>
+                        <li>
+                            <a href="index.php?page=comment" data-toggle="collapse" data-target="#comment"><i class="fa fa-fw fa-arrows-v"></i>Bình Luận <i class="fa fa-fw fa-caret-down"></i></a>
+                        </li>
+                        <?php  
                         if (isset($_SESSION['status']) && $_SESSION['status'] == 1) {
                     ?>
-                        <li>
-                            <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i> Thành viên <i class="fa fa-fw fa-caret-down"></i></a>
-                            <ul id="users" class="collapse">
-                                <li>
-                                    <a href="index.php?page=users">Danh sách</a>
-                                </li>
-                                <li>
-                                    <a href="index.php?page=add-users">Thêm mới</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="index.php?page=baocao" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i>Báo cáo <i class="fa fa-fw fa-caret-down"></i></a>
-                        </li>
-                        <li>
-                            <a href="index.php?page=comment" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i>Bình Luận <i class="fa fa-fw fa-caret-down"></i></a>
-                        </li>
+                        
                         
                     <?php
                         }

@@ -4,7 +4,7 @@
         $key = $_POST['keyw'];
         $sql = "SELECT * FROM tbl_binh_luan_san_pham WHERE noi_dung LIKE '%$key%' ORDER BY id_binh_luan";
     }else{
-        $sql = "SELECT * FROM tbl_binh_luan_san_pham ORDER BY id_binh_luan";
+        $sql = "SELECT * FROM tbl_binh_luan_san_pham A INNER JOIN tbl_khach_hang B ON A.id_khach_hang = B.id_khach_hang ORDER BY id_binh_luan";
     }
     
     $query = mysqli_query($conn, $sql);
@@ -100,7 +100,7 @@
                                     <td><?php echo $row['ten_khach_hang']?></td>
                                     <td><?php echo $row['id_san_pham'];?></td>
                                     <td><?php echo substr($row['noi_dung'],0,80);?></td>
-                                    <td><?php echo $row['ngay_tao']?></td>
+                                    <td><?php echo $row['ngay']?></td>
 									<td>
 										<a onclick="return confirm('Bạn có muốn xóa bài viết này không? ');" href="index.php?page=del-comment&id=<?php echo $row['id_binh_luan']; ?>">
 											<button class="btn btn-danger">Xóa</button>
