@@ -103,14 +103,14 @@
 									<td><?php echo substr($row['ten_san_pham'],0,30); ?></td>
 	        							<td><?php echo $row['don_gia']; ?></td>
 	        							<td><?php echo $row['id_danh_muc']; ?></td>
-									<td><img style="height: 100px " src="../../images/san-pham/<?php echo $row['anh'] ?>" alt=""></td>
+									<td><img src="../images/san-pham/<?php echo $row['anh']; ?>" width="200" alt=""></td>
 									<td><?php echo $row['so_luong']; ?></td>
 	        							<td><?php echo substr($row['mo_ta'],0,50); ?></td>
 									
 									<td><?php echo date('d-m-Y H:m:s', strtotime($row['ngay_them'])); ?></td>
 									<td>
 										<a href="index.php?page=edit-menu&id=<?php echo $row['id_san_pham']; ?>"><button class="btn btn-primary">Sửa</button></a>
-										<a onclick="return confirm('Bạn có muốn xóa sản phẩm này không? ');" href="index.php?page=del-menu&id=<?php echo $row['id_san_pham']; ?>">
+										<a onclick="return confirm('Bạn có muốn xóa san phẩm này không? ');" href="index.php?page=del-menu&id=<?php echo $row['id_san_pham']; ?>">
 											<button class="btn btn-danger">Xóa</button>
 										</a>
 									</td>

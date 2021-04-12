@@ -3,7 +3,7 @@
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
-        $sql = "SELECT *FROM tbl_khach_hang WHERE id_khach_hang = $id";
+        $sql = "SELECT * FROM tbl_khach_hang WHERE id_khach_hang = $id";
         $query = mysqli_query($conn, $sql);
         $row = mysqli_fetch_array($query);
 
@@ -47,26 +47,26 @@
             <form action="" method="POST" enctype="multipart/form-data">
             
                 <div class="form-group">
-                    <label for="title">Tên khách hàng</label>
-                    <input type="text" value="<?php echo $row['ten_khach_hang']; ?>" required="" class="form-control" name="title" id="title" required="">
+                    <label for="name">Tên khách hàng</label>
+                    <input type="text" value="<?php echo $row['ten_khach_hang']; ?>" required="" class="form-control" name="name" id="title" required="">
                 </div>
                 <div class="form-group">
-                    <label for="title">Địa chỉ</label>
-                    <input type="text" value="<?php echo $row['dia_chi']; ?>" required="" class="form-control" name="title" id="title" required="">
+                    <label for="">Địa chỉ</label>
+                    <input type="text" value="<?php echo $row['dia_chi']; ?>" required="" class="form-control" name="diachi"  required="">
                 </div>
                 <div class="form-group">
-                    <label for="title">Số điện thoại</label>
-                    <input type="text" value="<?php echo $row['so_dien_thoai']; ?>" required="" class="form-control" name="title" id="title" required="">
-                </div>
-
-                <div class="form-group">
-                    <label for="title">Email</label>
-                    <input type="text" value="<?php echo $row['email']; ?>" required="" class="form-control" name="title" id="title" required="">
+                    <label for="">Số điện thoại</label>
+                    <input type="text" value="<?php echo $row['so_dien_thoai']; ?>" required="" class="form-control" name="phone"  required="">
                 </div>
 
                 <div class="form-group">
-                    <label for="title">Mật khẩu</label>
-                    <input type="text" value="<?php echo $row['mat_khau']; ?>" required="" class="form-control" name="title" id="title" required="">
+                    <label for="">Email</label>
+                    <input type="text" value="<?php echo $row['email']; ?>" required="" class="form-control" name="email"  required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Mật khẩu</label>
+                    <input type="text" value="<?php echo $row['mat_khau']; ?>" required="" class="form-control" name="passw"  required="">
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Câp nhật</button>
             </form>

@@ -75,26 +75,19 @@
                                 <td><?php echo $row['email']; ?></td>
                                 <td><?php echo date('d-m-Y', strtotime($row['ngay_dat'])); ?></td>
                                	<td><?php echo $row['tong_tien']; ?></td>
-				<td><?php echo $row['ma_giam_gia']; ?></td>
-				<td><?php echo $row['dia_chi_nhan_hang']; ?></td>
-				<td><?php echo $row['hinh_thuc_mua_hang']; ?></td>
-	        		<td><?php echo $row['ghi_chu']; ?></td>
- 
+                                <td><?php echo $row['ma_giam_gia']; ?></td>
+                                <td><?php echo $row['dia_chi_nhan_hang']; ?></td>
+                                <td><?php echo $row['hinh_thuc_mua_hang']; ?></td>
+                                <td><?php echo $row['ghi_chu']; ?></td>
+                
                                 <td>
-                                    <?php  
-                                        // if ($row['trang_thai'] == 1) {
-                                        //     echo "<p style='color: red;'>Đã thanh toán</p>";
-
-                                        // }else{
-                                        //     echo "<p style='color: red;'>Chưa thanh toán </p>";
-                                        // }
-                                    ?>
                                     <form action="index.php?page=ordered&id=<?php echo $row['id_don_hang']; ?>" method="POST">
                                         <div class="input-group">
 
-                                            <select class="form-control" name="<?php echo $row['id_don_hang']; ?>" id="">
-                                                <option value="1" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 1) { ?> selected="selected"  <?php } ?> >Đã thanh toán</option>
-                                                <option value="0" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 0) { ?> selected="selected"  <?php } ?> >Chưa thanh toán</option>
+                                            <select class="form-control" name="<?php echo $row['id']; ?>" id="">
+                                                <option value="1" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 1) { ?> selected="selected"  <?php } ?> >Xác nhận đặt hàng</option>
+                                                <option value="2" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 2) { ?> selected="selected"  <?php } ?> >Đã xác nhận</option>
+                                                <option value="0" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 0) { ?> selected="selected"  <?php } ?> >Hủy đặt hàng</option>
                                             </select>
 
                                             <span class="input-group-addon">

@@ -89,7 +89,7 @@
                             </ul>
                         </li>
                     <li>
-                        <a href="index.php?page=ordered"><i class="fa fa-fw fa-arrows-v"></i> Đơn đặt hàng</a>
+                        <a href="index.php?page=ordered"><i class="fa fa-fw fa-arrows-v"></i> Đơn hàng</a>
                     </li>
                 
                     <li>
