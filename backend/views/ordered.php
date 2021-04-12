@@ -84,14 +84,16 @@
                                     <form action="index.php?page=ordered&id=<?php echo $row['id_don_hang']; ?>" method="POST">
                                         <div class="input-group">
 
-                                            <select class="form-control" name="<?php echo $row['id']; ?>" id="">
-                                                <option value="1" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 1) { ?> selected="selected"  <?php } ?> >Xác nhận đặt hàng</option>
-                                                <option value="2" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 2) { ?> selected="selected"  <?php } ?> >Đã xác nhận</option>
-                                                <option value="0" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 0) { ?> selected="selected"  <?php } ?> >Hủy đặt hàng</option>
+                                            <select class="form-control" name="<?php echo $row['id_don_hang']; ?>" id="">
+                                                <option value="1" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 1) { ?> selected="selected"  <?php } ?> >Đã Tiếp Nhận</option>
+                                                <option value="2" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 2) { ?> selected="selected"  <?php } ?> >Đang giao hàng</option>
+                                                <option value="3" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 0) { ?> selected="selected"  <?php } ?> >Đã giao hàng</option>
+                                                <option value="4" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 0) { ?> selected="selected"  <?php } ?> >Đã Huỷ</option>
                                             </select>
 
                                             <span class="input-group-addon">
-                                                <button onclick="return confirm('Bạn có thực sự muốn cập nhật trạng thái đặt này không?');" style="line-height: 0px; padding: 0px;" type="submit" class="" name="submit">Cập nhật</button>
+                                                <button onclick="return confirm('Bạn có thực sự muốn cập nhật trạng thái đặt này không?');" 
+                                                style="line-height: 0px; padding: 0px;" type="submit" class="" name="submit">Cập nhật</button>
                                             </span>
                                         </div>
                                     </form>
