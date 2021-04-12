@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 12, 2021 lúc 08:28 AM
+-- Thời gian đã tạo: Th4 12, 2021 lúc 11:55 AM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -38,7 +38,7 @@ CREATE TABLE `tag` (
 --
 
 INSERT INTO `tag` (`id_tag`, `ten_tag`, `luot_xem`) VALUES
-(1, 'chuồng', 11),
+(1, 'chuồng', 19),
 (2, 'pate', 0),
 (3, 'test', 0);
 
@@ -80,6 +80,16 @@ CREATE TABLE `tbl_binh_luan_san_pham` (
   `noi_dung` mediumtext COLLATE utf8_unicode_ci NOT NULL,
   `ngay` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_binh_luan_san_pham`
+--
+
+INSERT INTO `tbl_binh_luan_san_pham` (`id_binh_luan`, `id_khach_hang`, `id_san_pham`, `noi_dung`, `ngay`) VALUES
+(13, 5, 55, 'abc', '2021-04-12 07:09:57'),
+(14, 5, 55, 'abc', '2021-04-12 07:11:32'),
+(15, 5, 55, 'abc', '2021-04-12 07:11:32'),
+(16, 5, 55, 'a', '2021-04-12 07:11:53');
 
 -- --------------------------------------------------------
 
@@ -179,7 +189,7 @@ CREATE TABLE `tbl_dich_vu` (
 
 INSERT INTO `tbl_dich_vu` (`id_dich_vu`, `ten_dich_vu`, `don_gia_dv`, `anh_dv`, `mo_ta_dv`, `id_anh_dv`, `id_danh_muc`, `ngay_them_dv`, `tag`) VALUES
 (1, 'Cắt tỉa lông chó mèo', '250000', '2003_cat-tia-long-cho-bang-tong-do-cat-long-cho-meo-768x521.jpg', 'Bạn đang tìm kiếm địa chỉ cung cấp dịch vụ cắt tỉa lông chó mèo (pet grooming) chuyên nghiệp tại Hà Nội? Tại Jack&Nat pet care , chúng tôi cung cấp đầy đủ tất cả các loại hình dịch vụ chăm sóc và làm đẹp trọn gói tốt nhất dành cho thú cưng.\r\n\r\nCắt lông cho chó mèo là một vấn đề rất quan trọng. Việc đó đảm bảo cho sự phát triển về sức khỏe, thể chất và tinh thần cho thú cưng của bạn. Những thú cưng không được chăm sóc, cắt tỉa và làm đẹp thường có nguy cơ gặp phải bọ chét, ve rận, ký sinh trùng và các vấn đề về viêm da khác. Việc sử dụng dịch vụ cắt tỉa lông chó mèo tại Pet Mart  định kỳ và thường xuyên sẽ đem lại nhiều lợi ích thiết thực cho vật nuôi của bạn. Hãy lập kế hoạch đưa thú cưng của bạn đến với chúng tôi mỗi tuần.\r\nTại sao nên cắt tỉa lông cho chó mèo tại Jack&Nat?\r\nVới đội ngũ nhân viên  được đào tạo về dịch vụ cắt tỉa lông chó mèo chuyên nghiệp và được tham gia nhiều khóa đào tạo chăm sóc thú cưng tại nước ngoài. Với gần 10 năm kinh nghiệm, chúng tôi có thể đáp ứng được hầu hết nhu cầu làm đẹp của các giống vật nuôi.\r\n\r\nChúng tôi hiểu rằng thú cưng của mỗi khách hàng đều có nhu cầu chăm sóc khác nhau. Và cần có những giải pháp phù hợp với từng giống. Dịch vụ của chúng tôi luôn sử dụng những dòng sản phẩm sữa tắm tốt nhất đảm bảo an toàn cho vật nuôi. Với phương pháp chăm sóc toàn diện kết hợp với những kinh nghiệm, kiến thức chuyên sâu. Jack&Nat sẽ tư vấn, cung cấp những dịch vụ chăm sóc hiệu quả và chuyên nghiệp nhất.\r\nNhững lưu ý khi sử dụng dịch vụ\r\nPet Mart không tiếp nhận vật nuôi có tiểu sử bệnh hen, co giật hoặc các bệnh về thần kinh.\r\n\r\nĐể đảm bảo an toàn cho sức khỏe khi đưa đến làm dịch vụ cắt tỉa lông chó mèo. Không cho thú cưng ăn no và chạy nhảy quá sức trước khi đến cửa hàng. Có kế hoạch che nắng mưa trước khi đến và sau khi về. Nếu thú cưng có những biểu hiện bất thường về sức khỏe xin vui lòng liên hệ tới tổng đài của Pet Mart để được trợ giúp.\r\n\r\nVui lòng kiểm tra kỹ thú cưng khi đến đón thú cưng sau khi làm dịch vụ. Quy trình đảm bảo nhân viên của Pet Mart đã thực hiện đúng yêu cầu và bạn hài lòng với chất lượng dịch vụ.', NULL, 5, '2021-03-22 06:27:32', 1),
-(2, 'Tắm spa cho chó mèo ', '100000', 'dich-vu-spa-tam-thu-cung-chuyen-nghiep.jpg', 'Dịch vụ tắm spa cho chó mèo tại Jack&Nat pet care với các phương pháp chăm sóc toàn diện từ A – Z. Bao gồm: tắm, vắt tuyến hôi, sấy khô, chải lông rối, nhổ lông tai, vệ sinh tai, cắt mài móng chân, cạo lông theo yêu cầu. Tất cả đều với với mong muốn mang tới cho thú cưng của bạn một cuộc sống khỏe mạnh và hạnh phúc nhất.\r\n\r\nVới đội ngũ nhân viên  giàu kinh nghiệm, kiến thức chuyên sâu sẽ tư vấn và cung cấp cho bạn những gói dịch vụ tắm spa cho chó mèo  chất lượng nhất. Những chú cún và mèo cưng sẽ nhanh chóng được tút lại nhan sắc trở lên xinh đẹp và đáng yêu hơn.\r\nTại sao nên spa cho chó mèo thường xuyên?\r\nCòn niềm vui gì hơn khi những người bạn được khoác trên mình bộ lông mềm mượt, thơm tho và sạch sẽ.\r\n\r\nMỗi người bạn nhỏ đều có những thói quen và sở thích khác nhau. Chính vì vậy, Pet Mart luôn có những sự lựa chọn dịch vụ spa cho chó mèo phù hợp nhất với những dòng sản phẩm sữa tắm trị liệu đảm bảo an toàn cho sức khỏe của thú cưng.\r\n\r\nVới tình yêu thương với thú cưng vô bờ bến, chúng tôi chắc chắn sẽ mang tới cho thú cưng và khách hàng  những trải nghiệm tuyệt vời nhất tại Jack & Nat pet care\r\nNhững lưu ý khi sử dụng dịch vụ\r\nJack & Nat không tiếp nhận vật nuôi có tiểu sử bệnh hen, co giật hoặc các bệnh về thần kinh. \r\n\r\nĐể đảm bảo chất lượng dịch vụ đạt kết quả tốt nhất. Không cho thú cưng ăn no hoặc hoạt động quá sức trước khi đến cửa hàng. Nên sử dụng túi xách hoặc lồng vận chuyển. Nếu thú cưng có những biểu hiện bất thường về sức khỏe xin vui lòng liên hệ tới tổng đài của Pet Mart để được trợ giúp.\r\n\r\nKhi đến đón thú cưng, quý khách vui lòng kiểm tra kỹ trước khi ra về, để đảm bảo nhân viên của Pet Mart đã thực hiện đúng yêu cầu dịch vụ.', NULL, 6, '2021-03-22 06:27:32', 1),
+(2, 'Tắm spa cho chó mèo ', '100000', 'dich-vu-spa-tam-thu-cung-chuyen-nghiep.jpg', 'Dịch vụ tắm spa cho chó mèo tại Jack&Nat pet care với các phương pháp chăm sóc toàn diện từ A – Z. Bao gồm: tắm, vắt tuyến hôi, sấy khô, chải lông rối, nhổ lông tai, vệ sinh tai, cắt mài móng chân, cạo lông theo yêu cầu. Tất cả đều với với mong muốn mang tới cho thú cưng của bạn một cuộc sống khỏe mạnh và hạnh phúc nhất.\r\n\r\nVới đội ngũ nhân viên  giàu kinh nghiệm, kiến thức chuyên sâu sẽ tư vấn và cung cấp cho bạn những gói dịch vụ tắm spa cho chó mèo  chất lượng nhất. Những chú cún và mèo cưng sẽ nhanh chóng được tút lại nhan sắc trở lên xinh đẹp và đáng yêu hơn.\r\nTại sao nên spa cho chó mèo thường xuyên?\r\nCòn niềm vui gì hơn khi những người bạn được khoác trên mình bộ lông mềm mượt, thơm tho và sạch sẽ.\r\n\r\nMỗi người bạn nhỏ đều có những thói quen và sở thích khác nhau. Chính vì vậy, Pet Mart luôn có những sự lựa chọn dịch vụ spa cho chó mèo phù hợp nhất với những dòng sản phẩm sữa tắm trị liệu đảm bảo an toàn cho sức khỏe của thú cưng.\r\n\r\nVới tình yêu thương với thú cưng vô bờ bến, chúng tôi chắc chắn sẽ mang tới cho thú cưng và khách hàng  những trải nghiệm tuyệt vời nhất tại Jack & Nat pet care\r\nNhững lưu ý khi sử dụng dịch vụ\r\nJack & Nat không tiếp nhận vật nuôi có tiểu sử bệnh hen, co giật hoặc các bệnh về thần kinh. \r\n\r\nĐể đảm bảo chất lượng dịch vụ đạt kết quả tốt nhất. Không cho thú cưng ăn no hoặc hoạt động quá sức trước khi đến cửa hàng. Nên sử dụng túi xách hoặc lồng vận chuyển. Nếu thú cưng có những biểu hiện bất thường về sức khỏe xin vui lòng liên hệ tới tổng đài của Pet Mart để được trợ giúp.\r\n\r\nKhi đến đón thú cưng, quý khách vui lòng kiểm tra kỹ trước khi ra về, để đảm bảo nhân viên của Pet Mart đã thực hiện đúng yêu cầu dịch vụ.', NULL, 6, '2021-03-23 06:27:32', 1),
 (3, 'Khách sạn chó mèo', '150000', '19b9ac92bb4f4a11135e.jpg', 'Dịch vụ trông giữ chó mèo Jack & Nat pet care  tự hào là một trong những khách sạn 5⭐️ chăm sóc thú cưng chuyên nghiệp đầu tiên tại Việt Nam với mô hình hiện đại. Khách sạn chó mèo  Pet Mart luôn đảm bảo điều kiện ánh sáng và vệ sinh theo tiêu chuẩn chất lượng. Tất cả các khu vực đều được giám sát bởi hệ thống camera 24/7 đảm bảo quá trình vận hành an toàn tối đa.\r\n\r\nTại Jack & Nat, chúng tôi mong muốn cung cấp môi trường sạch sẽ, an toàn và thoải mái cho thú cưng. Chính vì vậy thiết kế phòng nghỉ cho chó mèo cũng luôn được chúng tôi chú trọng và nâng cấp thường xuyên.', NULL, 4, '2021-03-22 06:27:32', 1);
 
 -- --------------------------------------------------------
@@ -441,6 +451,24 @@ CREATE TABLE `tbl_yeu_thich` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Đang đổ dữ liệu cho bảng `tbl_yeu_thich`
+--
+
+INSERT INTO `tbl_yeu_thich` (`id_khach_hang`, `id_san_pham`) VALUES
+(5, 55);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `tbl_yeu_thich_dich_vu`
+--
+
+CREATE TABLE `tbl_yeu_thich_dich_vu` (
+  `id_khach_hang` int(11) NOT NULL,
+  `id_dich_vu` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
 -- Chỉ mục cho các bảng đã đổ
 --
 
@@ -563,7 +591,7 @@ ALTER TABLE `tbl_binh_luan_dich_vu`
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan_san_pham`
 --
 ALTER TABLE `tbl_binh_luan_san_pham`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_danh_muc`
