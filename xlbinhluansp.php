@@ -8,11 +8,11 @@ session_start();
 	$noidung=$_POST['noi_dung'];
 	$idkhachhang=$_SESSION['id-user'];
 	$idsanpham=$_POST['ma_san_pham'];
-	$tranghientai="location:menu.php?product=1&masanpham=".$idsanpham;
+	$tranghientai="location:menu.php?masanpham=".$idsanpham;
 	if ($noidung != "" && $idkhachhang != "")
 	{
 		$sql_insert="insert into tbl_binh_luan_san_pham(id_khach_hang,id_san_pham,noi_dung) values('".$idkhachhang."','".$idsanpham."','".$noidung."')";
-		if($con->query($sql_insert)===TRUE && $con->query($sql_insert1)===TRUE)
+		if($con->query($sql_insert)===TRUE)
 		{	
 			header($tranghientai);
 		}
