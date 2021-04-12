@@ -29,8 +29,9 @@
 			</div>
 			<div class="row special-list">
 			<?php
-					$sql="SELECT *
-								FROM tbl_dich_vu ";
+					$sql="SELECT * FROM tbl_dich_vu ";
+					if(isset($_GET['t'])) $sql.= " WHERE tbl_dich_vu.ten_dich_vu Like '%".$_GET['t']."%'";
+					if(isset($_GET['tag']) and !isset($_GET['tensanpham'])) $sql.= " WHERE tbl_dich_vu.tag = '".$_GET['tag']."'";
                     $result=$con->query($sql);
                     if($result->num_rows>0)
 						{

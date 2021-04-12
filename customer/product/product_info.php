@@ -40,8 +40,9 @@
 			<div class="row special-list">
 			<?php
 					$sql="Select *, IF(tbl_khuyen_mai.muc_khuyen_mai != 0, tbl_san_pham.don_gia*(1 - tbl_khuyen_mai.muc_khuyen_mai/100), tbl_san_pham.don_gia) AS 
-					gia_moi, tbl_san_pham.id_san_pham AS id_san_pham from tbl_san_pham LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham
-					WHERE tbl_san_pham.id_danh_muc != 10";
+					gia_moi, tbl_san_pham.id_san_pham AS id_san_pham from tbl_san_pham LEFT JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham";
+					if(isset($_GET['tensanpham'])) $sql.= " WHERE tbl_san_pham.ten_san_pham Like '%".$_GET['tensanpham']."%'";
+					if(isset($_GET['tag']) and !isset($_GET['tensanpham'])) $sql.= " WHERE tbl_san_pham.tag = '".$_GET['tag']."'";
                     $result=$con->query($sql);
                     if($result->num_rows>0)
 						{
@@ -57,7 +58,7 @@
 										<h4><?php  echo $row['ten_san_pham'] ?></h4>
 										<p></p>
 										<h5><?php echo number_format($row['don_gia']) ?>  VND</h5>
-										<a href="menu.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><button class="nutChiTiet">Chi tiết</button></a>
+										<a href="menu.php?masanpham=<?php echo $row['id_san_pham']?>"><button class="nutChiTiet">Chi tiết</button></a>
 									</div>
 								</div>
 							</div>

@@ -2,6 +2,15 @@
 $sql="select * from tbl_dich_vu where tbl_dich_vu.id_dich_vu='".$_GET['m']."'";
 $result=$con->query($sql);
 $row=$result->fetch_assoc();
+// tăng lượt xem theo tag
+$sqlTag="select id_tag, luot_xem from tag where id_tag = '".$row['tag']."'";
+$resultTag=$con->query($sqlTag);
+$rowTag=$resultTag->fetch_assoc();
+$luotXem = $rowTag['luot_xem']+1;
+$sqlUpdateTag = "UPDATE tag SET luot_xem = '".$luotXem."' WHERE id_tag = '".$rowTag['id_tag']."'";
+$resultUpdateTag=$con->query($sqlUpdateTag);
+
+//tăng lượt xem theo tag: end.
 	?>
     <!-- Start All Pages -->
 	<div class="all-page-title page-breadcrumb">

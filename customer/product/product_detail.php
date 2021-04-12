@@ -2,6 +2,15 @@
 $sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia_moi from tbl_san_pham LEFT OUTER JOIN tbl_khuyen_mai ON tbl_khuyen_mai.id_san_pham = tbl_san_pham.id_san_pham where tbl_san_pham.id_san_pham='".$_GET['masanpham']."'";
 $result=$con->query($sql);
 $row=$result->fetch_assoc();
+// tăng lượt xem theo tag
+$sqlTag="select id_tag, luot_xem from tag where id_tag = '".$row['tag']."'";
+$resultTag=$con->query($sqlTag);
+$rowTag=$resultTag->fetch_assoc();
+$luotXem = $rowTag['luot_xem']+1;
+$sqlUpdateTag = "UPDATE tag SET luot_xem = '".$luotXem."' WHERE id_tag = '".$rowTag['id_tag']."'";
+$resultUpdateTag=$con->query($sqlUpdateTag);
+
+//tăng lượt xem theo tag: end.
 	?>
     <!-- Start All Pages -->
 	<div class="all-page-title page-breadcrumb">
@@ -33,7 +42,7 @@ $row=$result->fetch_assoc();
               </div>
 
               <div class="content">
-                <p><?php echo $row['ten_san_pham']?></p>
+                <p><?php echo $row['ten_san_pham'];?></p>
               </div>
             </div>
 

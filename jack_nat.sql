@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 11, 2021 lúc 04:02 PM
+-- Thời gian đã tạo: Th4 12, 2021 lúc 06:19 AM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -38,8 +38,9 @@ CREATE TABLE `tag` (
 --
 
 INSERT INTO `tag` (`id_tag`, `ten_tag`, `luot_xem`) VALUES
-(1, 'chuồng', 0),
-(2, 'pate', 0);
+(1, 'chuồng', 8),
+(2, 'pate', 0),
+(3, 'test', 0);
 
 -- --------------------------------------------------------
 
@@ -102,10 +103,7 @@ CREATE TABLE `tbl_chi_tiet_don_dich_vu` (
 --
 
 INSERT INTO `tbl_chi_tiet_don_dich_vu` (`id_don_dich_vu`, `id_dich_vu`, `so_luong_thu_cung`, `don_gia`, `thanh_tien`, `ghi_chu`, `thoi_gian_bat_dau`, `thoi_gian_ket_thuc`) VALUES
-(1, 2, 1, 100000, 100000, '', '2021-04-11 12:31:00', '2021-04-12 09:31:00'),
-(2, 2, 1, 100000, 100000, '', '2021-04-11 12:31:00', '2021-04-12 09:31:00'),
-(3, 2, 1, 100000, 100000, '', '2021-04-11 13:31:00', '2021-04-18 13:31:00'),
-(4, 2, 1, 100000, 100000, '', '2021-04-18 13:47:00', '2021-04-17 13:47:00');
+(1, 2, 50, 100000, 5000000, '', '2021-04-11 17:33:00', '2021-04-29 17:33:00');
 
 -- --------------------------------------------------------
 
@@ -128,7 +126,10 @@ CREATE TABLE `tbl_chi_tiet_don_hang` (
 INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `so_luong`, `thanh_tien`) VALUES
 (3, 55, 170000, 2, 340000),
 (4, 55, 170000, 3, 510000),
-(4, 55, 170000, 2, 340000);
+(4, 55, 170000, 2, 340000),
+(7, 55, 170000, 1, 170000),
+(8, 55, 170000, 1, 170000),
+(9, 55, 170000, 1, 170000);
 
 -- --------------------------------------------------------
 
@@ -206,10 +207,7 @@ CREATE TABLE `tbl_don_dich_vu` (
 --
 
 INSERT INTO `tbl_don_dich_vu` (`id_don_hang`, `id_khach_hang`, `phu_thu`, `tong_tien`, `ten_khach_hang`, `dia_chi`, `so_dien_thoai`, `trang_thai`, `hinh_thuc_mua_hang`, `ghi_chu`, `email`, `ngay_dat`) VALUES
-(1, -1, 0, 100000, 'test', '12 Chùa Bộc', 1, 1, 'COD', '', 'test@gmail.com', '2021-04-11 12:36:02'),
-(2, -1, 0, 100000, 'test', '12 Chùa Bộc', 1, 1, 'COD', '', 'test@gmail.com', '2021-04-11 12:38:23'),
-(3, -1, 0, 100000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 357756343, 1, 'COD', '', 'hiimtung123@gmail.com', '2021-04-11 13:34:57'),
-(4, -1, 0, 100000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 1, 1, 'COD', '', 'hiimtung123@gmail.com', '2021-04-11 13:47:46');
+(1, -1, 0, 5000000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 1, 1, 'COD', '', 'hiimtung123@gmail.com', '2021-04-11 17:33:28');
 
 -- --------------------------------------------------------
 
@@ -239,7 +237,10 @@ CREATE TABLE `tbl_don_hang` (
 
 INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_chuyen`, `ma_giam_gia`, `tong_tien`, `trang_thai`, `ten_khach_hang`, `dia_chi_nhan_hang`, `hinh_thuc_mua_hang`, `ghi_chu`, `dien_thoai`, `ngay_dat`) VALUES
 (3, -1, 'hiimtung123@gmail.com', NULL, '', 340000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 13:45:49'),
-(4, -1, 'hiimtung123@gmail.com', NULL, '', 850000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 13:47:46');
+(4, -1, 'hiimtung123@gmail.com', NULL, '', 850000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 13:47:46'),
+(7, -1, 'hiimtung123@gmail.com', NULL, '', 170000, 1, '1', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 17:42:43'),
+(8, -1, 'hiimtung123@gmail.com', NULL, '', 170000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 17:49:10'),
+(9, -1, 'hiimtung123@gmail.com', NULL, '', 170000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-12 03:25:14');
 
 -- --------------------------------------------------------
 
@@ -355,7 +356,7 @@ INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_m
 (33, 'Thức ăn ướt Me-o Delite vị cá ngừ và thịt gà xé 70gr', 20000, '1', NULL, 'Nguyên Liệu Chính: Cá ngừ tươi, thịt gà xé, chất tạo đông, chất điều vị, taurin, các vitamin và khoáng chất.\r\n\r\nThành phần dinh dưỡng \r\n\r\nChất đạm : 8%\r\n\r\nChất béo : 0.3% \r\n\r\nChất xơ : 1%\r\n\r\nĐộ ẩm : 90%\r\n\r\nĐiểm nổi bật \r\n\r\nĐược làm từ cá thật\r\nTaurine: Tăng cường hệ miễn dịch và thị giác.\r\nBiotin/ Zinc: Giúp làn da và bộ long khỏe mạnh.\r\nVitamin C: Giúp tăng cường hệ miễn dịch.\r\nBảo quản: Nơi khô ráo thoáng mát', '', 100, '2021-03-22 04:56:56', 1),
 (34, 'Thức ăn cho mèo vị cá hồi và thịt vịt ANF Organic 6Free Skin Care Salmon & Duck', 290000, '1', 'thuc-an-cho-meo-vi-ca-hoi-va-thit-vit-anf-organic-6free-skin-care-salmon-duck-400x400.jpg', 'Thức ăn cho mèo  vị cá hồi và thịt vịt ANF  Organic 6Free Skin Care Salmon & Duck là thức ăn nhập khẩu từ Hàn Quốc dành riêng cho mèo có da nhạy cảm. Hàm lượng đạm cá hồi thủy phân giúp tăng tỷ lệ hấp thụ tiêu hóa và giảm nguy cơ dị ứng.\r\n\r\nThức ăn cho mèo vị cá hồi và thịt vịt ANF Organic 6Free Skin Care Salmon & Duck với 6 không: không gây đột biến gen, không chứa thuốc kháng sinh, không chứa thuốc trừ sâu, không chứa hóc môn, không chứa màu nhân tạo, không chứa chất bảo quản hóa học.\r\n\r\nLợi ích chính\r\nThức ăn cho mèo vị cá hồi và thịt vịt ANF Organic 6Free Skin Care Salmon & Duck dành cho các độ tuổi của mèo. Là dòng sản phẩm chuyên về da và lông của mèo. Với hương vị cá hồi chắc chắn sẽ làm người bạn bốn chân của bạn thích thú. Hoàn toàn phù hợp với những chú mèo có làn da nhạy cảm. Thức ăn cho mèo ANF Nature 6Free Skin care Salmon & Duck từ cá hồi chứa nhiều Omega 3 chống lão hóa ở thú cưng. Các thành phần từ thịt vị nhiều protein và vitamin thiết yêu bổ sung khoáng tăng cường sức khỏe. Không gây kích ứng da thú cưng. Giúp thú cưng tiêu hóa tốt, lợi tiểu.\r\n\r\nThức ăn cho mèo ANF Skin Care bao gồm hàm lượng yến mạch và đạm cá hồi phong phú. Giúp duy trì làn da khỏe mạnh và bộ lông mềm mượt cho mèo. L-Lysine hỗ trợ duy trì hệ miễn dịch. Hình thành protein thiết yếu và tăng cường hấp thu canxi. Thành phần thảo dược thiên nhiên hỗ trợ duy trì hệ miễn dịch khỏe mạnh và hình thành các lợi khuẩn bên trong đường ruột. Lông vón cục được đào thảo trong ruột mèo. Việt quất hỗ trợ đường tiết niệu khỏe mạnh.\r\n\r\nThành phần dinh dưỡng\r\nThức ăn cho mèo vị cá hồi và thịt vịt ANF Organic 6Free Skin Care Salmon & Duck được làm từ đạm động vật, gạo hữu cơ, đạm thực vật, dầu tinh luyện, gạo lứt hữu cơ, yến mạch hữu cơ, củ cải đường, hạt hướng dương, hạt lanh hữu cơ. Lúa mạch hữu cơ, hạt vừng, hạt lanh, kiều mạch, khoai lang hữu cơ. L – lysine, cà rốt, khoai lang, bó đỏ, cà rốt, dầu cá hồi. Vitamin tổng hợp A, D3, E, K3, B1, B2, B5… Axit, các khoáng chất tổng hợp sắt, đồng, kẽm, mangan, taurine, thảo dược…', '', 150, '2021-03-22 04:59:09', 1),
 (35, 'Thức ăn cho mèo Anh lông ngắn CATIDEA British ShorthairBritish Shorthair', 565000, '1', 'thuc-an-cho-meo-anh-long-ngan-catidea-british-shorthair-400x400.jpg', 'Thức ăn cho mèo  Anh lông ngắn CATIDEA  British ShorthairBritish Shorthair là thức ăn dành riêng cho giống mèo anh lông ngắn mới cai sữa và mèo trưởng thành. Thức ăn có các thành phần kích thích mèo phát triển nhanh, khỏe mạnh, đạt tiêu chuẩn. Thành phần hoàn toàn tự nhiên giúp cung cấp dinh dưỡng cân đối cho mèo Anh lông ngắn.\r\n\r\nLợi ích chính\r\nThức ăn cho mèo Anh lông ngắn CATIDEA British ShorthairBritish Shorthair cung cấp cho mèo cưng đầy đủ các chất dinh dưỡng cần thiết. Chăm sóc lông mềm mượt, khỏe mạnh, ngăn giảm lông tối đa, giảm tỷ lệ búi lông. Hỗ trợ tiêu hóa và thúc đấy quá trình phát triển của mèo cưng ổn định.\r\n\r\nThành phần dinh dưỡng\r\nTThức ăn cho mèo Anh lông ngắn CATIDEA British ShorthairBritish Shorthair được làm từ các thành phần dinh dưỡng sau:\r\n\r\n89% từ thịt: thịt bò, xương bò, thịt các loại, hơn 40 loại cá.\r\nRau quả: khoai tây, khoai mỡ, rau, bí ngô, việt quất, bông cải xanh, cà rốt, rau chân vịt.\r\nPhụ gia: men bia, mỡ gà, dầu cá…\r\nCấu tạo hạt thức ăn giúp kéo dài thời gian nhai thức ăn. Giúp rèn luyện cơ hàm, bảo vệ sức khỏe răng miệng cho mèo. Sản phẩm hoàn toàn không chứa phẩm màu, phụ gia độc hại, chất bảo quản thực phẩm.', '', 60, '2021-03-22 04:59:09', 1),
-(40, 'Xương cho chó gặm vị sữa và thịt bò BUDGE Bone Shape Dental Stick Milk and Beef Flavor', 35000, '11', 'xuong-cho-cho-gam-vi-sua-va-thit-bo-budge-bone-shape-dental-stick-milk-and-beef-flavor-400x400.jpg', 'Xương cho chó gặm vị sữa và thịt bò BUDGE  Bone Shape Dental Stick Milk and Beef Flavor là thức ăn dinh dưỡng dành riêng cho các giống chó.\r\nLợi ích chính\r\nXương cho chó gặm vị sữa và thịt bò BUDGE Bone Shape Dental Stick Milk and Beef Flavor bổ sung chất dinh dưỡng cực tốt cho thú cưng\r\nSản phẩm xương gặm giúp loại bỏ 99% những mảng bám răng cứng đầu, làm giảm mùi hôi miệng.\r\nThúc đẩy hệ tiêu hóa và tránh được những bệnh về đường ruột.\r\nBổ sung Canxi giúp xương và răng luôn chắc khỏe. Kích thích hoạt động nhai của cún cưng.\r\nThành phần dinh dưỡng\r\nXương cho chó gặm vị sữa và thịt bò BUDGE Bone Shape Dental Stick Milk and Beef Flavor với các thành phần như sữa và thịt bò, thịt động vật. Dẫn xuất thực vật, dầu thực vật, ngũ cốc, rau, khoáng chất và Vitamin A, B, E… Hương vị tự nhiên, tạo màu, chất bảo quản đảm bảo an toàn vệ sinh thực phẩm.', '', 100, '2021-03-07 08:09:22', 0),
+(40, 'Xương cho chó gặm vị sữa và thịt bò BUDGE Bone Shape Dental Stick Milk and Beef Flavor', 35000, '11', 'xuong-cho-cho-gam-vi-sua-va-thit-bo-budge-bone-shape-dental-stick-milk-and-beef-flavor-400x400.jpg', 'Xương cho chó gặm vị sữa và thịt bò BUDGE  Bone Shape Dental Stick Milk and Beef Flavor là thức ăn dinh dưỡng dành riêng cho các giống chó.\r\nLợi ích chính\r\nXương cho chó gặm vị sữa và thịt bò BUDGE Bone Shape Dental Stick Milk and Beef Flavor bổ sung chất dinh dưỡng cực tốt cho thú cưng\r\nSản phẩm xương gặm giúp loại bỏ 99% những mảng bám răng cứng đầu, làm giảm mùi hôi miệng.\r\nThúc đẩy hệ tiêu hóa và tránh được những bệnh về đường ruột.\r\nBổ sung Canxi giúp xương và răng luôn chắc khỏe. Kích thích hoạt động nhai của cún cưng.\r\nThành phần dinh dưỡng\r\nXương cho chó gặm vị sữa và thịt bò BUDGE Bone Shape Dental Stick Milk and Beef Flavor với các thành phần như sữa và thịt bò, thịt động vật. Dẫn xuất thực vật, dầu thực vật, ngũ cốc, rau, khoáng chất và Vitamin A, B, E… Hương vị tự nhiên, tạo màu, chất bảo quản đảm bảo an toàn vệ sinh thực phẩm.', '', 100, '2021-03-07 08:09:22', 3),
 (55, 'Thức ăn cho chó con ROYAL CANIN Medium Puppy', 170000, '11', 'thuc-an-cho-cho-con-royal-canin-medium-puppy-1kg-400x400.jpg', 'Thức ăn cho chó ROYAL CANIN  Medium Puppy dành cho chó con dưới 12 tháng tuổi.\r\n\r\nLợi ích chung\r\nThức ăn cho chó ROYAL CANIN Medium Puppy với công thức đặc chế riêng cho nhu cầu dinh dưỡng của chó con. Sản phẩm được nghiên cứu để cung cấp dinh dưỡng theo nhu cầu thực tế của chó con. Duy trì sức đề kháng cho chó con: chất chống oxy hóa CELT, công thức dinh dưỡng phù hợp. Hỗ trợ hệ tiêu hóa hoạt động ổn định: L.I.P, đường FOS. Cung cấp dinh dưỡng toàn diện cho chó: chế biến theo công thức cung cấp năng lượng cao\r\n\r\nThức ăn cho chó ROYAL CANIN Puppy có dạng viên hình tam giác phù hợp với cấu tạo răng của chó, giảm nguy cơ hình thành mảng bám răng ở chó. Kích thước hạt phù hợp cỡ răng, thông qua việc cọ xát vào răng giúp bảo vệ răng miệng cho chó.\r\n\r\nDuy trì hệ tiêu hóa khỏe mạnh. Men tiêu hóa L.I.P hỗ trợ chó hấp thu chất dinh dưỡng, cân bằng hệ vi sinh đường ruột, giảm bớt lượng phân và mùi nhẹ hơn. Đường tự nhiên FOS: cân bằng hệ vi sinh đường ruột. Gia tăng số lượng lợi khuẩn, bảo vệ đường ruột khỏi vi khuẩn có hại.\r\n\r\nThành phần dinh dưỡng\r\nBột phụ phẩm gà, mỡ gà, gạo ủ, ngô, lúa mì, bột ngô, bột củ cải khô, gluten lúa mì, hương vị tự nhiên, bột gạo, dầu cá, Photphat Monocalcium, dầu thực vật, Natri Silico Aluminate, Kali Clorua, muối, Fructooligosacarit, men thủy phân (nguồn Betaglucans), Yucca schidigera. Chiết xuất, DL-methionine, Vitamin [DL-alpha tocopherol acetate (nguồn Vitamin E), L-ascorbyl-2-polyphosphate (nguồn Vitamin C), Biotin, D-Canxi Pantothenate, Vitamin A Acetate, bổ sung Niacin, Pyridoxine (vitamin B6), Thiamine Mononitrate (Vitamin B1), bổ sung Vitamin B12, bổ sung Riboflavin, bổ sung Vitamin D3, Axit folic], Taurine, Monosodium Phosphate, Choline Clorua, khoáng chất vi lượng [kẽm Proteinate, kẽm oxit, Mangan Protein, Sulfate, Mangan Oxit Mangan, đồng Sunfat, Canxi Iodate, Natri Selenite, đồng Proteinate], L-lysine, chiết xuất cúc vạn thọ ( Tagetes erecta L.), Carotene, chiết xuất hương thảo, được bảo quản bằng hỗn hợp Tocopherols và Axit Citric.\r\n\r\nHướng dẫn cho ăn\r\nTạo thói quen ăn uống cho chó. Dựa theo tuổi của chó, cần cho ăn một ngày 3 lần vào các giờ cố định. Cho ăn tại một chỗ để tạo thói quen tốt cho chó. Nên cho chó ăn thức ăn chế biến riêng, không cho ăn thức ăn thừa của người. Vì thức ăn của người có nhiều thành phần khiến chó bị rối loạn tiêu hóa, dễ bị bệnh béo phì. Bảo đảm cung cấp đủ nước uống cho chó. Nếu thấy nước bị chó làm bẩn, cần thay nước mới ngay lập tức.\r\n\r\nKhi muốn đổi thức ăn mới cho chó, có thể trộn lẫn thức ăn cũ và mới khi cho ăn. Tăng dần tỉ lệ trong vòng 7 ngày. Đột ngột thay đổi loại thức ăn mới có thể gây mất cân bằng hệ tiêu hóa. Chó dễ bị khó tiêu và đi ngoài.\r\n\r\nMột số lưu ý\r\nChó con mới mọc răng cần cho ăn thức ăn mềm, vì vậy trước khi cho ăn cần ngâm trong nước ấm 40°C – 60°C. Sau 15′ thức ăn mềm là có thể cho ăn.\r\n\r\nChó con còn nhỏ không tiêu hóa được quá nhiều thức ăn. Chó con mới cai sữa ngày cho ăn 4 lần, dưới 6 tháng tuổi ngày cho ăn 3 lần.\r\n\r\nTham khảo khuyến cáo trên bao bì sản phẩm để giúp chó con duy trì trạng thái tốt nhất. Hạn sử dụng 18 tháng kể từ ngày sản xuất.', '', 100, '2021-03-07 08:37:58', 1),
 (56, 'Bánh thưởng cho chó dạng que vị thịt cừu WUJI Jerky Stick Lamb Flavor', 55000, '11', 'banh-thuong-cho-cho-dang-que-vi-thit-cuu-wuji-jerky-stick-lamb-flavor-400x400.jpg', 'Bánh thưởng cho chó dạng que vị thịt cừu WUJI  Jerky Stick Lamb Flavor phù hợp với tất cả các giống chó.\r\n\r\nLợi ích chính\r\nKẽm giúp duy trì tính toàn vẹn của da và lông.\r\nCollagen làm giảm các dấu hiệu lão hóa.\r\nVitamin E & Selen giúp bảo vệ tổn thương do các gốc tự do gây ra (Chất chống oxy hóa).\r\nVitamin A cần thiết để giữ cho thị lực rõ ràng và lâu hơn.\r\nProtein giúp phát triển cơ bắp và sửa chữa các mô.\r\nVitamin D3 giúp xương và răng chắc khỏe.\r\nVitamin B1, B5, B6, B12 cần thiết cho các chức năng của não.\r\nVitamin B1 giúp tăng cường trao đổi chất.\r\nThành phần dinh dưỡng\r\nBánh thưởng cho chó dạng que vị thịt cừu WUJI Jerky Stick Lamb Flavor được làm từ thịt gà thật. Kết hợp với bột mì, Glycerin thực vật, tinh bột sắn, thịt cừu, Kali sorbat, Vitamin và khoáng chất, màu nước rau củ. Phân tích đảm bảo:\r\n\r\nProtein thô (tối thiểu): 20%\r\nChất béo thô (Tối thiểu): 9%\r\nSợi thô (Tối đa): 6%\r\nĐộ ẩm (Tối đa): 20%\r\nHướng dẫn cho ăn\r\nChó trưởng thành 1 – 5kg: 1 – 2 miếng mỗi ngày.\r\nChó trưởng thành 5 – 10kg: 2 – 3 miếng mỗi ngày.\r\nChó trưởng thành 10 – 20kg: 3 – 5 miếng mỗi ngày.', '', 100, '2021-03-07 08:37:58', 1),
 (57, 'Nước sốt cho chó vị thịt bò và cà rốt JERHIGH Beef Grilled & Carrot In Gravy', 30000, '11', 'nuoc-sot-cho-cho-vi-thit-bo-va-ca-rot-jerhigh-beef-grilled-carrot-in-gravy-400x400.jpg', 'Nước sốt cho chó vị thịt bò và cà rốt JERHIGH  Beef Grilled & Carrot In Gravy dành cho tất cả các giống chó.\r\n\r\nLợi ích chính\r\nNước sốt cho chó JERHIGH Beef Grilled & Carrot In Gravy vị bò nướng và cà rốt tẩm nước sốt giúp da và lông khỏe mạnh. Khoáng chất kẽm giúp bảo vệ toàn diện da và lông. Omega 3 và làm giảm dấu hiệu của lão hóa, trẻ hóa các tể bào. Hồi phục các vùng thương nhanh chóng. Thúc đẩy quá trình trao đổi chất. Đồng thời hỗ trợ hệ tiêu hóa ổn định.\r\n\r\nSản phẩm nước nước sốt cho chó JERHIGH Beef Grilled & Carrot In Gravy được đóng gói tiện dụng siêu nhẹ với trọng lượng 120g. Rất thuận tiên cho việc sử dụng và mang theo khi di chuyển. Bạn có thể dễ dàng sử dụng bằng cách cho cún cưng ăn trực tiếp hoặc trộn với thức ăn khô. JerHigh Beef Grilled & Carrot In Gravy phù hợp với cả những chú chó biếng ăn nhất. Mang lại cảm giác ngon miệng và hưng phấn cho thú cưng trước khi ăn uống. Để đảm bảo dinh dưỡng tốt nhất, bạn nên đặt cạnh bát ăn một ít nước uống để cún cưng có thể dễ dàng sử dụng.\r\n\r\nThành phần dinh dưỡng\r\nNước sốt cho chó vị thịt bò và cà rốt JERHIGH Beef Grilled & Carrot In Gravy được sử dụng nguồn nguyên liệu nguyên chất 100%. Sản phẩm được sản xuất dựa trên các tiêu chuẩn thực phẩm an toàn của con người mang lại những giá trị dinh dưỡng cho vật nuôi. Để có một sản phẩm nước sốt cho chó JerHigh – Beef Grilled & Carrot In Gravy cần có: Thịt bò, thịt gà, bột biến tính. Gan gà, cà rốt, chất tạo đông Carrageenan. Chất điều vị, Gluten lúa mì, vị thịt, vị xông khói. Đường, muối, Omega 3 và 6. Khoáng chất kẽm và chất điều vị Glycine, chất tạo màu tự nhiên.', '', 100, '2021-03-07 08:37:58', 1),
@@ -468,7 +469,7 @@ ALTER TABLE `tbl_yeu_thich`
 -- AUTO_INCREMENT cho bảng `tag`
 --
 ALTER TABLE `tag`
-  MODIFY `id_tag` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_tag` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan_dich_vu`
@@ -498,13 +499,13 @@ ALTER TABLE `tbl_dich_vu`
 -- AUTO_INCREMENT cho bảng `tbl_don_dich_vu`
 --
 ALTER TABLE `tbl_don_dich_vu`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
