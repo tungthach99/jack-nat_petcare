@@ -226,4 +226,5 @@ session_start();
 		$_SESSION['datDichVuThanhCong']=1;
 		header("location:../../giohang.php");
 	}
+	header("location:../../giohang.php");
 ?>

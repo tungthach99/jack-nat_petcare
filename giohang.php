@@ -129,7 +129,6 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 							<tr style="background-color: rgba(208, 167, 114,0.1)">
 								<th>Tên sản phẩm</th>
 								<th>Ảnh</th>
-<!--								<th>Phiên bản</th>-->
 								<th>Số lượng</th>
 								<th>Đơn giá</th>
 								<th>SL tồn</th>
@@ -321,28 +320,36 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 								</div>
 								<div class="col-md-3">
 									<h3>Thông tin liên hệ</h3>
+									<?php
+	if(isset($_SESSION["id-user"]))
+	{
+		$sqlTaiKhoan = "select * from tbl_khach_hang where id_khach_hang = '".$_SESSION["id-user"]."'";
+		$resultTaiKhoan=$con->query($sqlTaiKhoan);
+		$rowTaiKhoan=$resultTaiKhoan->fetch_assoc();
+	}
+									?>
 								<form action="customer/Order/xldathang.php" method="post" name="xldonhang">
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" class="form-control" id="hoten" name="hoten" placeholder="Nhập tên" required data-error="Please enter your name">
+											<input type="text" class="form-control" id="hoten" name="hoten" placeholder="Nhập tên" required data-error="Please enter your name" value="<?php if(isset($_SESSION["id-user"])) echo $rowTaiKhoan['ten_khach_hang'] ?>">
 											<div class="help-block with-errors"></div>
 										</div>                                 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
+											<input type="text" placeholder="Email" id="email" class="form-control" name="email" required data-error="Please enter your email" value="<?php if(isset($_SESSION["id-user"])) echo $rowTaiKhoan['email'] ?>">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Số điện thoại" id="sdt" class="form-control" name="sdt" required data-error="Please enter your Numbar">
+											<input type="text" placeholder="Số điện thoại" id="sdt" class="form-control" name="sdt" required data-error="Please enter your Numbar" value="<?php if(isset($_SESSION["id-user"])) echo $rowTaiKhoan['so_dien_thoai'] ?>">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>
 									<div class="col-md-12">
 										<div class="form-group">
-											<input type="text" placeholder="Địa chỉ nhận hàng" id="diaChiNhanHang" class="form-control" name="diaChiNhanHang" required data-error="Vui lòng nhập địa chỉ nhận hàng">
+											<input type="text" placeholder="Địa chỉ nhận hàng" id="diaChiNhanHang" class="form-control" name="diaChiNhanHang" required data-error="Vui lòng nhập địa chỉ nhận hàng" value="<?php if(isset($_SESSION["id-user"])) echo $rowTaiKhoan['dia_chi'] ?>">
 											<div class="help-block with-errors"></div>
 										</div> 
 									</div>

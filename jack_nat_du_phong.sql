@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 12, 2021 lúc 06:37 AM
+-- Thời gian đã tạo: Th4 12, 2021 lúc 08:28 AM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -38,7 +38,7 @@ CREATE TABLE `tag` (
 --
 
 INSERT INTO `tag` (`id_tag`, `ten_tag`, `luot_xem`) VALUES
-(1, 'chuồng', 9),
+(1, 'chuồng', 11),
 (2, 'pate', 0),
 (3, 'test', 0);
 
@@ -93,7 +93,6 @@ CREATE TABLE `tbl_chi_tiet_don_dich_vu` (
   `so_luong_thu_cung` int(11) NOT NULL,
   `don_gia` int(11) NOT NULL,
   `thanh_tien` int(11) NOT NULL,
-  `ghi_chu` text COLLATE utf8_unicode_ci NOT NULL,
   `thoi_gian_bat_dau` timestamp NOT NULL DEFAULT current_timestamp(),
   `thoi_gian_ket_thuc` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -102,8 +101,9 @@ CREATE TABLE `tbl_chi_tiet_don_dich_vu` (
 -- Đang đổ dữ liệu cho bảng `tbl_chi_tiet_don_dich_vu`
 --
 
-INSERT INTO `tbl_chi_tiet_don_dich_vu` (`id_don_dich_vu`, `id_dich_vu`, `so_luong_thu_cung`, `don_gia`, `thanh_tien`, `ghi_chu`, `thoi_gian_bat_dau`, `thoi_gian_ket_thuc`) VALUES
-(1, 2, 50, 100000, 5000000, '', '2021-04-11 17:33:00', '2021-04-29 17:33:00');
+INSERT INTO `tbl_chi_tiet_don_dich_vu` (`id_don_dich_vu`, `id_dich_vu`, `so_luong_thu_cung`, `don_gia`, `thanh_tien`, `thoi_gian_bat_dau`, `thoi_gian_ket_thuc`) VALUES
+(1, 2, 50, 100000, 5000000, '2021-04-11 17:33:00', '2021-04-29 17:33:00'),
+(6, 2, 1, 100000, 100000, '2021-04-12 05:38:00', '2021-04-13 05:38:00');
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,8 @@ INSERT INTO `tbl_chi_tiet_don_hang` (`id_don_hang`, `id_san_pham`, `don_gia`, `s
 (4, 55, 170000, 2, 340000),
 (7, 55, 170000, 1, 170000),
 (8, 55, 170000, 1, 170000),
-(9, 55, 170000, 1, 170000);
+(9, 55, 170000, 1, 170000),
+(10, 55, 170000, 1, 170000);
 
 -- --------------------------------------------------------
 
@@ -207,7 +208,8 @@ CREATE TABLE `tbl_don_dich_vu` (
 --
 
 INSERT INTO `tbl_don_dich_vu` (`id_don_hang`, `id_khach_hang`, `phu_thu`, `tong_tien`, `ten_khach_hang`, `dia_chi`, `so_dien_thoai`, `trang_thai`, `hinh_thuc_mua_hang`, `ghi_chu`, `email`, `ngay_dat`) VALUES
-(1, -1, 0, 5000000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 1, 1, 'COD', '', 'hiimtung123@gmail.com', '2021-04-11 17:33:28');
+(1, -1, 0, 5000000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 1, 1, 'COD', '', 'hiimtung123@gmail.com', '2021-04-11 17:33:28'),
+(6, 5, 0, 100000, 'Thạch Thọ Tùng', '12 Chùa Bộc', 1, 1, 'COD', '', '12@gmail', '2021-04-12 05:38:50');
 
 -- --------------------------------------------------------
 
@@ -222,7 +224,7 @@ CREATE TABLE `tbl_don_hang` (
   `phi_van_chuyen` int(11) DEFAULT NULL,
   `ma_giam_gia` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tong_tien` float(255,0) DEFAULT NULL,
-  `trang_thai` int(4) DEFAULT 0,
+  `trang_thai` int(4) DEFAULT 1,
   `ten_khach_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dia_chi_nhan_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `hinh_thuc_mua_hang` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -240,7 +242,8 @@ INSERT INTO `tbl_don_hang` (`id_don_hang`, `id_khach_hang`, `email`, `phi_van_ch
 (4, -1, 'hiimtung123@gmail.com', NULL, '', 850000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 13:47:46'),
 (7, -1, 'hiimtung123@gmail.com', NULL, '', 170000, 1, '1', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 17:42:43'),
 (8, -1, 'hiimtung123@gmail.com', NULL, '', 170000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-11 17:49:10'),
-(9, -1, 'hiimtung123@gmail.com', NULL, '', 170000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-12 03:25:14');
+(9, -1, 'hiimtung123@gmail.com', NULL, '', 170000, 1, 'Thạch Thọ Tùng', '12 Chùa Bộc', 'COD', '', '1', '2021-04-12 03:25:14'),
+(10, 5, '1@gmail', NULL, '', 170000, 1, '1', '12 Chùa Bộc', 'COD', '', '2', '2021-04-12 05:18:35');
 
 -- --------------------------------------------------------
 
@@ -578,13 +581,13 @@ ALTER TABLE `tbl_dich_vu`
 -- AUTO_INCREMENT cho bảng `tbl_don_dich_vu`
 --
 ALTER TABLE `tbl_don_dich_vu`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
 --
 ALTER TABLE `tbl_don_hang`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_feedback`
