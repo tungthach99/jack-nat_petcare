@@ -38,3 +38,5 @@ echo 'Logged in as: ' . $me->getName();
 echo 'ID:' . $me->getId();
 echo 'Email:' . $me->getEmail();
 $_SESSION['fb_access_token'] = (string) $accessToken;
+// Từ đây bạn xử lý kiểm tra thông tin user trong database sau đó xử lý.
+?>

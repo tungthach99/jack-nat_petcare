@@ -55,7 +55,7 @@
 								<div class="gallery-single fix">
 									<img src="images/san-pham/<?php echo $row['anh'] ?>" alt="" style="width: 290px;height: 214px" class="img-fluid" alt="Image">
 									<div class="why-text">
-										<h4><?php  echo $row['ten_san_pham'] ?></h4>
+										<h4><?php  echo substr($row['ten_san_pham'],0,70) ?></h4>
 										<p></p>
 										<h5><?php echo number_format($row['don_gia']) ?>  VND</h5>
 										<a href="menu.php?masanpham=<?php echo $row['id_san_pham']?>"><button class="nutChiTiet">Chi tiết</button></a>
@@ -71,7 +71,7 @@
 								<div class="gallery-single fix">
 									<img src="images/san-pham/<?php echo $row['anh'] ?>" alt="" style="width: 290px;height: 214px;" class="img-fluid" alt="Image">
 									<div class="why-text">
-										<h4><?php echo $row['ten_san_pham'] ?></h4>
+										<h4><?php echo substr($row['ten_san_pham'],0,70) ?></h4>
 										<p></p>
 										<h5><?php echo number_format($row['don_gia']) ?>  VND</h5>
 										<a href="menu.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><button class="nutChiTiet">Chi tiết</button></a>
@@ -87,7 +87,7 @@
 								<div class="gallery-single fix">
 									<img src="images/san-pham/<?php echo $row['anh'] ?>" alt="" style=" width: 290px;height: 214px;" class="img-fluid" alt="Image">
 									<div class="why-text">
-										<h4><?php echo $row['ten_san_pham'] ?></h4>
+										<h4><?php echo substr($row['ten_san_pham'],0,70) ?></h4>
 										<p></p>
 										<h5><?php echo number_format($row['don_gia']) ?>  VND</h5>
 										<a href="menu.php?product=1&masanpham=<?php echo $row['id_san_pham']?>"><button class="nutChiTiet">Chi tiết</button></a>

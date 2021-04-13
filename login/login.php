@@ -6,14 +6,17 @@ session_start();
 
 require_once( 'Facebook/autoload.php' );
 $fb = new Facebook\Facebook([
-'app_id' => '{415708562813552}',
-'app_secret' => '{e856b55f333d67994e08e1dccc064629}',
+'app_id' => '415708562813552',
+'app_secret' => 'e856b55f333d67994e08e1dccc064629',
 'default_graph_version' => 'v10.0',
 ]);
 $helper = $fb->getRedirectLoginHelper();
 $permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permissions);
-echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+///=============
+// $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permissions);
+$loginUrl = $helper->getLoginUrl('http://localhost/jacknatPetcare-main/login/fb-callback.php', $permissions);
+//==============
+echo '<a href="' . $loginUrl . '" style="">Log in Facebook!</a>';
 ?>
 <?php 
 	include_once 'database.php';
@@ -21,12 +24,13 @@ echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
     if(isset($_POST['submit'])){
     	$email = $_POST['email'];
     	$password = $_POST['password'];
-    	$query = "SELECT admin_name,admin_email,admin_pass FROM tbl_admin WHERE admin_email = '$email' AND admin_pass = '$password' LIMIT 1 ";
+    	$query = "SELECT ten_khach_hang,email,mat_khau FROM tbl_khach_hang WHERE email = '$email' AND mat_khau = '$password' LIMIT 1 ";
     	$check = mysqli_query($conn,$query);		
 		if($check->num_rows >= 1){
 			$_SESSION['success']='Đăng nhập thành công';
 			$result = mysqli_fetch_all($check,MYSQLI_ASSOC);
-			$username = $result['admin_name'];
+			$username = $result['ten_khach_hang'];
+			
 			$_SESSION['username'] = $username;
 	    	$_SESSION['mail'] = $email;
 	    	header('Location: index.php');
@@ -63,7 +67,7 @@ echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 		  <a href="admin.php" class="btn btn-warning">Đăng ký</a>
 		</form>
 		</div>
-		
+
 	</div>
 </body>
 </html>

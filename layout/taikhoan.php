@@ -13,7 +13,25 @@
 	<div class="noiDungFormDangNhap">
 		Bạn chưa có tài khoản? <a href="taotaikhoan.php">Tạo tài khoản.</a>
 	</div>
-	<a><img width="60%;" src="images/facebook.png"></a>
+	
+	<?php
+
+require_once( 'login/Facebook/autoload.php' );
+$fb = new Facebook\Facebook([
+'app_id' => '415708562813552',
+'app_secret' => 'e856b55f333d67994e08e1dccc064629',
+'default_graph_version' => 'v10.0',
+]);
+$helper = $fb->getRedirectLoginHelper();
+$permissions = ['email']; // Optional permissions
+///=============
+// $loginUrl = $helper->getLoginUrl('https://vzn.vn/demo/fb-callback.php', $permissions);
+$loginUrl = $helper->getLoginUrl('http://localhost/jacknatPetcare/login/fb-callback.php', $permissions);
+//==============
+//echo '<a href="' . $loginUrl . '" style="">Log in Facebook!</a>';
+?>
+	
+	<a href="<?php echo $loginUrl ?>"><img width="60%;" src="images/facebook.png"></a>
 	<?php }?>
 	<?php if(isset($_SESSION["id-user"])){?>
 	<h4>XIN CHÀO <?php echo $_SESSION["ten-user"]?>
