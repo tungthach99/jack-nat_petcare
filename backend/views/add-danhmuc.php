@@ -38,7 +38,6 @@
     if (isset($_POST['submit'])) {
         $tendanhmuc = $_POST['ten_danh_muc'];
        
-
         $sql = "INSERT INTO tbl_danh_muc(ten_danh_muc) VALUES('$tendanhmuc')";
         $query = mysqli_query($conn, $sql);
         if ($query) {

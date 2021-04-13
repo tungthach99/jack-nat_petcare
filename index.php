@@ -71,56 +71,99 @@ session_start();
 	<!-- End header -->
 	
 	<!-- Start slides -->
+			
 	<div class="container  " >
-		<div class="col-8" >
-			<div id="slides" class="cover-slides" >
-				<ul class="slides-container">
-					<li class="text-center">
-						<img src="images/dog.jfif" alt="">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h1 class="m-b-20"data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-									<p class="m-b-40"data-aos="fade-in" data-aos-delay="000">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
+		<div class="row">
+			<div class="col-lg-8" >
+				<div id="slides" class="cover-slides" >
+					<ul class="slides-container">
+						<li class="text-center">
+							<img src="images/dog.jfif" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<h1 class="m-b-20"data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+										<p class="m-b-40"data-aos="fade-in" data-aos-delay="000">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+										<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
+									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-					<li class="text-center">
-						<img src="images/photod.jfif" alt="">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h1 class="m-b-20" data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-									<p class="m-b-40"data-aos="fade-in" data-aos-delay="300">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
+						</li>
+						<li class="text-center">
+							<img src="images/photod.jfif" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<h1 class="m-b-20" data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+										<p class="m-b-40"data-aos="fade-in" data-aos-delay="300">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+										<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
+									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-					<li class="text-center">
-						<img src="images/1618289632108.pjg" alt="">
-						<div class="container">
-							<div class="row">
-								<div class="col-md-12">
-									<h1 class="m-b-20"data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-									<p class="m-b-40"data-aos="fade-in" data-aos-delay="300">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
+						</li>
+						<li class="text-center">
+							<img src="images/1618289632108.pjg" alt="">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-12">
+										<h1 class="m-b-20"data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+										<p class="m-b-40"data-aos="fade-in" data-aos-delay="300">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+										<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
+									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-				</ul>
-				<div class="slides-navigation">
-					<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-					<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+						</li>
+					</ul>
+					<div class="slides-navigation">
+						<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+						<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+					</div>
 				</div>
 			</div>
+			<div class="col-lg-4">
+					<div class="tz-gallery"  data-aos="fade-left" data-aos-delay="200">
+						<div class="	">
+							<?php
+								$sql="SELECT * 
+												FROM tbl_news WHERE status = '2'  
+												ORDER BY id DESC
+												";
+								$result=$con->query($sql);
+								if($result->num_rows>0)
+									{
+										while($row=$result->fetch_assoc())
+										{ //for->while
+							?>
+								<div class="col-sm-9	" style="hight=100px">
+									<a class="lightbox" href="images/<?php echo $row['avatar'] ?>">
+										<img class="img-fluid" src="images/<?php echo $row['avatar'] ?>" alt="Gallery Images">
+									</a>
+								</div>
+							<?php 
+							}
+							}
+							?>
+						</div>
+					</div>
+			</div>
 		</div>
-		<div class="col-4">
-		</div>
+		
 	</div>
+	<!-- <div id="sl1" class="sl1" style="top: 210px; position: fixed; left: 85%; margin-right: 500px; bottom: 0px;">
+							
+			<a rel="nofollow" href="#" title="m88" target="_blank"><img src="https://aff.opus-static.com/m88/120x300_VN.gif" alt="m88" border="0" width="120" height="280">
+			</a>
+			
+	
+	<br>	
+			<a rel="nofollow" href="#" target="_blank">
+				<img alt="sbobb" src="https://i.imgur.com/jye8JMj.gif" width="120" height="269">
+			</a>
+		
+	</div> -->
+
+
+
 	<!-- End slides -->
 	<!-- ======= Clients Section ======= -->
 <section id="clients" class="clients" >
@@ -211,7 +254,7 @@ session_start();
 
   </div>
 </section><!-- End Counts Sectio
->>>>>>> Stashed changes
+
 <!-- ======= Services Section ======= -->
 <section id="services" class="services section-bg">
     <div class="container">
@@ -461,26 +504,26 @@ session_start();
 			</div>
 			<div class="tz-gallery"data-aos="zoom-in" data-aos-delay="200">
 				<div class="row">
-				<?php
-					$sql="SELECT * 
-									FROM tbl_feedback
-									ORDER BY id_feedback DESC
-									LIMIT 6 ";
-                    $result=$con->query($sql);
-                    if($result->num_rows>0)
-						{
-							while($row=$result->fetch_assoc())
-							{ //for->while
+					<?php
+						$sql="SELECT * 
+										FROM tbl_feedback
+										ORDER BY id_feedback DESC
+										LIMIT 6 ";
+						$result=$con->query($sql);
+						if($result->num_rows>0)
+							{
+								while($row=$result->fetch_assoc())
+								{ //for->while
 					?>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="images/uploads/<?php echo $row['img'] ?>">
-							<img class="img-fluid" src="images/uploads/<?php echo $row['img'] ?>" alt="Gallery Images">
-						</a>
-					</div>
+						<div class="col-sm-6 col-md-4 col-lg-4">
+							<a class="lightbox" href="images/uploads/<?php echo $row['img'] ?>">
+								<img class="img-fluid" src="images/uploads/<?php echo $row['img'] ?>" alt="Gallery Images">
+							</a>
+						</div>
 					<?php 
 					}
-				}
-				?>
+					}
+					?>
 				</div>
 			</div>
 		</div>

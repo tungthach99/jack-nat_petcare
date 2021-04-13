@@ -19,7 +19,7 @@
     <meta name="author" content="">
     <!-- Favicons -->
     
-    <link href="../backend/images/icon-logo.png" rel="apple-touch-icon">
+    <link href="../images/icon-logo.png" rel="apple-touch-icon">
 
     <title>Quản trị hệ thống JACK&NAT PetCare</title>
 
@@ -34,6 +34,8 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <script src="https://kit.fontawesome.com/4888049cd0.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -72,13 +74,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Quản trị hệ thống</a>
+                        <a href="index.php"><i class="fa fa-fw  fa-home"></i> Quản trị hệ thống</a>
                     </li>
                     <li>
-                        <a href="index.php"><i class="fa fa-fw fa-file"></i> Tổng Quan</a>
+                        <a href="index.php"><i class="fa fa-fw fa-television"></i> Tổng Quan</a>
                     </li>
                     <li>
-                            <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i> Thành viên <i class="fa fa-fw fa-caret-down"></i></a>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Thành viên <i class="fa fa-fw fa-caret-down"></i></a>
                             <ul id="users" class="collapse">
                                 <li>
                                     <a href="index.php?page=users">Danh sách</a>
@@ -89,7 +91,7 @@
                             </ul>
                         </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#danhmuc"><i class="fa fa-fw fa-arrows-v"></i> Danh Mục <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#danhmuc"><i class="fa fa-fw fa-bars"></i> Danh Mục <i class="fa fa-fw fa-caret-down"></i></a>
                             <ul id="danhmuc" class="collapse">
                                 <li>
                                     <a href="index.php?page=dsdanhmuc">Danh sách</a>
@@ -100,7 +102,7 @@
                             </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#menu"><i class="fa fa-fw fa-arrows-v"></i> Sản phẩm<i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#menu"><i class="fa fa-fw fa-cubes"></i> Sản phẩm<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="menu" class="collapse">
                             <li>
                                 <a href="index.php?page=menu">Danh sách</a>
@@ -111,7 +113,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#service"><i class="fa fa-fw fa-arrows-v"></i> Dịch vụ<i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#service"><i class="fa fa-fw fa-shower"></i> Dịch vụ<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="service" class="collapse">
                             <li>
                                 <a href="index.php?page=service">Danh sách</a>
@@ -122,14 +124,25 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#discount"><i class="fa fa-fw fa-credit-card-alt"></i> Mã giảm giá<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="discount" class="collapse">
+                            <li>
+                                <a href="index.php?page=discount">Danh sách</a>
+                            </li>
+                            <li>
+                                <a href="index.php?page=add-discount">Thêm mới</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>
                         <a href="index.php?page=ordered"><i class="fa fa-fw fa-arrows-v"></i> Đơn hàng</a>
                     </li>
                     <li>
                         <a href="index.php?page=ordered2"><i class="fa fa-fw fa-arrows-v"></i> Đơn dịch vụ</a>
-                    </li>
+                    </li> -->
                 
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Tin tức <i class="fa fa-fw fa-caret-down"></i></a>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-newspaper-o"></i> Tin tức <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
                                 <a href="index.php?page=news">Danh sách</a>
@@ -139,18 +152,18 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="index.php?page=customer" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i> Khách Hàng <i class="fa fa-fw fa-caret-down"></i></a>   
-                    </li>
+                    <!-- <li>
+                        <a href="index.php?page=customer" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-handshake-o"></i> Khách Hàng <i class="fa fa-fw fa-caret-down"></i></a>   
+                    </li> -->
                    
                     
-                        <li>
+                        <!-- <li>
                             <a href="index.php?page=baocao" data-toggle="collapse" data-target="#baocao"><i class="fa fa-fw fa-arrows-v"></i>Báo cáo <i class="fa fa-fw fa-caret-down"></i></a>
                         </li>
                         <li>
                             <a href="index.php?page=comment" data-toggle="collapse" data-target="#comment"><i class="fa fa-fw fa-arrows-v"></i>Bình Luận <i class="fa fa-fw fa-caret-down"></i></a>
                         </li>
-                        
+                         -->
                     
                 </ul>
             </div>

@@ -25,18 +25,19 @@
     $rs_menus2 = mysqli_fetch_array($query_menus2);
 
      // Số lượng khách hàng
-     $sql_customer = "SELECT COUNT(id_khach_hang) as id FROM tbl_khach_hang";
-     $query_customer = mysqli_query($conn, $sql_customer);
-     $rs_customer = mysqli_fetch_array($query_customer);
+    $sql_customer = "SELECT COUNT(id_khach_hang) as id FROM tbl_khach_hang";
+    $query_customer = mysqli_query($conn, $sql_customer);
+    $rs_customer = mysqli_fetch_array($query_customer);
 
-       // Số lượng bình luận
-       $sql_comment = "SELECT COUNT(id_binh_luan) as id FROM tbl_binh_luan_san_pham";
-       $query_comment = mysqli_query($conn, $sql_comment);
-       $rs_comment = mysqli_fetch_array($query_comment);
-        // Số lượng dịch vụ
-        $sql_service = "SELECT COUNT(id_dich_vu) as id FROM tbl_dich_vu";
-        $query_service = mysqli_query($conn, $sql_service);
-        $rs_service = mysqli_fetch_array($query_service);
+    // Số lượng bình luận
+    $sql_comment = "SELECT COUNT(id_binh_luan) as id FROM tbl_binh_luan_san_pham";
+    $query_comment = mysqli_query($conn, $sql_comment);
+    $rs_comment = mysqli_fetch_array($query_comment);
+    
+    // Số lượng dịch vụ
+    $sql_service = "SELECT COUNT(id_dich_vu) as id FROM tbl_dich_vu";
+    $query_service = mysqli_query($conn, $sql_service);
+    $rs_service = mysqli_fetch_array($query_service);
 
 
 ?>
@@ -87,7 +88,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-users fa-5x"></i>
+                            <i class="fa fa-check-square-o fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge"><?php if($rs_order['id']  > 0) { echo $rs_order['id']; } ?></div>
@@ -153,7 +154,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-tasks fa-5x"></i>
+                            <i class="fa fa-th-list fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge"><?php if($rs_menus2['id']  > 0) { echo $rs_menus2['id']; } ?></div>
@@ -175,7 +176,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-users fa-5x"></i>
+                            <i class="fa fa-handshake-o fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge"><?php if($rs_customer['id']  > 0) { echo $rs_customer['id']; } ?></div>
@@ -197,7 +198,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-newspaper-o fa-5x"></i>
+                            <i class="fa fa-area-chart fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge"><?php if($rs_news['id']  > 0) { echo $rs_news['id']; } ?></div>
@@ -219,7 +220,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-user fa-5x"></i>
+                            <i class="fa fa-commenting fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge"><?php if($rs_comment['id']  > 0) { echo $rs_comment['id']; } ?></div>
@@ -228,6 +229,28 @@
                     </div>
                 </div>
                 <a href="index.php?page=comment">
+                    <div class="panel-footer">
+                        <span class="pull-left">Xem chi tiết</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-credit-card-alt fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><?php if($rs_menus['id']  > 0) { echo $rs_menus['id']; } ?></div>
+                            <div>Mã giảm giá</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.php?page=discount">
                     <div class="panel-footer">
                         <span class="pull-left">Xem chi tiết</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

@@ -27,7 +27,7 @@
                   <input type="text" required="" placeholder="Nhập tiêu đề bản tin cần tìm..." name="keyw" class="form-control" value="<?php if(isset($key)) { echo $key; } ?>"/>
 
                   <span class="input-group-addon">
-                      <button style="line-height: 0px; padding: 0px;" type="submit" class="" name="submit_search">
+                      <button style="line-height: 0px; padding: 17px;" type="submit" class="" name="submit_search">
 	                      Tìm kiếm
 	                  </button>
                   </span>
@@ -95,10 +95,11 @@
 						?>
 								<tr>
 									<td><?php echo $stt; ?></td>
-									<td><img src="images/<?php echo $row['avatar']; ?>" width="100" alt=""></td>
-									<td><a href="index.php?page=edit-discount&id=<?php echo $row['ma_giam_gia']; ?>"><?php echo $row['title']; ?></a></td>
+									<td><?php echo $row['ma_giam_gia'];?></td>
+									<td><?php echo $row['chiet_khau'];?></td>
 									<td><?php echo $row['ngay_ap_dung'];?></td>
 	        	                    <td><?php echo $row['ngay_ket_thuc']?></td>
+									<td>
 										<a href="index.php?page=edit-discount&id=<?php echo $row['ma_giam_gia']; ?>"><button class="btn btn-primary">Sửa</button></a>
 										<a onclick="return confirm('Bạn có muốn xóa mã này không? ');" href="index.php?page=del-discount&id=<?php echo $row['ma_giam_gia']; ?>">
 											<button class="btn btn-danger">Xóa</button>
