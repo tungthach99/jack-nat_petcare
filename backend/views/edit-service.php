@@ -30,7 +30,7 @@
             $query = mysqli_query($conn, $sql);
             if ($query) {       
                $_SESSION['check'] = 2;
-               header("Location: index.php?page=news");
+               header("Location: index.php?page=service");
             }
        }
     }
