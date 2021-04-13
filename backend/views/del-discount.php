@@ -1,11 +1,11 @@
 <?php  
 	if (isset($_GET['id'])) {
 		$id = $_GET['id'];
-		$sql = "DELETE FROM tbl_dich_vu WHERE id_dich_vu = $id";
+		$sql = "DELETE FROM tbl_ma_giam_gia WHERE id_ma_giam_gia = $id";
 		$query = mysqli_query($conn, $sql);
 		if ($query) {
 			$_SESSION['check'] = 3;
-           header("Location: index.php?page=del-discount");
+           header("Location: index.php?page=discount");
 		}
 	}
 

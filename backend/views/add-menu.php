@@ -31,12 +31,12 @@
                 
                 <div class="form-group">
                 <label class="form-control-label" for="input-username">Chọn ảnh</label>
-				<input name="anh" type='file' id="anhIp" /><br>
+				<input name="anh" type='file' id="imgInp" /><br>
   				<img style="height: 200px" id="blah" src="" />
                 </div>
                 <div class="form-group">
                     <label for="input-username">Mô tả</label>
-                    <textarea required="" class="form-control ckeditor" name="mota" id="ckeditor" id="" cols="30" rows="10"></textarea>
+                    <textarea required="" class="form-control ckeditor" name="description" id="ckeditor" id="" cols="30" rows="10"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="input-username">Số lượng</label>
@@ -61,7 +61,10 @@
         $danhmuc = $_POST['id_danh_muc'];
 
         $anh= $_FILES['anh'];
-        move_uploaded_file($_FILES["anh_dv"]["tmp_name"], "images/san-pham/".basename($_FILES['fileUpload']['name'])
+        $nameFile = time().$anh['name'];
+        $tmp_name = $anh['tmp_name'];
+        move_uploaded_file($tmp_name, "../images/san-pham/".$nameFile);
+
         $mota = $_POST['mo_ta'];
         $soluong = $_POST['so_luong'];
         

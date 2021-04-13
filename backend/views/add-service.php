@@ -22,31 +22,32 @@
             <form action="" method="POST" enctype="multipart/form-data">
             
                 <div class="form-group">
-                    <label for="title">Tên dịch vụ</label>
-                    <input type="text" required="" class="form-control" name="title" id="title" required="">
+                    <label for="">Tên dịch vụ</label>
+                    <input type="text"  class="form-control" name="name" value="<?php if(isset($name)){ echo $name; } ?>" required="" placeholder="Nhập tên sản phẩm...">
+                    
                 </div>
                 <div class="form-group">
-                    <label for="dongia">Đơn giá</label>
-                    <input type="number" required="" class="form-control" name="dongiar" id="dongia" required="">
+                    <label for="">Đơn giá</label>
+                    <input type="number" class="form-control" name="price" value="<?php if(isset($name)){ echo $price; } ?>" required="" placeholder="Nhập đơn giá sản phẩm...">
+
                 </div>
 
                 <div class="form-group">
-                    <label for="anh_dv">Ảnh dịch vụ</label>
-                    <input type="file" required="" class="form-control" name="anhdv" id="anhdv" required="">
+                    <label for="">Ảnh dịch vụ</label>
+                    <input type="file" required="" class="form-control" name="anhdv"  required="">
                 </div>
 
                 <div class="form-group">
-                    <label for="motadv">Chi tiết bài viết</label>
+                    <label for="">Chi tiết bài viết</label>
                     <textarea required="" class="form-control ckeditor" name="mota" id="ckeditor" id="" cols="30" rows="10"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Danh mục</label>
+                    <input type="text" required="" class="form-control" name="danhmuc"  required="">
                 </div>
                 
 
-                <div class="form-group">
-                    <label for="danhmuc">Danh mục</label>
-                    <label class="radio-inline"><input type="radio" name="danhmuc" checked="" class="radio-inline" id="ty" value="1"> Thú Y</label>
-                    <label class="radio-inline"><input type="radio" name="danhmuc" class="radio-inline" id="tC" value="2"> Trông coi</label>
-                    <label class="radio-inline"><input type="radio" name="danhmuc" class="radio-inline" id="tm" value="3"> Thẩm mỹ</label>
-                </div>
+                
             
                 <button type="submit" name="submit" class="btn btn-primary">Thêm mới</button>
             </form>
@@ -58,15 +59,19 @@
 
 <?php  
     if (isset($_POST['submit'])) {
-        $title = $_POST['ten_dich_vu'];
-        $dongia = $_POST['don_gia_dv'];
-        $anh= $_FILES['anh_dv']['name'];
-        move_uploaded_file($_FILES["anh_dv"]["tmp_name"], "images/san-pham/".basename($_FILES['fileUpload']['name']));
+        $name = $_POST['ten_dich_vu'];
+        $price = $_POST['don_gia_dv'];
+        
+        $anh= $_FILES['anh_dv'];
+        $nameFile = time().$anh['name'];
+        $tmp_name = $anh['tmp_name'];
+        move_uploaded_file($tmp_name, "../images/san-pham/".$nameFile);
+
         $motadv = $_POST['mo_ta_dv'];
         $iddanhmuc = $_POST['id_danh_muc'];
        
-        $sql = "INSERT INTO tbl_dich_vu(ten_dich_vu, don_gia_dv, anh_dv,mo_ta_dv,id_danh_muc,ngay_them_dv) 
-        VALUES('$title','$dongia' , '$anh', '$motadv','$iddanhmuc', curtime())";
+        $sql = "INSERT INTO tbl_dich_vu(ten_dich_vu ,don_gia_dv ,anh_dv ,mo_ta_dv ,id_danh_muc ,ngay_them_dv) 
+        VALUES('$name','$price' , '$nameFile', '$motadv','$iddanhmuc', curtime())";
     
         $query = mysqli_query($conn, $sql);
         if ($query) {
