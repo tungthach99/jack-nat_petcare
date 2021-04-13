@@ -127,7 +127,7 @@ session_start();
 								$sql="SELECT * 
 												FROM tbl_news WHERE status = '2'  
 												ORDER BY id DESC
-												";
+												LIMIT 3 ";
 								$result=$con->query($sql);
 								if($result->num_rows>0)
 									{
