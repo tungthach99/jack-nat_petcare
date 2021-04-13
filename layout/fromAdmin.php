@@ -2,14 +2,14 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="heading-title text-center">
+					<div class="heading-title text-center"data-aos="zoom-in" data-aos-delay="300">
 						<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">FROM ADMIN</strong></h5>
 						<p>"Một chú cún con không phải là toàn bộ cuộc sống của bạn nhưng chúng có thể biến cuộc sống của bạn trở nên muôn màu và toàn diện hơn."</p>
 					</div>
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-8 mr-auto ml-auto text-center">
+				<div class="col-md-8 mr-auto ml-auto text-center"data-aos="zoom-in" data-aos-delay="500">
 					<div id="reviews" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner mt-4">
 							<div class="carousel-item text-center active">

@@ -32,15 +32,34 @@ session_start();
     <link rel="stylesheet" href="css/custom.css">
 	<script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/css3.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/slide.css"> -->
 </head>
 
 <body>
+
 <?php
-require("public/ketnoi.php");
+	require("public/ketnoi.php");
 	include("layout/header.php");
 	include("layout/taikhoan.php");
 ?>
+<!-- <div class="container">
+	<div class="slide">
+		<div class="dieuhuong">
+			<i class="fa fa-chevron-circle-left" onclick="Back();"></i>
+			<i class="fa fa-chevron-circle-right" onclick="Next();"></i>
+		</div>
+		<div class="chuyen-slide">
+		<img src="../images/banner/banner1.jpg" alt="">
+		<img src="../images/banner/banner2.jpg" alt=""> 
+		<img src="../images/banner/banner3.jpg" alt=""> 
+		<img src="../images/banner/banner4.jpg" alt="">
+		<img src="../images/banner/banner5.jpg" alt=""> 
+		</div>
+	</div>
+</div>	 -->
+
 <!-- Phong to anh -->
 <div id="noiDungPhongTo" style="100%">
 		<div class="menuAnh">
@@ -86,22 +105,7 @@ require("public/ketnoi.php");
         ?>
 
 	
-	<!-- Start QT -->
-<!--
-	<div class="qt-box qt-background">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto text-left">
-					<p class="lead ">
-						" Thú cưng là cả gia đình "
-					</p>
-					<span class="lead">Jack & Nat pet care</span>
-				</div>
-			</div>
-		</div>
-	</div>
--->
-	<!-- End QT -->
+
 	
 	<?php
 	include("layout/fromAdmin.php");
@@ -144,6 +148,7 @@ require("public/ketnoi.php");
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
+	<!-- <script src="js/slide.js"></script> -->
 	<?php
 	include("layout/vedautrang.php")
 	?>
