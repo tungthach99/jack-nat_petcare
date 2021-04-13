@@ -42,14 +42,21 @@ session_start();
 </head>
 
 <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
-	
 	<!-- Start header -->
     <?php
 	include("public/ketnoi.php");
 	include("layout/header.php");
 	include("layout/taikhoan.php");
+	if(isset($_GET["loi"]))
+	{
+		if($_GET["loi"]=='1') include("layout/message5.php");
+	}
+	if(isset($_GET["error"]) and ($_GET["error"])==2)
+	{
+		include("layout/message2_t.php");
+	}
 	?>
-	
+	<br><br><br>
 	<!-- End header -->
 	
 	<!-- Start slides -->
@@ -138,45 +145,6 @@ session_start();
 
   </div>
 </section><!-- End Clients Section -->
-
-	<!-- Start About
-	<div class="about-section-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<img src="images/8299380e569463c0c51f18f47d2d86da.jpg" alt="" class="img-fluid">
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
-					<div class="inner-column">
-						<h1>Welcome To <span>Jack & Nat Pet Care</span></h1>
-						<h4>Câu chuyện nhỏ</h4>
-						<p>Mỗi con vật đến với cửa hàng thú cưng của chúng tôi đều được gọi là em, vì chúng được nâng niu và chăm sóc cẩn thận như các em bé vậy. Các em đến đây được chăm sóc theo quy trình từ vệ sinh tai, vắt tuyến hôi cho đến tắm rửa, sấy khô.</p>
-						<p>Nhiều người nói chó, mèo cần gì chăm sóc kỹ thế. Nhưng tôi không nghĩ vậy. Thú cưng từ bao lâu nay đã trở thành như các thành viên trong mỗi gia đình. Chúng ta con người được quan tâm, chăm sóc và cả làm đẹp thì các em cún, em mèo cũng không nên ngoại lệ.</p>
-						<a class="btn btn-lg btn-circle btn-outline-new-white" href="about.php">Xem thêm</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	End About -->
-	
-	<!-- Start QT 
-	<div class="qt-box qt-background">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 ml-auto mr-auto text-left">
-					<p class="lead ">
-						" Một chú mèo lạc giữa loài động vật giống như nụ hồng nhỏ nhắn nở rộ giữa một bụi gai. "
-					</p>
-					<span class="lead">Khuyết danh</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	 End QT -->
-    
-	<!-- Start Menu -->
-	<!-- End Counts Section -->
 
 <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
@@ -419,9 +387,10 @@ session_start();
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Feedback Của Khách Hàng  <i class="fa fa-heart" style="font-size:30px;color:red"></i></h2>
-					</div>
+<!--					<div class="heading-title text-center">-->
+						
+						<h1 style="font-size: 40px; text-align: center; font-weight: bold">FEEDBACK CỦA KHÁCH HÀNG  <i class="fa fa-heart" style="font-size:30px;color:red"></i></h1>
+<!--					</div>-->
 				</div>
 			</div>
 			<div class="tz-gallery">

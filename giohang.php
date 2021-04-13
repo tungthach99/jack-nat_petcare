@@ -1,7 +1,10 @@
 <?php
 ob_start(); 
 session_start();
-
+if(isset($_SESSION['datDichVuThanhCong']) or isset($_SESSION['datSanPhamThanhCong']))
+   {
+	include("layout/message1_t.php");
+	}
 if(isset($_SESSION['datDichVuThanhCong']) and $_SESSION['datDichVuThanhCong']==1)
 {
 	if(isset($_SESSION["giohang2"]))
@@ -49,7 +52,8 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">    
 	<!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">    
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style1.css">  
 	<!-- Pickadate CSS -->
     <link rel="stylesheet" href="css/classic.css">    
 	<link rel="stylesheet" href="css/classic.date.css">    

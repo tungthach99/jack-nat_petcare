@@ -85,10 +85,6 @@
 									}
 								}
 			   					?>
-<!--
-								<a class="dropdown-item" href="service.php">Cắt tỉa lông chó mèo</a>
-								<a class="dropdown-item" href="service.php">Tắm spa chó mèo</a>
--->
 							</div>
 						</li>
 						<li class="nav-item dropdown">
@@ -109,7 +105,7 @@
 						</li>
 						
 						<li class="nav-item"><a <?php if(isset($_SESSION["giohang"]) or isset($_SESSION["giohang2"])) echo "style='color:red;'" ?> href="giohang.php" onClick="dongFrom('formDangNhap');" class="nav-link"><i class="fa fa-shopping-cart"></i> Giỏ hàng</a></li>
-						<li class="nav-item"><a onClick="hienthiform('formDangNhap');" class="nav-link"><i class="fa fa-user"></i> Tài khoản</a></li>
+						<li class="nav-item"><a <a <?php if(isset($_SESSION["id-user"])) echo "style='color:red;'" ?> onClick="hienthiform('formDangNhap');" class="nav-link"><i class="fa fa-user"></i> Tài khoản</a></li>
 
 					</ul>
 				</div>
