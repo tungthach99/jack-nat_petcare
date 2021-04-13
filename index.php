@@ -44,12 +44,11 @@ session_start();
     
 </head>
 
-<<<<<<< Updated upstream
-<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
-=======
+
+
 <body >
 	
->>>>>>> Stashed changes
+
 	<!-- Start header -->
     <?php
 	include("public/ketnoi.php");
@@ -174,8 +173,8 @@ session_start();
   </div>
 </section><!-- End About Section -->
 
-<<<<<<< Updated upstream
-=======
+
+
 <!-- ======= Counts Section ======= -->
 <section id="counts" class="counts" style="background: #d0a772;
     padding: 40px 0 20px 0;
