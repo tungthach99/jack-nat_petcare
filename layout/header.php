@@ -69,24 +69,9 @@
 						<li class="nav-item active"><a class="nav-link" href="index.php">Trang chủ</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.php">Giới thiệu</a></li>
 						<li class="nav-item"><a class="nav-link" href="menu.php">Sản phẩm</a></li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="dichvu.php" id="dropdown-a" data-toggle="dropdown">Dịch vụ</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<?php
-								$sql="select * from tbl_danh_muc where id_danh_muc not in (1,2) ";
-								$result=$con->query($sql);
-								$row=$result->fetch_assoc();
-								if($result->num_rows>0)
-								{
-									while($row=$result->fetch_assoc())
-									{
-									?>
-										<a class="dropdown-item" href="dichvu.php?&a=<?php echo $row["ten_danh_muc"] ?>"><?php echo $row["ten_danh_muc"] ?></a>
-									<?php
-									}
-								}
-			   					?>
-							</div>
+						<li class="nav-item">
+							<a class="nav-link" href="dichvu.php" id="dropdown-a">Dịch vụ</a>
+							
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle"  id="dropdown-a" data-toggle="dropdown">Liên hệ</a>
