@@ -59,13 +59,11 @@
 <?php  
     if (isset($_POST['submit'])) {
         $title = $_POST['ten_dich_vu'];
-        $dongia = $_POST['don_gia_dv']
-        
+        $dongia = $_POST['don_gia_dv'];
         $anh= $_FILES['anh_dv']['name'];
-        move_uploaded_file($_FILES["anh_dv"]["tmp_name"], "images/san-pham/".basename($_FILES['fileUpload']['name'])
-
+        move_uploaded_file($_FILES["anh_dv"]["tmp_name"], "images/san-pham/".basename($_FILES['fileUpload']['name']));
         $motadv = $_POST['mo_ta_dv'];
-        $iddanhmuc = $_POST['id_danh_muc']
+        $iddanhmuc = $_POST['id_danh_muc'];
        
         $sql = "INSERT INTO tbl_dich_vu(ten_dich_vu, don_gia_dv, anh_dv,mo_ta_dv,id_danh_muc,ngay_them_dv) 
         VALUES('$title','$dongia' , '$anh', '$motadv','$iddanhmuc', curtime())";
