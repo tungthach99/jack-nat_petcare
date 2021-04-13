@@ -25,10 +25,7 @@
                     <label for="title">Tên danh mục</label>
                     <input type="text" required="" class="form-control" name="title" id="title" required="">
                 </div>
-				<div class="form-group">
-                    <label for="title">Mô tả</label>
-                    <input type="text" required="" class="form-control" name="title" id="title" required="">
-                </div>
+				
                 <button type="submit" name="submit" class="btn btn-primary">Thêm mới</button>
             </form>
         </div>
@@ -40,10 +37,9 @@
 <?php  
     if (isset($_POST['submit'])) {
         $title = $_POST['ten_danh_muc'];
-        $description = $_POST['mo_ta'];
        
 
-        $sql = "INSERT INTO tbl_danh_muc(ten_danh_muc, mo_ta) VALUES('$title', '$description')";
+        $sql = "INSERT INTO tbl_danh_muc(ten_danh_muc) VALUES('$title')";
         $query = mysqli_query($conn, $sql);
         if ($query) {
            $_SESSION['check'] = 1;

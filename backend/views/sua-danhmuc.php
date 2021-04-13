@@ -9,9 +9,9 @@
 
        if (isset($_POST['submit'])) {
          $title = $_POST['title'];
-         $description = $_POST['mo_ta'];
+        
          $sql = "UPDATE tbl_danh_Muc
-         SET ten_danh_muc = '$title', mo_ta = '$description'
+         SET ten_danh_muc = '$title'
          WHERE id_danh_muc = $id";
             $query = mysqli_query($conn, $sql);
             if ($query) {       
@@ -47,11 +47,7 @@
                     <label for="title">Tên danh mục</label>
                     <input type="text" value="<?php echo $row['ten_danh_muc']; ?>" required="" class="form-control" name="title" id="title" required="">
                 </div>
-                <div class="form-group">
-                    <label for="title">Mô tả</label>
-                    <input type="text" value="<?php echo $row['mo_ta']; ?>" required="" class="form-control" name="title" id="title" required="">
-                </div>
-
+                
                 
             
                 <button type="submit" name="submit" class="btn btn-primary">Câp nhật</button>

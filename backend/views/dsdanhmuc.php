@@ -79,7 +79,7 @@
 	        <th scope="col">STT</th>
 			<th scope="col">ID</th>
 	        <th scope="col">Tên danh mục</th>
-	        <th scope="col">Mô tả</th>
+	       
 	        <th scope="col">Tác vụ</th>
 	        
 	      </tr>
@@ -94,7 +94,7 @@
 	        	<td><?php echo $stt; ?></td>
 				<td><?php echo $row['id_danh_muc']; ?></td>
 	        	<td><?php echo $row['ten_danh_muc']; ?></td>
-	        	<td><?php echo $row['mo_ta']; ?></td>
+	        	
 				<td>
 					<a href="index.php?page=sua-danhmuc&id=<?php echo $row['id_danh_muc']; ?>"><button class="btn btn-primary">Sửa</button></a>
 					<a onclick="return confirm('Bạn có muốn xóa danh mục này không? ');" href="index.php?page=del-danhmuc&id=<?php echo $row['id_danh_muc']; ?>">

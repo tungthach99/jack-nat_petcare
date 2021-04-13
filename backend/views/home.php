@@ -33,6 +33,10 @@
        $sql_comment = "SELECT COUNT(id_binh_luan) as id FROM tbl_binh_luan_san_pham";
        $query_comment = mysqli_query($conn, $sql_comment);
        $rs_comment = mysqli_fetch_array($query_comment);
+        // Số lượng dịch vụ
+        $sql_service = "SELECT COUNT(id_dich_vu) as id FROM tbl_dich_vu";
+        $query_service = mysqli_query($conn, $sql_service);
+        $rs_service = mysqli_fetch_array($query_service);
 
 
 ?>

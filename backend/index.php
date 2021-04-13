@@ -89,18 +89,43 @@
                             </ul>
                         </li>
                     <li>
-                            <a href="javascript:;" data-toggle="collapse" data-target="#danhmuc"><i class="fa fa-fw fa-arrows-v"></i> Danh Mục <i class="fa fa-fw fa-caret-down"></i></a>
-                            <ul id="users" class="collapse">
+                        <a href="javascript:;" data-toggle="collapse" data-target="#danhmuc"><i class="fa fa-fw fa-arrows-v"></i> Danh Mục <i class="fa fa-fw fa-caret-down"></i></a>
+                            <ul id="danhmuc" class="collapse">
                                 <li>
                                     <a href="index.php?page=dsdanhmuc">Danh sách</a>
                                 </li>
                                 <li>
-                                    <a href="index.php?page=them-danhmuc">Thêm mới</a>
+                                    <a href="index.php?page=add-danhmuc">Thêm mới</a>
                                 </li>
                             </ul>
-                        </li>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#menu"><i class="fa fa-fw fa-arrows-v"></i> Sản phẩm<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="menu" class="collapse">
+                            <li>
+                                <a href="index.php?page=menu">Danh sách</a>
+                            </li>
+                            <li>
+                                <a href="index.php?page=add-menu">Thêm mới</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#service"><i class="fa fa-fw fa-arrows-v"></i> Dịch vụ<i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="service" class="collapse">
+                            <li>
+                                <a href="index.php?page=service">Danh sách</a>
+                            </li>
+                            <li>
+                                <a href="index.php?page=add-service">Thêm mới</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="index.php?page=ordered"><i class="fa fa-fw fa-arrows-v"></i> Đơn hàng</a>
+                    </li>
+                    <li>
+                        <a href="index.php?page=ordered2"><i class="fa fa-fw fa-arrows-v"></i> Đơn dịch vụ</a>
                     </li>
                 
                     <li>
@@ -115,21 +140,9 @@
                         </ul>
                     </li>
                     <li>
-                            <a href="index.php?page=customer" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i> Khách Hàng <i class="fa fa-fw fa-caret-down"></i></a>
-                            
-                        </li>
-                    <li>
-                    
-                        <a href="javascript:;" data-toggle="collapse" data-target="#menu"><i class="fa fa-fw fa-arrows-v"></i> Sản phẩm<i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="menu" class="collapse">
-                            <li>
-                                <a href="index.php?page=menu">Danh sách</a>
-                            </li>
-                            <li>
-                                <a href="index.php?page=add-menu">Thêm mới</a>
-                            </li>
-                        </ul>
+                        <a href="index.php?page=customer" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-arrows-v"></i> Khách Hàng <i class="fa fa-fw fa-caret-down"></i></a>   
                     </li>
+                   
                     
                         <li>
                             <a href="index.php?page=baocao" data-toggle="collapse" data-target="#baocao"><i class="fa fa-fw fa-arrows-v"></i>Báo cáo <i class="fa fa-fw fa-caret-down"></i></a>
@@ -137,14 +150,7 @@
                         <li>
                             <a href="index.php?page=comment" data-toggle="collapse" data-target="#comment"><i class="fa fa-fw fa-arrows-v"></i>Bình Luận <i class="fa fa-fw fa-caret-down"></i></a>
                         </li>
-                        <?php  
-                        if (isset($_SESSION['status']) && $_SESSION['status'] == 1) {
-                    ?>
                         
-                        
-                    <?php
-                        }
-                    ?>
                     
                 </ul>
             </div>

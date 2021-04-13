@@ -8,18 +8,20 @@
         $row = mysqli_fetch_array($query);
 
        if (isset($_POST['submit'])) {
-           $tensanpham=$_POST['ten_san_pham'];
-             $dongia = $_POST['don_gia'];
-             $soluong = $_POST['so_luong'];
-            $danhmuc= $_POST['danh_muc'];
+            $tensanpham=$_POST['ten_san_pham'];
+            $dongia = $_POST['don_gia'];
+            $soluong = $_POST['so_luong'];
+            $danhmuc= $_POST['id_danh_muc'];
             $mota = $_POST['mo_ta'];
-             $anh = $_FILES['anh']['name'];
-
-
+            $anh = $_FILES['anh']['name'];
+            // $nameFile = time().$_FILES['anh']['name'];
+            // $tmp_name = $file['tmp_name'];
+            // move_uploaded_file($tmp_name, "../images/san-pham/".$nameFile);
+           
            $sql = "UPDATE tbl_san_pham 
-                    SET ten_san_pham = '$tensanpham', don_gia = '$dongia',so_luong = '$soluong', id_danh_muc='$danhmuc' , mo_ta = '$mota', anh = '$anh'
+                    SET ten_san_pham = '$tensanpham', 
+                    don_gia = '$dongia',so_luong = '$soluong', id_danh_muc='$danhmuc' , mo_ta = '$mota', anh = '$anh'
                     WHERE id_san_pham = $id";
-
             $query = mysqli_query($conn, $sql);
             if ($query) {       
                $_SESSION['check'] = 2;
@@ -71,34 +73,27 @@
                               </div>
                            </div>
                            <div class="col-lg-12">
-                              <div class="form-group focused">
-                                 <label class="form-control-label" for="input-username">Chọn ảnh</label>
-                                 <input name="anh" type='file' id="imgInp" /><br>
-                                 <img style="height: 200px" id="blah" src="" />
-                              </div>
+                           <div class="form-group">
+                                 <img src="../images/san-pham/<?php echo $row['anh']; ?>" width="100px"/>
+                                 <br> <br>
+                                 <label for="">Thay đổi Ảnh (nếu có)</label>
+                                 <input class="form-control" type="file" name="anh">
+                           </div>
+
                            </div>
                            <div class="col-lg-12">
                                <div class="form-group focused">
                                    <label class="form-control-label" for="input-username">Danh mục</label>
                                    <select class="form-control form-control-alternative" name="danhmuc" id="">
-                                     <option value="">---Chọn danh mục---</option>
-                                     <?php
-                                        $sql_dm = "SELECT * FROM tbl_danh_muc";
-                                        $query_dm = $connection->query($sql_dm);
-                                        while ($row_dm=$query_dm->fetch_assoc()) {
-                                        
-                                      ?>
-                                      <option value="<?php echo $row_dm['id_danh_muc'] ?>">
-                                        <?php echo $row_dm['ten_danh_muc'] ?></option>
-                                      <?php } ?>
                                    </select>
                                 </div>
                              </div>
                              <div class="col-lg-12">
-                              <div class="form-group">
-                                 <label class="form-control-label" for="input-username">Mô tả</label>
-                                 <input name="mota" type="text" id="input-username" class="form-control form-control-alternative" placeholder="Mô tả" value="<?php echo $row['mo_ta'] ?>">
+                             <div class="form-group">
+                                 <label for="mota">Chi tiết bài viết</label>
+                                 <textarea required="" class="form-control ckeditor" name="mota" id="ckeditor" id="" cols="30" rows="10"><?php echo $row['mo_ta']; ?></textarea>
                               </div>
+                              
                            </div>
                         </div>
                      </div>

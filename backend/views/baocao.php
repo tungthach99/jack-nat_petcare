@@ -9,16 +9,18 @@ if(isset($_GET['bcdt']) and isset($_GET['bcdt'])==1)
 		{
 			echo "<br><h1>Tổng doanh thu tháng ".$_POST['thang']." năm ".$_POST['nam']." là: ".number_format($row['tong_tien'])." VND</h1>";
 		}
-		echo "<a class='btn btn-outline-default' href='?ql=baocao/ds'> Trở về</a>";
+		echo "<a class='btn btn-outline-default' href='index.php?page=baocao'> Trở về</a>";
 	}
 }
 if(isset($_GET['bcdt']) || isset($_GET['bcdt'])==2)
 {
 	if(isset($_POST["sobanghi"]))
 	{
-	$sql= "SELECT SUM(t1.tong_tien) as doanh_thu,t2.id_san_pham,t3.ten_san_pham,COUNT(t2.id_san_pham) AS so_luong FROM tbl_don_hang AS t1,tbl_chi_tiet_don_hang AS t2,tbl_san_pham AS t3 WHERE t1.id_don_hang=t2.id_don_hang AND t2.id_san_pham=t3.id_san_pham GROUP BY t2.id_san_pham limit ".$_POST["sobanghi"];
+	$sql= "SELECT SUM(t1.tong_tien) as doanh_thu,t2.id_san_pham,t3.ten_san_pham,COUNT(t2.id_san_pham) 
+	AS so_luong FROM tbl_don_hang AS t1,tbl_chi_tiet_don_hang AS t2,tbl_san_pham AS t3 
+	WHERE t1.id_don_hang=t2.id_don_hang AND t2.id_san_pham=t3.id_san_pham GROUP BY t2.id_san_pham limit ".$_POST["sobanghi"];
 	$query=$connection->query($sql);
-?>
+	?>
 		<br><div class="table-responsive">
 			<table class="table align-items-center table-flush">
 	    		<thead class="thead-light">
@@ -48,7 +50,7 @@ if(isset($_GET['bcdt']) || isset($_GET['bcdt'])==2)
 		</div>
 <?php
 	
-	echo "<a class='btn btn-outline-default' href='?ql=baocao/ds'> Trở về</a>";
+	echo "<a class='btn btn-outline-default' href='index.php?page=baocao'> Trở về</a>";
 
 	}
 }
