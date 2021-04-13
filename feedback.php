@@ -16,10 +16,13 @@ session_start();
         <input type="file" required  class="form-control" name="fileUpload" id="fileUpload">
     </div>
     <div class="div-group">
-        <p id="label">Hãy nhập bình luận của bạn</p>
-        <input type="text" id="comment-box" name="comment" placeholder="Nhập bình luận của bạn ở đây..."> </input>
+        <p id="label">Hãy nhập lời nhắn của bạn</p>
+        <input type="text" id="comment-box" name="comment" placeholder="Nhập lời nhắn của bạn ở đây..."> </input>
     </div>
+    <div style="display: flex; flex-direction: row;">
     <input id="submit" type="submit" value="Gửi">
+    <a style="width: 240px;" href="index.php"><input id="submit" style="background-color: cyan; text-align: center" value="Quay lại trang chủ"></a>
+    </div>
 </form>
 <?php
     if (isset($flag) && $flag == true) {
@@ -114,7 +117,7 @@ label{
     overflow: hidden;
 }
 #submit{
-    width: 616px;
+    width: 240px;
     height: 40px;
     font-size: 20px;
     margin: 0 60px 15px 60px;
