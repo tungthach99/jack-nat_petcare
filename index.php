@@ -33,15 +33,22 @@ session_start();
     <script type="text/javascript" src="js/main.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
 	<link href="css/boxicons/css/boxicons.min.css" rel="stylesheet">
+	<link href="css/remixicon/remixicon.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/css3.css">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
+	<link href="css/aos/aos.css" rel="stylesheet">
     
 </head>
 
-<body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
+
+
+<body >
+	
+
 	<!-- Start header -->
     <?php
 	include("public/ketnoi.php");
@@ -64,7 +71,7 @@ session_start();
 	<!-- End header -->
 	
 	<!-- Start slides -->
-	<div class="container" >
+	<div class="container  " >
 		<div class="col-8" >
 			<div id="slides" class="cover-slides" >
 				<ul class="slides-container">
@@ -73,9 +80,9 @@ session_start();
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
-									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-									<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+									<h1 class="m-b-20"data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p class="m-b-40"data-aos="fade-in" data-aos-delay="000">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
 								</div>
 							</div>
 						</div>
@@ -85,21 +92,21 @@ session_start();
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
-									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-									<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+									<h1 class="m-b-20" data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p class="m-b-40"data-aos="fade-in" data-aos-delay="300">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
 								</div>
 							</div>
 						</div>
 					</li>
 					<li class="text-center">
-						<img src="images/four.jfif" alt="">
+						<img src="images/1618289632108.pjg" alt="">
 						<div class="container">
 							<div class="row">
 								<div class="col-md-12">
-									<h1 class="m-b-20"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-									<p class="m-b-40">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
-									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php">Xem thêm</a></p>
+									<h1 class="m-b-20"data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+									<p class="m-b-40"data-aos="fade-in" data-aos-delay="300">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
 								</div>
 							</div>
 						</div>
@@ -118,44 +125,99 @@ session_start();
 	<!-- ======= Clients Section ======= -->
 <section id="clients" class="clients" >
   <div class="container">
-
     <div class="row" style="margin-left= 0px">
-
       <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100">
         <img src="images/clients/client-1.png" class="img-fluid" alt="">
       </div>
-
       <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="200">
         <img src="images/clients/client-2.png" class="img-fluid" alt="">
       </div>
-
       <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="300">
         <img src="images/clients/client-3.png" class="img-fluid" alt="">
       </div>
-
       <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="400">
         <img src="images/clients/client-4.png" class="img-fluid" alt="">
       </div>
-
       <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="500">
         <img src="images/clients/client-5.png" class="img-fluid" alt="">
       </div>
-
       <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="600">
         <img src="images/clients/client-6.png" class="img-fluid" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Clients Section -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="row content">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <h2 style="font-weight: 600;font-size: 40px;line-height: 60px;margin-bottom: 20px;">
+		JACK&NAT PETCARE </h2>
+		<h2> HƠN CẢ NHỮNG LỜI YÊU THƯƠNG</h2>
+        <h3>JACK&NAT vui lòng khách đến vừa lòng khách đi</h3>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
+        <p>
+		Hệ thống nhiều chi nhánh cửa hàng thú cưng chuyên cung cấp đồ dùng, quần áo, thức ăn, sữa tắm, chuồng, vòng cổ xích và các phụ kiện cho Chó cảnh , Mèo cảnh.
+        </p>
+        <ul>
+          <li><i class="ri-check-double-line"></i> Thú cưng của bạn sẽ là một con cưng, một con công chúa, một hoàng tử khi sử dụng các sản phẩm, dịch vụ tại Jack&Nat Petcare..</li>
+          <li><i class="ri-check-double-line"></i> Cùng nhiều bài viết chia sẻ kinh nghiệm chăm sóc thú cưng hàng đầu tại Việt Nam</li>
+          <li><i class="ri-check-double-line"></i> Địa chỉ nhận tắm spa, chăm sóc, cắt tỉa lông và trông giữ thú cưng chuyên nghiệp. </li>
+          <li><i class="ri-check-double-line"></i>  Với chất lượng dịch vụ tốt nhất luôn được khách hàng tin tưởng sẽ là điểm đến lý tưởng và tuyệt vời dành cho vật nuôi.</li>
+
+        </ul>
+        <p class="font-italic">
+			“Tạo ra những sản phẩm mà người yêu thú cưng thật sự tin tưởng” 
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End About Section -->
+
+
+
+<!-- ======= Counts Section ======= -->
+<section id="counts" class="counts" style="background: #d0a772;
+    padding: 40px 0 20px 0;
+    color: #fff;">
+  <div class="container">
+
+    <div class="row counters">
+
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up" style="font-size: 36px;display: block;font-weight: 700;">1000</span>
+        <p>Khách hàng</p>
+      </div>
+
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up"style="font-size: 36px;display: block;font-weight: 700;">33</span>
+        <p>Sản phẩm và Dịch vụ</p>
+      </div>
+
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up"style="font-size: 36px;display: block;font-weight: 700;">50</span>
+        <p>Nhân viên</p>
+      </div>
+
+      <div class="col-lg-3 col-6 text-center">
+        <span data-toggle="counter-up"style="font-size: 36px;display: block;font-weight: 700;">100</span>
+        <p>Phòng</p>
       </div>
 
     </div>
 
   </div>
-</section><!-- End Clients Section -->
-
+</section><!-- End Counts Sectio
+>>>>>>> Stashed changes
 <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+<section id="services" class="services section-bg">
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <div class="section-title" data-aos="fade-right">
+                <div class="section-title" data-aos="fade-up">
                 <img src="images/cut.png" alt="" class="img-fluid">
                 
                 <h1>DỊCH VỤ</h1>
@@ -170,7 +232,7 @@ session_start();
         <div class="col-lg-8">
 			<div class="row">
 				<div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" >
-					<div class="icon-box" style="width: 350px" data-aos="zoom-in" data-aos-delay="200">
+					<div class="icon-box" style="width: 350px" data-aos="zoom-in" data-aos-delay="300">
 						<div class="icon"><i class="bx bxl-dribbble"></i></div>
 						<h4><a href="">Uy Tín</a></h4>
 						<p>   Luông là sự lựa chọn số 1 dành cho khách hàng     </p>
@@ -178,7 +240,7 @@ session_start();
 				</div>
 
 				<div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-					<div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+					<div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
 						<div class="icon"><i class="bx bx-file"></i></div>
 						<h4><a href="">Chất Lượng</a></h4>
 						<p>Chúng tôi luôn đặt sự lựa chọn sản phẩm lên hàng đầu và được chọn lọc kỹ càng.</p>
@@ -211,11 +273,11 @@ session_start();
     <!-- Sản phẩm bán chạy -->
 	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;">
 		<span class="col-sm-2"></span>
-		<span class="col-sm-8 noiDungGioiThieu">
+		<span class="col-sm-8 noiDungGioiThieu"data-aos="fade-left">
 			<h1 style="font-size: 40px; text-align: center; font-weight: bold">SẢN PHẨM BÁN CHẠY NHẤT</h1>
 			<div style="text-align: center;">
 			
-			<div class="row" style=" width: 100%;">
+			<div class="row" style=" width: 100%;"data-aos="zoom-in" data-aos-delay="200">
 				<label id="labelTrai" for="trai"><i class="fa fa-angle-left"></i></label>
 				<label id="lablePhai" for="phai"><i class="fa fa-angle-right"></i></label>
 				<div class="slide_sp">
@@ -300,10 +362,10 @@ session_start();
 	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;">
 		<span class="col-sm-2"></span>
 		<span class="col-sm-8 noiDungGioiThieu">
-			<h1 style="font-size: 40px; text-align: center; font-weight: bold">DỊCH VỤ BÁN CHẠY NHẤT</h1>
+			<h1 style="font-size: 40px; text-align: center; font-weight: bold"data-aos="fade-left">DỊCH VỤ BÁN CHẠY NHẤT</h1>
 			<div style="text-align: center;">
 			
-			<div class="row" style=" width: 100%;">
+			<div class="row" style=" width: 100%;"data-aos="zoom-in" data-aos-delay="200">
 				<label id="labelTrai2" for="trai2"><i class="fa fa-angle-left"></i></label>
 				<label id="lablePhai2" for="phai2"><i class="fa fa-angle-right"></i></label>
 				<div class="slide_sp">
@@ -386,7 +448,7 @@ session_start();
 	<!-- Dịch vụ bán chạy: end. -->
 	
 	 <!-- Start Gallery -->
-	 <div class="container">
+	 <div class="container"data-aos="zoom-in" data-aos-delay="200">
 	 <div class="gallery-box">
 		<div class="container-fluid">
 			<div class="row">
@@ -397,7 +459,7 @@ session_start();
 <!--					</div>-->
 				</div>
 			</div>
-			<div class="tz-gallery">
+			<div class="tz-gallery"data-aos="zoom-in" data-aos-delay="200">
 				<div class="row">
 				<?php
 					$sql="SELECT * 
@@ -428,7 +490,7 @@ session_start();
 	<!-- End Gallery -->
 	
 	<!-- Sản phẩm mới nhất -->
-	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;">
+	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;"data-aos="fade-right" data-aos-delay="300">
 		<span class="col-sm-2"></span>
 		<span class="col-sm-8 noiDungGioiThieu">
 			<h1 style="font-size: 40px; text-align: center; font-weight: bold">SẢN PHẨM MỚI NHẤT</h1>
@@ -515,13 +577,13 @@ session_start();
 	<!-- Sản phẩm mới nhất: end. -->
 
     <!-- Dịch vụ mới nhất -->
-	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;">
+	<div class="row leCacMuc" style="width: 100%; margin-top: 15px;" >
 		<span class="col-sm-2"></span>
 		<span class="col-sm-8 noiDungGioiThieu">
-			<h1 style="font-size: 40px; text-align: center; font-weight: bold">DỊCH VỤ MỚI NHẤT NHẤT</h1>
+			<h1 style="font-size: 40px; text-align: center; font-weight: bold"data-aos="fade-left">DỊCH VỤ MỚI NHẤT NHẤT</h1>
 			<div style="text-align: center;">
 			
-			<div class="row" style=" width: 100%;">
+			<div class="row" style=" width: 100%;"data-aos="zoom-in" data-aos-delay="200">
 				<label id="labelTrai4" for="trai4"><i class="fa fa-angle-left"></i></label>
 				<label id="lablePhai4" for="phai4"><i class="fa fa-angle-right"></i></label>
 				<div class="slide_sp">
@@ -607,7 +669,7 @@ session_start();
     include_once 'layout/footer.php';
     
 	?>
-	
+
 <!--	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>-->
 
 	<!-- ALL JS FILES -->
@@ -622,9 +684,13 @@ session_start();
 	<script src="js/form-validator.min.js"></script>
     <script src="js/contact-form-script.js"></script>
     <script src="js/custom.js"></script>
-    
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
 	<?php include_once 'layout/vedautrang.php'; ?>
     <script src="css/aos/aos.js"></script>
+	
+	<script>
+  		AOS.init();
+	</script>
 	
 </body>
 </html>

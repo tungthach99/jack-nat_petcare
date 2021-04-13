@@ -45,7 +45,7 @@
 	include("layout/taikhoan.php");
 	?>
 	<!-- Start All Pages -->
-	<div class="all-page-title page-breadcrumb">
+	<div class="all-page-title page-breadcrumb"data-aos="fade-right" data-aos-delay="200">
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-lg-12">
@@ -57,13 +57,13 @@
 	<!-- End All Pages -->
 	
 	<!-- Start Contact -->
-	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1316.848422848072!2d105.82835289255182!3d21.008272930291216!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac7ffa6e6679%3A0x1ff55bbdd942b323!2zSOG7jWMgVmnhu4duIE5nw6JuIEjDoG5n!5e0!3m2!1svi!2s!4v1615127389469!5m2!1svi!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	<iframe data-aos="flip-up" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1316.848422848072!2d105.82835289255182!3d21.008272930291216!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac7ffa6e6679%3A0x1ff55bbdd942b323!2zSOG7jWMgVmnhu4duIE5nw6JuIEjDoG5n!5e0!3m2!1svi!2s!4v1615127389469!5m2!1svi!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 	<div class="contact-box">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-12">
+				<div class="col-lg-12"data-aos="flip-up">
 					<div class="heading-title text-center">
-						<h2>Liên Hệ</h2>
+						<h2 data-aos="flip-up" data-aos-delay="200">Liên Hệ</h2>
 						<p>Đặt lịch hẹn tư vấn</p>
 					</div>
 				</div>
