@@ -54,29 +54,13 @@ session_start();
 	<?php
 	if(isset($_GET["action"]) and $_GET["action"] == 'hoantat')
 	{
-	?>
-	<div id="cheManHinh">
-		<div id="thongBaoChinh">
-			<h1>Thông báo!</h1>
-			<p>Thành công</p>
-			<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('cheManHinh');" class="linkXanh">Đã hiểu</a>
-		</div>
-	</div>
-	<?php
+		include("layout/message1_t.php");
 	}
 	?>
 	<?php
 	if(isset($_GET["action"]) and $_GET["action"] == 'fail')
 	{
-	?>
-	<div id="cheManHinh">
-		<div id="thongBaoChinh">
-			<h1>Thông báo!</h1>
-			<p>Không thành  công</p>
-			<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('cheManHinh');" class="linkXanh">Đã hiểu</a>
-		</div>
-	</div>
-	<?php
+		include("layout/message2_t.php");
 	}
 	?>
 	<div class="batDau row">

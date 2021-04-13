@@ -55,6 +55,10 @@ session_start();
 	{
 		include("layout/message2_t.php");
 	}
+	if(isset($_GET["dangky"]) and $_GET["dangky"]==1)
+	{
+		include("layout/message1_t.php");
+	}
 	?>
 	<br><br><br>
 	<!-- End header -->

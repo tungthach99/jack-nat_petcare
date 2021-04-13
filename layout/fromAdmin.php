@@ -48,7 +48,7 @@
 							</div>
 							<div class="carousel-item text-center">
 								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/anhcanhan.png0"0 alt="">
+									<img class="d-block w-100 rounded-circle" src="images/anhcanhan.jpg"0 alt="">
 								</div>
 								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">TUAN NGUYEN</strong></h5>
 								<!-- <h6 class="text-dark m-0">Web Designer</h6> -->

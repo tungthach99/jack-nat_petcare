@@ -48,7 +48,7 @@
 						{
 							while($row=$result->fetch_assoc())
 							{ //for->while
-							if($row['id_danh_muc']=='11')
+							if($row['id_danh_muc']=='1')
 							{
 					?>
 							<div class="col-lg-4 col-md-6 special-grid thucan">
@@ -64,7 +64,7 @@
 							</div>
 							<?php
 								}
-								if($row['id_danh_muc']=='12')
+								if($row['id_danh_muc']=='2')
 								{
 							?>
 							<div class="col-lg-4 col-md-6 special-grid phukien">
@@ -80,7 +80,7 @@
 							</div>
 							<?php
 								}
-								if($row['id_danh_muc']=='13')
+								if($row['id_danh_muc']=='3')
 								{
 							?>
 							<div class="col-lg-4 col-md-6 special-grid chuongnha">

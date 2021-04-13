@@ -3,16 +3,22 @@ $sql="select *,tbl_san_pham.don_gia*(1-tbl_khuyen_mai.muc_khuyen_mai/100) AS gia
 $result=$con->query($sql);
 $row=$result->fetch_assoc();
 // tăng lượt xem theo tag
-$sqlTag="select id_tag, luot_xem from tag where id_tag = '".$row['tag']."'";
+$sqlTag="select id_tag, luot_xem from tag where id_tag = '".$row['tag']."' or id_tag = '".$row['tag_2']."' or id_tag = '".$row['tag_2']."'";
 $resultTag=$con->query($sqlTag);
-$rowTag=$resultTag->fetch_assoc();
-$luotXem = $rowTag['luot_xem']+1;
-$sqlUpdateTag = "UPDATE tag SET luot_xem = '".$luotXem."' WHERE id_tag = '".$rowTag['id_tag']."'";
-$resultUpdateTag=$con->query($sqlUpdateTag);
+if($resultTag->num_rows>0)
+{
+	while($rowTag=$resultTag->fetch_assoc())
+	{ //for->while
+		$luotXem = $rowTag['luot_xem']+1;
+		$sqlUpdateTag = "UPDATE tag SET luot_xem = '".$luotXem."' WHERE id_tag = '".$rowTag['id_tag']."'";
+		$resultUpdateTag=$con->query($sqlUpdateTag);
+	}
+}
 
 //tăng lượt xem theo tag: end.
-	?>
+?>
     <!-- Start All Pages -->
+<!--
 	<div class="all-page-title page-breadcrumb">
 		<div class="container text-center">
 			<div class="row">
@@ -22,10 +28,19 @@ $resultUpdateTag=$con->query($sqlUpdateTag);
 			</div>
 		</div>
 	</div>
+-->
 	<!-- End All Pages -->
 
     <!-- Thông tin sản phẩm-->
-
+<br><br><br>
+<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<br>
+					<h1 style="font-size: 40px; text-align: center; font-weight: bold">Thông tin sản phẩm</h1>
+				</div>
+			</div>
+		</div>
     <section class="blog-posts grid-system blog">
       <div class="container">
         <div class="row">

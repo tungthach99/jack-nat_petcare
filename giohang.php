@@ -15,6 +15,8 @@ if(isset($_SESSION['datDichVuThanhCong']) and $_SESSION['datDichVuThanhCong']==1
 		unset($_SESSION["giatinh2"]);
 	if(isset($_SESSION["stt_gio_hang2"]))
 		unset($_SESSION["stt_gio_hang2"]);
+	if(isset($_SESSION["thucThuDichVu"]))
+		unset($_SESSION["thucThuDichVu"]);
 	unset($_SESSION['datDichVuThanhCong']);
 }
 if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']==1)
@@ -84,7 +86,7 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 		?>
 		<div id="che-man-hinh">
 			<div class="mess" id="mess-sua">
-				<br><br><br><br><h1>Cảnh báo !!!</h1>
+				<h1>Cảnh báo !!!</h1>
 				<p>Xin lỗi! Sản phẩm bạn cần hiện không còn đủ số lượng. </p>
 				<a style="color: #fff; border-radius: 5px; float: right;" onClick="dongform('che-man-hinh');" class="linkXanh" cursor="pointer">Đã hiểu</a>
 			</div>
@@ -238,6 +240,7 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 								<th>Đơn giá</th>
 								<th>Thời gian bắt đầu</th>
 								<th>Thời gian kết thúc</th>
+								<th>Thu thêm giờ</th>
 								<th>Thành tiền</th>
 								<th>+</th>
 								<th>-</th>
@@ -250,7 +253,7 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 							if(isset($_SESSION["giohang2"]))
 							{
 								foreach($_SESSION["giohang2"] as $key2=>$value2){
-									$sql2="select * from tbl_dich_vu where id_dich_vu=".$value2;
+									$sql2="SELECT t1.id_dich_vu,t1.ten_dich_vu,t1.don_gia_dv, t1.anh_dv, t1.id_danh_muc FROM tbl_dich_vu AS t1 JOIN tbl_danh_muc AS t2 ON t1.id_danh_muc = t2.id_danh_muc WHERE t1.id_dich_vu=".$value2;
 									$result2=$con->query($sql2);
 									if($result2->num_rows>0)
 									{
@@ -269,12 +272,26 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 								$_SESSION["giatinh2"][$key2]=$giatinh2;
 								?>
 								<td><?php echo number_format($giatinh2) ?></td>
-								<td><?php echo ($_SESSION["tgBatDau"][$key2])?></td>
+								<td><?php echo ($_SESSION["tgBatDau"][$key2]) ;?></td>
 								<td><?php echo ($_SESSION["tgKetThuc"][$key2])?></td>
+<!--floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60))-->
 								<?php
-									$thanhtien2=$_SESSION["soluong2"][$key2]*$giatinh2;
-									$_SESSION["tongtien2"]+=$thanhtien2;
+									if($row2['id_danh_muc'] == 5) $phuThu = $giatinh2;
+										else $phuThu=15000;
+									if(floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60)) > 60)
+									{
+										$thanhtien2=($_SESSION["soluong2"][$key2]*$giatinh2) + ($_SESSION["soluong2"][$key2]*($phuThu/60)*floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60))-60);
+										$_SESSION["tongtien2"]+=$thanhtien2;
+									}
+									else
+									{
+										$thanhtien2=$_SESSION["soluong2"][$key2]*$giatinh2;
+										$_SESSION["tongtien2"]+=$thanhtien2;
+									}
+									$_SESSION["thucThuDichVu"][$key2]=$thanhtien2;
+									
 								?>
+								<td><?php echo number_format($thanhtien2 - ($_SESSION["soluong2"][$key2]*$giatinh2));?></td>
 								<td><?php echo number_format($thanhtien2) ?></td>
 								<td>
 								<a class="fa fa-plus" href="customer/Order/xltangdonhang2.php?&stt=<?php echo $key2?>"></a>

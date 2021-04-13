@@ -150,8 +150,8 @@ session_start();
 					{
 //						$tgBatDau = date("Y/m/d H:i:s", strtotime($_SESSION["tgBatDau"][$key]));
 //						Them du lieu vao bang chi tiet don hang
-						$thanhtien=$_SESSION["soluong2"][$key]*$_SESSION["giatinh2"][$key];
-						$sqlinsert = "insert into tbl_chi_tiet_don_dich_vu(id_don_dich_vu,id_dich_vu,don_gia,so_luong_thu_cung,thanh_tien,thoi_gian_bat_dau,thoi_gian_ket_thuc) values('".$_SESSION["id_don_hang"]."','".$row_11['id_dich_vu']."','".$_SESSION["giatinh2"][$key]."',".$_SESSION["soluong2"][$key].",'".$thanhtien."','".date("Y/m/d H:i:s", strtotime($_SESSION["tgBatDau"][$key]))."','".date("Y/m/d H:i:s", strtotime($_SESSION["tgKetThuc"][$key]))."')";
+						$thanhtien=$_SESSION["thucThuDichVu"][$key];
+						$sqlinsert = "insert into tbl_chi_tiet_don_dich_vu(id_don_dich_vu,id_dich_vu,don_gia,so_luong_thu_cung,thanh_tien,thu_them_gio,thoi_gian_bat_dau,thoi_gian_ket_thuc) values('".$_SESSION["id_don_hang"]."','".$row_11['id_dich_vu']."','".$_SESSION["giatinh2"][$key]."',".$_SESSION["soluong2"][$key].",'".$thanhtien."','".($thanhtien-($_SESSION["soluong2"][$key]*$_SESSION["giatinh2"][$key]))."','".date("Y/m/d H:i:s", strtotime($_SESSION["tgBatDau"][$key]))."','".date("Y/m/d H:i:s", strtotime($_SESSION["tgKetThuc"][$key]))."')";
 						if ($con->query($sqlinsert)) {
 							echo "<br>Thêm chi tiết đơn dịch vụ thành công: ".$sqlinsert."<br>";
 						}

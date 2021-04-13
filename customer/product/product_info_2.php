@@ -22,7 +22,7 @@
 							<button <?php if(!isset($_GET['a'])) echo "class='active'"?> data-filter="*">Tất cả</button>
 							<button <?php if(isset($_GET['a']) and $_GET['a'] == "Thú y") echo "class='active'"?> data-filter=".thuy">Thú y</button>
 							<button <?php if(isset($_GET['a']) and $_GET['a'] == "Trông coi") echo "class='active'"?> data-filter=".trongcoi">Trông coi</button>
-							<button <?php if(isset($_GET['a']) and $_GET['a'] == "Thẩm mỹ") echo "class='active'"?> data-filter=".thammy">Thẩm mỹ</button>
+							<button <?php if(isset($_GET['a']) and $_GET['a'] == "Làm đẹp") echo "class='active'"?> data-filter=".thammy">Làm đẹp</button>
 						</div>
 					</div>
 				</div>
