@@ -519,7 +519,7 @@ session_start();
 					?>
 						<div class="col-sm-6 col-md-4 col-lg-4">
 							<a class="lightbox" href="images/uploads/<?php echo $row['img'] ?>">
-								<img class="img-fluid" style="width: 330px; height: 200px" src="images/uploads/<?php echo $row['img'] ?>" alt="Gallery Images">
+								<img class="img-fluid"  src="images/uploads/<?php echo $row['img'] ?>" alt="Gallery Images">
 							</a>
 						</div>
 					<?php 
