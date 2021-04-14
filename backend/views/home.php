@@ -14,6 +14,11 @@
     $query_order = mysqli_query($conn, $sql_order);
     $rs_order = mysqli_fetch_array($query_order);
 
+     // Số lượng đơn dịch vụ
+     $sql_order2 = "SELECT COUNT(id_dich_vu) as id FROM tbl_dich_vu";
+     $query_order2 = mysqli_query($conn, $sql_order2);
+     $rs_order2 = mysqli_fetch_array($query_order2);
+
     // Số lượng sản phẩm
     $sql_menus = "SELECT COUNT(id_san_pham) as id FROM tbl_san_pham";
     $query_menus = mysqli_query($conn, $sql_menus);
@@ -251,6 +256,28 @@
                     </div>
                 </div>
                 <a href="index.php?page=feedback">
+                    <div class="panel-footer">
+                        <span class="pull-left">Xem chi tiết</span>
+                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+            <div class="panel panel-green">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-check-square-o fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge"><?php if($rs_order2['id']  > 0) { echo $rs_order2['id']; } ?></div>
+                            <div>Danh sách đơn dịch vụ</div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.php?page=ordered2">
                     <div class="panel-footer">
                         <span class="pull-left">Xem chi tiết</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
