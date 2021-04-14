@@ -507,6 +507,7 @@ session_start();
 					<?php
 						$sql="SELECT * 
 										FROM tbl_feedback
+										WHERE trang_thai = 1
 										ORDER BY id_feedback DESC
 										LIMIT 6 ";
 						$result=$con->query($sql);
