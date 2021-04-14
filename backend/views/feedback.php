@@ -53,7 +53,8 @@
                             <th class="text-center">Email</th>
                             <th class="text-center">Ảnh </th>
                             <th class="text-center">Nội dung</th>
-                            <th class="text-center">Tình trạng</th>                     
+                            <th class="text-center">Tình trạng</th>            
+                            <th scope="col">Tác vụ</th>         
                         </tr>
                     </thead>
                     <tbody>
@@ -72,8 +73,8 @@
                                     <form action="index.php?page=feedback&id=<?php echo $row['id_feedback']; ?>" method="POST">
                                         <div class="input-group">
                                             <select class="form-control" name="trangThai" id="">
-                                            <option value="1" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 1) { ?> selected="selected"  <?php } ?> >Đã duyệt</option>
                                                 <option value="2" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 2) { ?> selected="selected"  <?php } ?> >Không duyệt</option>
+                                                <option value="1" <?php if(isset($row['trang_thai']) && $row['trang_thai'] == 1) { ?> selected="selected"  <?php } ?> >Duyệt</option>
                                             </select>
                                             <span class="input-group-addon">
                                                 <button onclick="return confirm('Bạn có thực sự muốn cập nhật trạng thái đặt này không?');" style="line-height: 0px; padding: 0px;" type="submit" name="submit">Cập nhật</button>
@@ -81,6 +82,11 @@
                                         </div>
                                     </form>
                                 </td>
+                                <td>
+										<a onclick="return confirm('Bạn có muốn xóa feedback này không? ');" href="index.php?page=del-feedback&id=<?php echo $row['id_feedback']; ?>">
+											<button class="btn btn-danger">Xóa</button>
+										</a>
+									</td>
                             </tr>
                         <?php
                                 }
