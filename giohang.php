@@ -280,7 +280,7 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 										else $phuThu=15000;
 									if(floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60)) > 60)
 									{
-										$thanhtien2=($_SESSION["soluong2"][$key2]*$giatinh2) + ($_SESSION["soluong2"][$key2]*($phuThu/60)*floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60))-60);
+										$thanhtien2=($_SESSION["soluong2"][$key2]*$giatinh2) + ($_SESSION["soluong2"][$key2]*($phuThu/60)*floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60))-$phuThu);
 										$_SESSION["tongtien2"]+=$thanhtien2;
 									}
 									else
@@ -393,60 +393,6 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 	</div>
 	<!-- End Reservation -->
 	
-	<!-- Start Customer Reviews -->
-	<div class="customer-reviews-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Tham khảo thêm</h2>
-						<p>Các dịch vụ nổi bật của chúng tôi</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-8 mr-auto ml-auto text-center">
-					<div id="reviews" class="carousel slide" data-ride="carousel">
-						<div class="carousel-inner mt-4">
-							<div class="carousel-item text-center active">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_cat-tia-long.jpg" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Cắt tỉa lông</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Cắt tỉa lông và cắt tỉa lông và và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông và cắt tỉa lông.</p>
-							</div>
-							<div class="carousel-item text-center">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_massage-thu-cung.jpg" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Massage cho thú cưng</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng Massage cho thú cưng.</p>
-							</div>
-							<div class="carousel-item text-center">
-								<div class="img-box p-1 border rounded-circle m-auto">
-									<img class="d-block w-100 rounded-circle" src="images/dv_kham-suc-khoe.jpg" alt="">
-								</div>
-								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase"><a href="#">Kiểm tra sức khỏe</a></strong></h5>
-								<h6 class="text-dark m-0">1,000,000 VND</h6>
-								<p class="m-0 pt-3">Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe Kiểm tra sức khỏe.</p>
-							</div>
-						</div>
-						<a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">
-							<i class="fa fa-angle-left" aria-hidden="true"></i>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#reviews" role="button" data-slide="next">
-							<i class="fa fa-angle-right" aria-hidden="true"></i>
-							<span class="sr-only">Next</span>
-						</a>
-                    </div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End Customer Reviews -->
 	<?php
 	include("layout/footer.php");
 	?>

@@ -246,11 +246,11 @@
                         </div>
                         <div class="col-xs-9 text-right">
                             <div class="huge"><?php if($rs_menus['id']  > 0) { echo $rs_menus['id']; } ?></div>
-                            <div>Mã giảm giá</div>
+                            <div>Feedback</div>
                         </div>
                     </div>
                 </div>
-                <a href="index.php?page=discount">
+                <a href="index.php?page=feedback">
                     <div class="panel-footer">
                         <span class="pull-left">Xem chi tiết</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

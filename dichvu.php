@@ -72,12 +72,12 @@ require("public/ketnoi.php");
 		}
 		else
 		{
-			include("customer/Product/product_info_2.php");
+			include_once("customer/Product/product_info_2.php");
 		}
 		//code tim kiem san pham
-		if(isset($_GET["m"]))
+		if(isset($_GET["t"]))
 		{
-				include("customer/Product/product_info_2.php");
+				include_once("customer/Product/product_info_2.php");
 		}
 		//end tim kiem.
         ?>

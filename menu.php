@@ -94,14 +94,15 @@ session_start();
 		}
 		else
 		{
-			include("customer/Product/product_info.php");
-		}
-		//code tim kiem san pham
-		if(isset($_GET["tensanpham"]))
-		{
-				include("customer/Product/product_info.php");
-		}
+			include_once("customer/Product/product_info.php");
+			//code tim kiem san pham
+			
 		//end tim kiem.
+		}
+		if(isset($_GET["tensanpham"]))
+			{
+				include_once("customer/Product/product_info.php");
+			}
         ?>
 
 	
