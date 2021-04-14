@@ -280,7 +280,7 @@ if(isset($_SESSION['datSanPhamThanhCong']) and $_SESSION['datSanPhamThanhCong']=
 										else $phuThu=15000;
 									if(floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60)) > 60)
 									{
-										$thanhtien2=($_SESSION["soluong2"][$key2]*$giatinh2) + ($_SESSION["soluong2"][$key2]*($phuThu/60)*floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60))-60*24);
+										$thanhtien2=($_SESSION["soluong2"][$key2]*$giatinh2) + ($_SESSION["soluong2"][$key2]*($phuThu/60)*floor(((strtotime($_SESSION["tgKetThuc"][$key2])-strtotime($_SESSION["tgBatDau"][$key2])) / 60))-$phuThu);
 										$_SESSION["tongtien2"]+=$thanhtien2;
 									}
 									else
