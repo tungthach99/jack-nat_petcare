@@ -72,9 +72,9 @@ session_start();
 	
 	<!-- Start slides -->
 			
-	<div class="container  " >
+	<!-- <div class="container  " >
 		<div class="row">
-			<div class="col-lg-8" >
+			<div class="col-lg-8" > -->
 				<div id="slides" class="cover-slides" >
 					<ul class="slides-container">
 						<li class="text-center">
@@ -82,27 +82,27 @@ session_start();
 							<div class="container">
 								<div class="row">
 									<div class="col-md-12">
-										<h1 class="m-b-20"data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-										<p class="m-b-40"data-aos="fade-in" data-aos-delay="000">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+										<h1 class="m-b-20"data-aos="fade-left" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+										<p class="m-b-40"data-aos="fade-left" data-aos-delay="000">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
 										<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
 									</div>
 								</div>
 							</div>
 						</li>
 						<li class="text-center">
-							<img src="images/photod.jfif" alt="">
+							<img src="images/banner6.jpeg" alt="">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-12">
-										<h1 class="m-b-20" data-aos="fade-in" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
-										<p class="m-b-40"data-aos="fade-in" data-aos-delay="300">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
+										<h1 class="m-b-20" data-aos="fade-right" data-aos-delay="200"><strong>Welcome To <br> Jack & Nat pet care</strong></h1>
+										<p class="m-b-40"data-aos="fade-right" data-aos-delay="300">"Không biết từ bao giờ, những em cún, em mèo đã trở thành một phần của cuộc sống tôi"</p>
 										<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="menu.php"data-aos="fade-in" data-aos-delay="400">Xem thêm</a></p>
 									</div>
 								</div>
 							</div>
 						</li>
 						<li class="text-center">
-							<img src="images/1618289632108.pjg" alt="">
+							<img src="images/pet-banner.jpg" alt="">
 							<div class="container">
 								<div class="row">
 									<div class="col-md-12">
@@ -114,12 +114,13 @@ session_start();
 							</div>
 						</li>
 					</ul>
+					
 					<div class="slides-navigation">
 						<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
 						<a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
 					</div>
 				</div>
-			</div>
+			<!-- </div>
 			<div class="col-lg-4">
 					<div class="tz-gallery"  data-aos="fade-left" data-aos-delay="200">
 						<div class="	">
@@ -148,7 +149,7 @@ session_start();
 			</div>
 		</div>
 		
-	</div>
+	</div> -->
 	<!-- <div id="sl1" class="sl1" style="top: 210px; position: fixed; left: 85%; margin-right: 500px; bottom: 0px;">
 							
 			<a rel="nofollow" href="#" title="m88" target="_blank"><img src="https://aff.opus-static.com/m88/120x300_VN.gif" alt="m88" border="0" width="120" height="280">
