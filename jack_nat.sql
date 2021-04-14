@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 13, 2021 lúc 03:35 PM
+-- Thời gian đã tạo: Th4 14, 2021 lúc 06:21 AM
 -- Phiên bản máy phục vụ: 10.4.18-MariaDB
 -- Phiên bản PHP: 8.0.3
 
@@ -38,19 +38,19 @@ CREATE TABLE `tag` (
 --
 
 INSERT INTO `tag` (`id_tag`, `ten_tag`, `luot_xem`) VALUES
-(1, 'chuồng', 89),
-(2, 'pate', 0),
+(1, 'chuồng', 101),
+(2, 'pate', 1),
 (3, 'test', 1),
-(4, 'rẻ vô địch', 28),
+(4, 'rẻ vô địch', 70),
 (5, 'trông coi', 0),
-(6, 'thức ăn', 0),
+(6, 'thức ăn', 8),
 (7, 'healthy', 0),
 (8, 'trending', 0),
-(9, 'hoàng thượng', 0),
+(9, 'hoàng thượng', 1),
 (10, 'diệt bọ', 0),
-(11, 'meow', 23),
-(12, 'gáu gáu', 3),
-(13, 'đồ dùng', 6),
+(11, 'meow', 63),
+(12, 'gáu gáu', 16),
+(13, 'đồ dùng', 16),
 (14, 'phụ kiện', 0);
 
 -- --------------------------------------------------------
@@ -101,7 +101,8 @@ INSERT INTO `tbl_binh_luan_san_pham` (`id_binh_luan`, `id_khach_hang`, `id_san_p
 (14, 5, 55, 'abc', '2021-04-12 07:11:32'),
 (15, 5, 55, 'abc', '2021-04-12 07:11:32'),
 (16, 5, 55, 'a', '2021-04-12 07:11:53'),
-(17, 5, 58, 'acb', '2021-04-12 14:49:14');
+(17, 5, 58, 'acb', '2021-04-12 14:49:14'),
+(18, 5, 16, 'acv', '2021-04-13 15:46:51');
 
 -- --------------------------------------------------------
 
@@ -136,7 +137,10 @@ INSERT INTO `tbl_chi_tiet_don_dich_vu` (`id_don_dich_vu`, `id_dich_vu`, `so_luon
 (14, 2, 2, 100000, 200000, '2021-04-14 10:12:00', '2021-04-28 10:12:00', 0),
 (15, 2, 2, 100000, 200000, '2021-04-13 10:43:00', '2021-04-28 10:43:00', 0),
 (20, 2, 1, 100000, 129940, '2021-04-13 13:21:00', '2021-04-13 15:21:00', 29940),
-(21, 2, 1, 100000, 129940, '2021-04-13 13:21:00', '2021-04-13 15:21:00', 29940);
+(21, 2, 1, 100000, 129940, '2021-04-13 13:21:00', '2021-04-13 15:21:00', 29940),
+(22, 2, 1, 100000, 130000, '2021-04-14 01:09:00', '2021-04-14 04:09:00', 30000),
+(22, 2, 1, 100000, 115000, '2021-04-14 01:17:00', '2021-04-14 03:17:00', 15000),
+(22, 5, 1, 200000, 400000, '2021-04-14 01:17:00', '2021-04-14 03:17:00', 200000);
 
 -- --------------------------------------------------------
 
@@ -222,7 +226,6 @@ INSERT INTO `tbl_dich_vu` (`id_dich_vu`, `ten_dich_vu`, `don_gia_dv`, `anh_dv`, 
 (1, 'Cắt tỉa lông chó mèo', '250000', '2003_cat-tia-long-cho-bang-tong-do-cat-long-cho-meo-768x521.jpg', 'Bạn đang tìm kiếm địa chỉ cung cấp dịch vụ cắt tỉa lông chó mèo (pet grooming) chuyên nghiệp tại Hà Nội? Tại Jack&Nat pet care , chúng tôi cung cấp đầy đủ tất cả các loại hình dịch vụ chăm sóc và làm đẹp trọn gói tốt nhất dành cho thú cưng.\r\n\r\nCắt lông cho chó mèo là một vấn đề rất quan trọng. Việc đó đảm bảo cho sự phát triển về sức khỏe, thể chất và tinh thần cho thú cưng của bạn. Những thú cưng không được chăm sóc, cắt tỉa và làm đẹp thường có nguy cơ gặp phải bọ chét, ve rận, ký sinh trùng và các vấn đề về viêm da khác. Việc sử dụng dịch vụ cắt tỉa lông chó mèo tại Pet Mart  định kỳ và thường xuyên sẽ đem lại nhiều lợi ích thiết thực cho vật nuôi của bạn. Hãy lập kế hoạch đưa thú cưng của bạn đến với chúng tôi mỗi tuần.\r\nTại sao nên cắt tỉa lông cho chó mèo tại Jack&Nat?\r\nVới đội ngũ nhân viên  được đào tạo về dịch vụ cắt tỉa lông chó mèo chuyên nghiệp và được tham gia nhiều khóa đào tạo chăm sóc thú cưng tại nước ngoài. Với gần 10 năm kinh nghiệm, chúng tôi có thể đáp ứng được hầu hết nhu cầu làm đẹp của các giống vật nuôi.\r\n\r\nChúng tôi hiểu rằng thú cưng của mỗi khách hàng đều có nhu cầu chăm sóc khác nhau. Và cần có những giải pháp phù hợp với từng giống. Dịch vụ của chúng tôi luôn sử dụng những dòng sản phẩm sữa tắm tốt nhất đảm bảo an toàn cho vật nuôi. Với phương pháp chăm sóc toàn diện kết hợp với những kinh nghiệm, kiến thức chuyên sâu. Jack&Nat sẽ tư vấn, cung cấp những dịch vụ chăm sóc hiệu quả và chuyên nghiệp nhất.\r\nNhững lưu ý khi sử dụng dịch vụ\r\nPet Mart không tiếp nhận vật nuôi có tiểu sử bệnh hen, co giật hoặc các bệnh về thần kinh.\r\n\r\nĐể đảm bảo an toàn cho sức khỏe khi đưa đến làm dịch vụ cắt tỉa lông chó mèo. Không cho thú cưng ăn no và chạy nhảy quá sức trước khi đến cửa hàng. Có kế hoạch che nắng mưa trước khi đến và sau khi về. Nếu thú cưng có những biểu hiện bất thường về sức khỏe xin vui lòng liên hệ tới tổng đài của Pet Mart để được trợ giúp.\r\n\r\nVui lòng kiểm tra kỹ thú cưng khi đến đón thú cưng sau khi làm dịch vụ. Quy trình đảm bảo nhân viên của Pet Mart đã thực hiện đúng yêu cầu và bạn hài lòng với chất lượng dịch vụ.', NULL, 6, '2021-03-22 06:27:32', 4, 11, 12),
 (2, 'Tắm spa cho chó mèo ', '100000', 'dich-vu-spa-tam-thu-cung-chuyen-nghiep.jpg', 'Dịch vụ tắm spa cho chó mèo tại Jack&Nat pet care với các phương pháp chăm sóc toàn diện từ A – Z. Bao gồm: tắm, vắt tuyến hôi, sấy khô, chải lông rối, nhổ lông tai, vệ sinh tai, cắt mài móng chân, cạo lông theo yêu cầu. Tất cả đều với với mong muốn mang tới cho thú cưng của bạn một cuộc sống khỏe mạnh và hạnh phúc nhất.\r\n\r\nVới đội ngũ nhân viên  giàu kinh nghiệm, kiến thức chuyên sâu sẽ tư vấn và cung cấp cho bạn những gói dịch vụ tắm spa cho chó mèo  chất lượng nhất. Những chú cún và mèo cưng sẽ nhanh chóng được tút lại nhan sắc trở lên xinh đẹp và đáng yêu hơn.\r\nTại sao nên spa cho chó mèo thường xuyên?\r\nCòn niềm vui gì hơn khi những người bạn được khoác trên mình bộ lông mềm mượt, thơm tho và sạch sẽ.\r\n\r\nMỗi người bạn nhỏ đều có những thói quen và sở thích khác nhau. Chính vì vậy, Pet Mart luôn có những sự lựa chọn dịch vụ spa cho chó mèo phù hợp nhất với những dòng sản phẩm sữa tắm trị liệu đảm bảo an toàn cho sức khỏe của thú cưng.\r\n\r\nVới tình yêu thương với thú cưng vô bờ bến, chúng tôi chắc chắn sẽ mang tới cho thú cưng và khách hàng  những trải nghiệm tuyệt vời nhất tại Jack & Nat pet care\r\nNhững lưu ý khi sử dụng dịch vụ\r\nJack & Nat không tiếp nhận vật nuôi có tiểu sử bệnh hen, co giật hoặc các bệnh về thần kinh. \r\n\r\nĐể đảm bảo chất lượng dịch vụ đạt kết quả tốt nhất. Không cho thú cưng ăn no hoặc hoạt động quá sức trước khi đến cửa hàng. Nên sử dụng túi xách hoặc lồng vận chuyển. Nếu thú cưng có những biểu hiện bất thường về sức khỏe xin vui lòng liên hệ tới tổng đài của Pet Mart để được trợ giúp.\r\n\r\nKhi đến đón thú cưng, quý khách vui lòng kiểm tra kỹ trước khi ra về, để đảm bảo nhân viên của Pet Mart đã thực hiện đúng yêu cầu dịch vụ.', NULL, 4, '2021-03-23 06:27:32', 4, 11, 12),
 (3, 'Khách sạn chó mèo', '150000', '19b9ac92bb4f4a11135e.jpg', 'Dịch vụ trông giữ chó mèo Jack & Nat pet care  tự hào là một trong những khách sạn 5⭐️ chăm sóc thú cưng chuyên nghiệp đầu tiên tại Việt Nam với mô hình hiện đại. Khách sạn chó mèo  Pet Mart luôn đảm bảo điều kiện ánh sáng và vệ sinh theo tiêu chuẩn chất lượng. Tất cả các khu vực đều được giám sát bởi hệ thống camera 24/7 đảm bảo quá trình vận hành an toàn tối đa.\r\n\r\nTại Jack & Nat, chúng tôi mong muốn cung cấp môi trường sạch sẽ, an toàn và thoải mái cho thú cưng. Chính vì vậy thiết kế phòng nghỉ cho chó mèo cũng luôn được chúng tôi chú trọng và nâng cấp thường xuyên.', NULL, 5, '2021-03-22 06:27:32', 9, 12, 11),
-(4, 'Trông coi đặc biệt', '200000', '19b9ac92bb4f4a11135e.jpg', 'Dịch vụ trông coi đặc biệt siêu cấp vip pro\r\n<br><br>Thú cưng của bạn sẽ được chăm sóc đặc biệt trong suốt quá trình và sử dụng đồ dùng, thức ăn miễn phí.', NULL, 5, '2021-04-13 12:01:12', 11, 12, 0),
 (5, 'Trông coi đặc biệt', '200000', '19b9ac92bb4f4a11135e.jpg', 'Dịch vụ trông coi đặc biệt siêu cấp vip pro\r\n<br><br>Thú cưng của bạn sẽ được chăm sóc đặc biệt trong suốt quá trình và sử dụng đồ dùng, thức ăn miễn phí.', NULL, 5, '2021-04-13 12:01:29', 11, 12, 9);
 
 -- --------------------------------------------------------
@@ -265,7 +268,8 @@ INSERT INTO `tbl_don_dich_vu` (`id_don_hang`, `id_khach_hang`, `phu_thu`, `tong_
 (18, 7, 0, 129940, 'Nguyễn Thị Hoa', '13 Chùa Bộcc', 999999999, 1, 'COD', '', 'gmail@hoanguyen.com', '2021-04-13 13:19:47'),
 (19, 7, 0, 129940, 'Nguyễn Thị Hoa', '13 Chùa Bộcc', 999999999, 1, 'COD', '', 'gmail@hoanguyen.com', '2021-04-13 13:21:22'),
 (20, 7, 0, 129940, 'Nguyễn Thị Hoa', '13 Chùa Bộcc', 999999999, 1, 'COD', '', 'gmail@hoanguyen.com', '2021-04-13 13:23:46'),
-(21, 5, 0, 129940, 'Nguyen Anh Tuan', '12 Chùa Bộc - Đống Đa - Hà Nội', 1236958742, 1, 'COD', '', 'hoa.jhr1999@gmail.com', '2021-04-13 13:34:43');
+(21, 5, 0, 129940, 'Nguyen Anh Tuan', '12 Chùa Bộc - Đống Đa - Hà Nội', 1236958742, 1, 'COD', '', 'hoa.jhr1999@gmail.com', '2021-04-13 13:34:43'),
+(22, -1, 0, 645000, '1', '12 Chùa Bộc', 1, 1, 'COD', '', 'hiimtung123@gmail.com', '2021-04-14 01:18:19');
 
 -- --------------------------------------------------------
 
@@ -317,15 +321,23 @@ CREATE TABLE `tbl_feedback` (
   `ten_khach_hang` varchar(296) COLLATE utf8_unicode_520_ci NOT NULL,
   `email` varchar(296) COLLATE utf8_unicode_520_ci NOT NULL,
   `img` varchar(296) COLLATE utf8_unicode_520_ci NOT NULL,
-  `noi_dung` varchar(296) COLLATE utf8_unicode_520_ci NOT NULL
+  `noi_dung` varchar(296) COLLATE utf8_unicode_520_ci NOT NULL,
+  `trang_thai` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_520_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `tbl_feedback`
 --
 
-INSERT INTO `tbl_feedback` (`id_feedback`, `id_khach_hang`, `ten_khach_hang`, `email`, `img`, `noi_dung`) VALUES
-(23, 0, 'Tung Thach', 'hiimtung123@gmail.com', 'backiee-82109.jpg', '123');
+INSERT INTO `tbl_feedback` (`id_feedback`, `id_khach_hang`, `ten_khach_hang`, `email`, `img`, `noi_dung`, `trang_thai`) VALUES
+(23, 0, 'Tung Thach', 'hiimtung123@gmail.com', 'backiee-82109.jpg', '123', 1),
+(24, 0, 'a', 'a', '607eee181fbaf0a8f3b881ec0b0337a8.jpg', 'fsd', 1),
+(25, 2, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '5e00beede1359.jpg', 'a', 1),
+(26, 2, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '8299380e569463c0c51f18f47d2d86da.jpg', 'a', 1),
+(27, 2, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', 'dv_massage-thu-cung.jpg', 'a', 1),
+(28, 2, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', 'background.jpg', 'a', 1),
+(29, 2, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', 'dv_cat-tia-long.jpg', 'a', 1),
+(30, 2, 'Thạch Thọ Tùng', 'hiimtung123@gmail.com', '444a4d4ad8efafd8d2087c26d505df36.jpg', 'a', 1);
 
 -- --------------------------------------------------------
 
@@ -454,7 +466,6 @@ CREATE TABLE `tbl_san_pham` (
 --
 
 INSERT INTO `tbl_san_pham` (`id_san_pham`, `ten_san_pham`, `don_gia`, `id_danh_muc`, `anh`, `mo_ta`, `id_anh`, `so_luong`, `ngay_them`, `tag`, `tag_2`, `tag_3`) VALUES
-(15, 'Tấm lót kháng khuẩn Charcoal 45*60cm (50 miếng)', 20000, '2', '3396_absorb_plus_antibacterial_50pcs_petcity.jpg', 'Tã lót được làm từ than hoạt tính nguyên chất 100% và polymer siêu thấm, giúp thấm hút nước tiểu một cách nhanh chóng và kết lại thành một khối. Phòng chống vi khuẩn, khử mùi, thấm hút ngay tức thì, kháng khuẩn khử mùi hiệu quả, có tác dụng phòng chống chất lỏng trào ngược trở lại. Kết hợp với thành phần kháng khuẩn, có hiệu quả ngăn chặn sự tăng trưởng của vi khuẩn. Ngoài ra với chức năng khử mùi độc đáo giúp bạn an tâm không lo ngửi thấy mùi hôi trong phòng. Sản phẩm có bề mặt là vải không dệt mềm mại, thấm hút chất lỏng nhanh, duy trì bề mặt khô thoáng, tạo cảm giác dễ chiu và thoải mái cho vật nuôi. Dưới đáy tã lót được làm từ Polyethylene chống thấm, ngăn ngừa chất lỏng chảy ra ngoài. Sản phẩm thích hợp cho chó, mèo, thỏ...\r\n\r\n', '', 150, '2021-03-22 04:45:40', 4, 13, NULL),
 (16, 'Áo thun gucci mickey sọc xanh size 7', 120000, '2', '4605_121161024_1308414832829924_2526940334383185913_o.jpg', 'Với thiết kế tinh tế của áo thun, Boss sẽ nổi bật và ấm áp hơn khi cùng Sen dạo phố đón những cơn gió đầu mùa.\r\n\r\nĐẶC ĐIỂM SẢN PHẨM:\r\nChất liệu cotton thoáng mát, mềm mại\r\nTạo cảm giác thoải mái\r\nTăng vẻ quý phái cho thú cưng\r\nNhiều Size khác nhau\r\nChất liệu Polyester chính hiệu\r\nPhân phối chính hãng \r\n', '', 60, '2021-03-22 04:45:40', 6, NULL, NULL),
 (17, 'Bát ăn đôi lớn', 60000, '2', 'HTB16o.ga8r0gK0jSZFnq6zRRXXae.jpg_q50.jpg', 'Bát ăn cho chó mèo bằng nhựa BOBO  Plastic Bowl 3038 là sản phẩm phù hợp với tất cả giống chó và mèo.\r\n\r\nLợi ích chính\r\nBát ăn cho chó mèo bằng nhựa BOBO Plastic Bowl  3038 với chất liệu bằng nhựa được sản xuất trên dây chuyền công nghệ cao.\r\nVới thiết kế tiêu chuẩn chất lượng của Châu Âu vừa và gọn.\r\nMàu sắc hoa văn trang trí bề mặt sản phẩm đa dạng, đáng yêu. Không gây hại cho tất cả các giống chó và mèo.\r\nBề mặt trơn láng, dễ dàng chùi rửa sạch sẽ sau khi sử dụng.', '', 100, '2021-03-22 04:47:53', 4, NULL, NULL),
 (18, 'Ferplast Glam - Chén nhựa Melamine size M', 126000, '2', '2913_bat_an_ferplast_glam_light_blue_pet_bowl_petcity_2.jpg', NULL, '', 60, '2021-03-22 04:47:53', 1, 13, NULL),
@@ -656,7 +667,7 @@ ALTER TABLE `tbl_binh_luan_dich_vu`
 -- AUTO_INCREMENT cho bảng `tbl_binh_luan_san_pham`
 --
 ALTER TABLE `tbl_binh_luan_san_pham`
-  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_binh_luan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_danh_muc`
@@ -674,7 +685,7 @@ ALTER TABLE `tbl_dich_vu`
 -- AUTO_INCREMENT cho bảng `tbl_don_dich_vu`
 --
 ALTER TABLE `tbl_don_dich_vu`
-  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_don_hang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_don_hang`
@@ -686,7 +697,7 @@ ALTER TABLE `tbl_don_hang`
 -- AUTO_INCREMENT cho bảng `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
-  MODIFY `id_feedback` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_feedback` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_khach_hang`
